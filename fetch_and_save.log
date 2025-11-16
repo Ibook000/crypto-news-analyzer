@@ -1,0 +1,651 @@
+2025-11-16 12:45:10,661 - __main__ - INFO - 新闻定时抓取服务启动
+2025-11-16 12:45:10,662 - __main__ - INFO - 开始执行新闻抓取与保存任务...
+2025-11-16 12:45:10,687 - __main__ - INFO - 数据库连接成功
+2025-11-16 12:45:10,687 - __main__ - INFO - 开始处理源: cointelegraph
+2025-11-16 12:45:10,688 - fetchers.rss_fetcher - INFO - 正在抓取: Cointelegraph - https://cointelegraph.com/rss
+2025-11-16 12:45:12,778 - fetchers.rss_fetcher - WARNING - RSS解析警告: <urlopen error [WinError 10061] 由于目标计算机积极拒绝，无法连接。>
+2025-11-16 12:45:12,779 - fetchers.rss_fetcher - WARNING - RSS源 Cointelegraph 没有获取到条目
+2025-11-16 12:45:12,779 - __main__ - INFO - 从 cointelegraph 抓取到 0 篇文章
+2025-11-16 12:45:12,779 - __main__ - INFO - 开始处理源: coindesk
+2025-11-16 12:45:12,786 - fetchers.rss_fetcher - INFO - 正在抓取: CoinDesk - https://www.coindesk.com/arc/outboundfeeds/rss/?outputType=xml
+2025-11-16 12:45:14,855 - fetchers.rss_fetcher - WARNING - RSS解析警告: <urlopen error [WinError 10061] 由于目标计算机积极拒绝，无法连接。>
+2025-11-16 12:45:14,856 - fetchers.rss_fetcher - WARNING - RSS源 CoinDesk 没有获取到条目
+2025-11-16 12:45:14,856 - __main__ - INFO - 从 coindesk 抓取到 0 篇文章
+2025-11-16 12:45:14,856 - __main__ - INFO - 开始处理源: cryptoslate
+2025-11-16 12:45:14,857 - fetchers.rss_fetcher - INFO - 正在抓取: CryptoSlate - https://cryptoslate.com/feed/
+2025-11-16 12:45:16,945 - fetchers.rss_fetcher - WARNING - RSS解析警告: <urlopen error [WinError 10061] 由于目标计算机积极拒绝，无法连接。>
+2025-11-16 12:45:16,946 - fetchers.rss_fetcher - WARNING - RSS源 CryptoSlate 没有获取到条目
+2025-11-16 12:45:16,946 - __main__ - INFO - 从 cryptoslate 抓取到 0 篇文章
+2025-11-16 12:45:16,947 - __main__ - INFO - 新闻抓取与保存任务完成: 总共抓取 0 篇，保存 0 篇新文章
+2025-11-16 12:45:16,947 - __main__ - INFO - 定时任务已配置: 每小时执行一次
+2025-11-16 12:45:19,327 - __main__ - INFO - 新闻定时抓取服务已停止
+2025-11-16 12:50:09,747 - __main__ - INFO - 新闻定时抓取服务启动
+2025-11-16 12:50:09,747 - __main__ - INFO - 开始执行新闻抓取与保存任务...
+2025-11-16 12:50:09,773 - __main__ - INFO - 数据库连接成功
+2025-11-16 12:50:09,774 - __main__ - INFO - 开始处理源: cointelegraph
+2025-11-16 12:50:09,774 - fetchers.rss_fetcher - INFO - 正在抓取: Cointelegraph - https://cointelegraph.com/rss
+2025-11-16 12:50:10,162 - fetchers.rss_fetcher - INFO - 成功抓取 30 篇文章从 Cointelegraph
+2025-11-16 12:50:10,162 - __main__ - INFO - 从 cointelegraph 抓取到 30 篇文章
+2025-11-16 12:50:14,941 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/crypto-index-etfs-adoption-wisdomtree-will-peck-interview?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 12:50:14,948 - database.operations - ERROR - 添加文章 https://cointelegraph.com/news/crypto-index-etfs-adoption-wisdomtree-will-peck-interview 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('https://cointelegraph.com/news/crypto-index-etfs-adoption-wisdomtree-will-peck-interview', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:50:15,914 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 12:50:15,915 - database.operations - ERROR - 添加文章 https://cointelegraph.com/news/what-happened-in-crypto-today 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('https://cointelegraph.com/news/what-happened-in-crypto-today', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:50:16,952 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/pro-bitcoin-steak-n-shake-el-salvador-expansion?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 12:50:16,953 - database.operations - ERROR - 添加文章 https://cointelegraph.com/news/pro-bitcoin-steak-n-shake-el-salvador-expansion 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('https://cointelegraph.com/news/pro-bitcoin-steak-n-shake-el-salvador-expansion', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:50:17,745 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/crypto-fundamentals-strong-despite-market-rout?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 12:50:17,746 - database.operations - ERROR - 添加文章 https://cointelegraph.com/news/crypto-fundamentals-strong-despite-market-rout 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('https://cointelegraph.com/news/crypto-fundamentals-strong-despite-market-rout', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:50:18,830 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/crypto-treasuries-blockchain-pave-way-decentralized-science?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 12:50:18,833 - database.operations - ERROR - 添加文章 https://cointelegraph.com/news/crypto-treasuries-blockchain-pave-way-decentralized-science 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('https://cointelegraph.com/news/crypto-treasuries-blockchain-pave-way-decentralized-science', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:50:21,462 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/explained/what-happens-to-satoshi-s-1m-bitcoin-if-quantum-computers-go-live?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 12:50:21,464 - database.operations - ERROR - 添加文章 https://cointelegraph.com/explained/what-happens-to-satoshi-s-1m-bitcoin-if-quantum-computers-go-live 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('https://cointelegraph.com/explained/what-happens-to-satoshi-s-1m-bitcoin-if-quantum-computers-go-live', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:50:22,311 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/aster-says-tokenomics-unchanged-amid-community-confusion?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 12:50:22,313 - database.operations - ERROR - 添加文章 https://cointelegraph.com/news/aster-says-tokenomics-unchanged-amid-community-confusion 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('https://cointelegraph.com/news/aster-says-tokenomics-unchanged-amid-community-confusion', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:50:23,060 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/kiyosaki-cash-crunch-bitcoin-gold-big-print-warning?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 12:50:23,063 - database.operations - ERROR - 添加文章 https://cointelegraph.com/news/kiyosaki-cash-crunch-bitcoin-gold-big-print-warning 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('https://cointelegraph.com/news/kiyosaki-cash-crunch-bitcoin-gold-big-print-warning', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:50:24,142 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/ark-invest-bitmine-bullish-share-buys-crypto-stock-dip?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 12:50:24,143 - database.operations - ERROR - 添加文章 https://cointelegraph.com/news/ark-invest-bitmine-bullish-share-buys-crypto-stock-dip 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('https://cointelegraph.com/news/ark-invest-bitmine-bullish-share-buys-crypto-stock-dip', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:50:25,052 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/crypto-sentiment-index-plunges-bitcoin-macro-scares?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 12:50:25,054 - database.operations - ERROR - 添加文章 https://cointelegraph.com/news/crypto-sentiment-index-plunges-bitcoin-macro-scares 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('https://cointelegraph.com/news/crypto-sentiment-index-plunges-bitcoin-macro-scares', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:50:25,763 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/crypto-market-bottoms-sentiment-social-media-forecasts-santiment?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 12:50:25,766 - database.operations - ERROR - 添加文章 https://cointelegraph.com/news/crypto-market-bottoms-sentiment-social-media-forecasts-santiment 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('https://cointelegraph.com/news/crypto-market-bottoms-sentiment-social-media-forecasts-santiment', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:50:26,695 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/crypto-market-structure-bill-cftc-sec-united-states-jeff-park?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 12:50:26,696 - database.operations - ERROR - 添加文章 https://cointelegraph.com/news/crypto-market-structure-bill-cftc-sec-united-states-jeff-park 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('https://cointelegraph.com/news/crypto-market-structure-bill-cftc-sec-united-states-jeff-park', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:50:27,672 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/bitcoin-hits-6-month-low-as-ai-fears-add-to-risk-off-mood-how-are-pro-traders-positioned?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 12:50:27,673 - database.operations - ERROR - 添加文章 https://cointelegraph.com/news/bitcoin-hits-6-month-low-as-ai-fears-add-to-risk-off-mood-how-are-pro-traders-positioned 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('https://cointelegraph.com/news/bitcoin-hits-6-month-low-as-ai-fears-add-to-risk-off-mood-how-are-pro-traders-positioned', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:50:28,574 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/sol-drops-to-5-month-low-despite-solana-spot-etf-success-is-dollar100-next?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 12:50:28,576 - database.operations - ERROR - 添加文章 https://cointelegraph.com/news/sol-drops-to-5-month-low-despite-solana-spot-etf-success-is-dollar100-next 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('https://cointelegraph.com/news/sol-drops-to-5-month-low-despite-solana-spot-etf-success-is-dollar100-next', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:50:29,771 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/probability-december-interest-rate-cut-below-50?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 12:50:29,773 - database.operations - ERROR - 添加文章 https://cointelegraph.com/news/probability-december-interest-rate-cut-below-50 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('https://cointelegraph.com/news/probability-december-interest-rate-cut-below-50', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:50:30,889 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/ether-treasury-company-ceo-buying?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 12:50:30,891 - database.operations - ERROR - 添加文章 https://cointelegraph.com/news/ether-treasury-company-ceo-buying 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('https://cointelegraph.com/news/ether-treasury-company-ceo-buying', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:50:31,822 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/public-bitcoin-miner-retreat-sharply-as-btc-pulls-back-from-recent-highs?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 12:50:31,823 - database.operations - ERROR - 添加文章 https://cointelegraph.com/news/public-bitcoin-miner-retreat-sharply-as-btc-pulls-back-from-recent-highs 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('https://cointelegraph.com/news/public-bitcoin-miner-retreat-sharply-as-btc-pulls-back-from-recent-highs', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:50:32,997 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/bitcoin-s-2-year-trend-is-about-to-collapse-is-90k-programmed?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 12:50:32,998 - database.operations - ERROR - 添加文章 https://cointelegraph.com/news/bitcoin-s-2-year-trend-is-about-to-collapse-is-90k-programmed 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('https://cointelegraph.com/news/bitcoin-s-2-year-trend-is-about-to-collapse-is-90k-programmed', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:50:33,906 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/binance-blackrock-buidl-off-exchange-collateral-traders?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 12:50:33,908 - database.operations - ERROR - 添加文章 https://cointelegraph.com/news/binance-blackrock-buidl-off-exchange-collateral-traders 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('https://cointelegraph.com/news/binance-blackrock-buidl-off-exchange-collateral-traders', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:50:35,088 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/btc-market-dip-small-sentiment-freefall?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 12:50:35,090 - database.operations - ERROR - 添加文章 https://cointelegraph.com/news/btc-market-dip-small-sentiment-freefall 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('https://cointelegraph.com/news/btc-market-dip-small-sentiment-freefall', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:50:35,960 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/strategy-s-nav-falls-under-1-critics-raise-alarm-after-dollar5-7b-bitcoin-wallet-move?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 12:50:35,962 - database.operations - ERROR - 添加文章 https://cointelegraph.com/news/strategy-s-nav-falls-under-1-critics-raise-alarm-after-dollar5-7b-bitcoin-wallet-move 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('https://cointelegraph.com/news/strategy-s-nav-falls-under-1-critics-raise-alarm-after-dollar5-7b-bitcoin-wallet-move', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:50:37,000 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/eric-trump-bitcoin-volatility-american-bitcoin-btc-holdings?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 12:50:37,002 - database.operations - ERROR - 添加文章 https://cointelegraph.com/news/eric-trump-bitcoin-volatility-american-bitcoin-btc-holdings 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('https://cointelegraph.com/news/eric-trump-bitcoin-volatility-american-bitcoin-btc-holdings', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:50:38,016 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/price-predictions-11-14-btc-eth-xrp-bnb-sol-doge-ada-hype-link-bch?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 12:50:38,017 - database.operations - ERROR - 添加文章 https://cointelegraph.com/news/price-predictions-11-14-btc-eth-xrp-bnb-sol-doge-ada-hype-link-bch 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('https://cointelegraph.com/news/price-predictions-11-14-btc-eth-xrp-bnb-sol-doge-ada-hype-link-bch', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:50:38,994 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/bitcoin-falls-6-month-low-etf-demand-collapses-finance-redefined?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 12:50:38,996 - database.operations - ERROR - 添加文章 https://cointelegraph.com/news/bitcoin-falls-6-month-low-etf-demand-collapses-finance-redefined 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('https://cointelegraph.com/news/bitcoin-falls-6-month-low-etf-demand-collapses-finance-redefined', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:50:39,987 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/cardone-capital-dats-real-estate-bitcoin-fund?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 12:50:39,989 - database.operations - ERROR - 添加文章 https://cointelegraph.com/news/cardone-capital-dats-real-estate-bitcoin-fund 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('https://cointelegraph.com/news/cardone-capital-dats-real-estate-bitcoin-fund', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:50:40,911 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/eth-long-term-holders-dump-45k-ether-per-day-is-a-price-drop-to-dollar2-5k-next?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 12:50:40,913 - database.operations - ERROR - 添加文章 https://cointelegraph.com/news/eth-long-term-holders-dump-45k-ether-per-day-is-a-price-drop-to-dollar2-5k-next 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('https://cointelegraph.com/news/eth-long-term-holders-dump-45k-ether-per-day-is-a-price-drop-to-dollar2-5k-next', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:50:41,995 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/michael-saylor-strategy-dumping-bitcoin?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 12:50:41,997 - database.operations - ERROR - 添加文章 https://cointelegraph.com/news/michael-saylor-strategy-dumping-bitcoin 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('https://cointelegraph.com/news/michael-saylor-strategy-dumping-bitcoin', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:50:43,024 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/tether-expands-commodity-lending-1-5b-trade-finance?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 12:50:43,026 - database.operations - ERROR - 添加文章 https://cointelegraph.com/news/tether-expands-commodity-lending-1-5b-trade-finance 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('https://cointelegraph.com/news/tether-expands-commodity-lending-1-5b-trade-finance', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:50:44,144 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/bitcoin-bull-run-might-actually-be-over-as-wyckoff-pattern-points-to-dollar86k?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 12:50:44,146 - database.operations - ERROR - 添加文章 https://cointelegraph.com/news/bitcoin-bull-run-might-actually-be-over-as-wyckoff-pattern-points-to-dollar86k 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('https://cointelegraph.com/news/bitcoin-bull-run-might-actually-be-over-as-wyckoff-pattern-points-to-dollar86k', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:50:45,299 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/ripple-cto-s-50-year-bitcoin-joke-has-a-point?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 12:50:45,301 - database.operations - ERROR - 添加文章 https://cointelegraph.com/news/ripple-cto-s-50-year-bitcoin-joke-has-a-point 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('https://cointelegraph.com/news/ripple-cto-s-50-year-bitcoin-joke-has-a-point', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:50:45,302 - __main__ - INFO - 源 cointelegraph: 0/30 篇文章保存成功
+2025-11-16 12:50:45,302 - __main__ - INFO - 开始处理源: coindesk
+2025-11-16 12:50:45,302 - fetchers.rss_fetcher - INFO - 正在抓取: CoinDesk - https://www.coindesk.com/arc/outboundfeeds/rss/?outputType=xml
+2025-11-16 12:50:46,060 - fetchers.rss_fetcher - INFO - 成功抓取 25 篇文章从 CoinDesk
+2025-11-16 12:50:46,062 - __main__ - INFO - 从 coindesk 抓取到 25 篇文章
+2025-11-16 12:51:07,133 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/15/is-2025-worse-than-2022-for-crypto-nic-carter-and-mccordic-offer-opposing-views HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/15/is-2025-worse-than-2022-for-crypto-nic-carter-and-mccordic-offer-opposing-views (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001CA76EB5350>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-16 12:51:07,136 - database.operations - ERROR - 添加文章 012dc39f-5cff-4bd7-864a-104ad517f76b 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('012dc39f-5cff-4bd7-864a-104ad517f76b', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:51:28,188 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/15/harvard-endowment-takes-rare-leap-into-bitcoin-with-usd443m-bet-on-blackrock-s-ibit HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/15/harvard-endowment-takes-rare-leap-into-bitcoin-with-usd443m-bet-on-blackrock-s-ibit (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001CA76F00690>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-16 12:51:28,189 - database.operations - ERROR - 添加文章 ee4758bb-caf4-4dca-a202-1fc9825e8f34 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('ee4758bb-caf4-4dca-a202-1fc9825e8f34', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:51:49,225 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/business/2025/11/15/alibaba-to-use-jpmorgan-s-blockchain-for-tokenized-dollar-and-euro-payments-cnbc HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /business/2025/11/15/alibaba-to-use-jpmorgan-s-blockchain-for-tokenized-dollar-and-euro-payments-cnbc (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001CA76F118D0>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-16 12:51:49,229 - database.operations - ERROR - 添加文章 c68c4811-c072-43d6-ac6d-da6637097935 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('c68c4811-c072-43d6-ac6d-da6637097935', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:52:10,288 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/policy/2025/11/15/state-of-crypto-what-s-in-the-new-crypto-market-structure-draft HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /policy/2025/11/15/state-of-crypto-what-s-in-the-new-crypto-market-structure-draft (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001CA7659FE10>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-16 12:52:10,290 - database.operations - ERROR - 添加文章 8e1c7f3b-e89d-41a9-bb4e-d7474c4f7f5a 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('8e1c7f3b-e89d-41a9-bb4e-d7474c4f7f5a', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:52:31,343 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/15/crypto-market-slips-into-extreme-fear-after-bitcoin-fails-to-hold-usd100-000-level HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/15/crypto-market-slips-into-extreme-fear-after-bitcoin-fails-to-hold-usd100-000-level (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001CA76E693D0>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-16 12:52:31,345 - database.operations - ERROR - 添加文章 a6a69187-5e83-4d52-a691-2f57a8185c35 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('a6a69187-5e83-4d52-a691-2f57a8185c35', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:52:52,384 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/15/negative-skew-what-it-is-why-it-s-frustrating-bitcoin-bulls-and-why-it-might-mean-a-bottom-is-near HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/15/negative-skew-what-it-is-why-it-s-frustrating-bitcoin-bulls-and-why-it-might-mean-a-bottom-is-near (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001CA76587D90>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-16 12:52:52,387 - database.operations - ERROR - 添加文章 21a2f714-6708-41e7-a902-3b294cd18b07 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('21a2f714-6708-41e7-a902-3b294cd18b07', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:53:13,434 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/business/2025/11/15/tether-eyes-usd1b-investment-in-german-robotics-startup-neura-ft HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /business/2025/11/15/tether-eyes-usd1b-investment-in-german-robotics-startup-neura-ft (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001CA7659C9D0>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-16 12:53:13,436 - database.operations - ERROR - 添加文章 17f0517f-553b-45b6-bfa1-34061e102653 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('17f0517f-553b-45b6-bfa1-34061e102653', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:53:34,454 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/15/crypto-liquidity-still-hollow-after-october-crash-risking-sharp-price-swings HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/15/crypto-liquidity-still-hollow-after-october-crash-risking-sharp-price-swings (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001CA76F12950>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-16 12:53:34,456 - database.operations - ERROR - 添加文章 4d8af943-d65d-4baa-af3d-bf9ec2dbd4f2 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('4d8af943-d65d-4baa-af3d-bf9ec2dbd4f2', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:53:55,510 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/14/bitcoin-slides-below-usd95k-in-worst-week-since-march-analyst-sets-downside-target-at-usd84k HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/14/bitcoin-slides-below-usd95k-in-worst-week-since-march-analyst-sets-downside-target-at-usd84k (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001CA76F12DD0>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-16 12:53:55,511 - database.operations - ERROR - 添加文章 f05ccb3e-6d73-4a34-a512-df7862c23d2a 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('f05ccb3e-6d73-4a34-a512-df7862c23d2a', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:54:16,544 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/policy/2025/11/14/u-s-doj-pursues-north-korea-s-illicit-money-machine-seizes-more-crypto HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /policy/2025/11/14/u-s-doj-pursues-north-korea-s-illicit-money-machine-seizes-more-crypto (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001CA76E6A150>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-16 12:54:16,546 - database.operations - ERROR - 添加文章 a714b104-b1e9-4fcd-b909-d387227c0fd8 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('a714b104-b1e9-4fcd-b909-d387227c0fd8', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:54:37,604 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/14/xrp-slides-7-but-etf-launch-sets-stage-for-potential-reversal-above-usd2-36 HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/14/xrp-slides-7-but-etf-launch-sets-stage-for-potential-reversal-above-usd2-36 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001CA76F03FD0>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-16 12:54:37,607 - database.operations - ERROR - 添加文章 3874ecbd-4139-4666-85cb-91f2c9dfa078 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('3874ecbd-4139-4666-85cb-91f2c9dfa078', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:54:58,658 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/business/2025/11/14/blackrock-s-usd2-5b-tokenized-fund-gets-listed-as-collateral-on-binance-expands-to-bnb-chain HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /business/2025/11/14/blackrock-s-usd2-5b-tokenized-fund-gets-listed-as-collateral-on-binance-expands-to-bnb-chain (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001CA76E5DD50>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-16 12:54:58,662 - database.operations - ERROR - 添加文章 9a36b999-86fc-44d1-949e-68df8ff931e2 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('9a36b999-86fc-44d1-949e-68df8ff931e2', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:55:19,717 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/14/canary-likely-to-hit-pause-on-etf-filings-with-xrp-eyes-sec-shift-for-what-s-next HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/14/canary-likely-to-hit-pause-on-etf-filings-with-xrp-eyes-sec-shift-for-what-s-next (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001CA76E83990>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-16 12:55:19,720 - database.operations - ERROR - 添加文章 c72a79c0-22f1-467c-928a-0abcc5ad607b 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('c72a79c0-22f1-467c-928a-0abcc5ad607b', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:55:40,777 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/13/ether-tumbles-8-as-etfs-bleed-over-usd1-4b-long-term-holders-sell HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/13/ether-tumbles-8-as-etfs-bleed-over-usd1-4b-long-term-holders-sell (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001CA76F12E10>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-16 12:55:40,779 - database.operations - ERROR - 添加文章 1b2bc501-b7e2-43ec-b6cf-9bf94652ffa6 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('1b2bc501-b7e2-43ec-b6cf-9bf94652ffa6', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:56:01,805 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/14/saylor-says-strategy-buying-bitcoin-shooting-down-rumors-of-sales HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/14/saylor-says-strategy-buying-bitcoin-shooting-down-rumors-of-sales (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001CA7660BBD0>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-16 12:56:01,807 - database.operations - ERROR - 添加文章 9c08aa9c-181b-4013-be63-7550ddbf1f6b 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('9c08aa9c-181b-4013-be63-7550ddbf1f6b', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:56:22,852 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/coindesk-indices/2025/11/14/coindesk-20-performance-update-aave-falls-7-8-leading-index-lower HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /coindesk-indices/2025/11/14/coindesk-20-performance-update-aave-falls-7-8-leading-index-lower (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001CA76E6BBD0>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-16 12:56:22,855 - database.operations - ERROR - 添加文章 d0c79053-d4f4-4ed6-b1a7-e611ebe305d5 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('d0c79053-d4f4-4ed6-b1a7-e611ebe305d5', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:56:43,898 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/business/2025/11/14/tom-lee-s-ethereum-treasury-firm-bitmine-immersion-appoints-chi-tsang-as-ceo HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /business/2025/11/14/tom-lee-s-ethereum-treasury-firm-bitmine-immersion-appoints-chi-tsang-as-ceo (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001CA76E6BCD0>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-16 12:56:43,901 - database.operations - ERROR - 添加文章 d09a2eb0-804c-426f-8b31-474f464c3ec7 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('d09a2eb0-804c-426f-8b31-474f464c3ec7', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:57:04,943 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/business/2025/11/14/trump-family-linked-american-bitcoin-posts-q3-profit HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /business/2025/11/14/trump-family-linked-american-bitcoin-posts-q3-profit (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001CA76585150>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-16 12:57:04,947 - database.operations - ERROR - 添加文章 0f4af9f6-9b17-4137-9fe0-4ccade800c7e 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('0f4af9f6-9b17-4137-9fe0-4ccade800c7e', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:57:26,002 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/daybook-us/2025/11/14/running-for-the-exits-crypto-daybook-americas HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /daybook-us/2025/11/14/running-for-the-exits-crypto-daybook-americas (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001CA7659FB50>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-16 12:57:26,004 - database.operations - ERROR - 添加文章 e8de3230-d34a-4668-a4c3-3ba52807fe7b 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('e8de3230-d34a-4668-a4c3-3ba52807fe7b', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:57:47,061 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/14/crypto-markets-today-bitcoin-breaches-usd98k-as-liquidations-top-usd1-1b HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/14/crypto-markets-today-bitcoin-breaches-usd98k-as-liquidations-top-usd1-1b (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001CA7660B5D0>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-16 12:57:47,063 - database.operations - ERROR - 添加文章 54cb8344-e91c-4c8d-903e-5218ea3e8378 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('54cb8344-e91c-4c8d-903e-5218ea3e8378', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:58:01,683 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/14/3-key-charts-to-track-as-ether-strengthens-against-bitcoin HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/14/3-key-charts-to-track-as-ether-strengthens-against-bitcoin (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001CA76F13990>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+2025-11-16 12:58:01,684 - database.operations - ERROR - 添加文章 471b9666-222c-42a8-9f70-f87e45ad09ab 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('471b9666-222c-42a8-9f70-f87e45ad09ab', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:58:16,317 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/14/bitcoin-spot-etfs-see-usd869m-outflow-second-largest-on-record HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/14/bitcoin-spot-etfs-see-usd869m-outflow-second-largest-on-record (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001CA76E6B8D0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+2025-11-16 12:58:16,319 - database.operations - ERROR - 添加文章 6a72a693-2c95-4386-9b85-1828bfdab847 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('6a72a693-2c95-4386-9b85-1828bfdab847', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:58:30,947 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/14/tether-dominance-surges-to-highest-since-april HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/14/tether-dominance-surges-to-highest-since-april (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001CA76E6BFD0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+2025-11-16 12:58:30,950 - database.operations - ERROR - 添加文章 b0c6f6bb-00c9-4a5a-88e4-1a6f1cd20f5b 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('b0c6f6bb-00c9-4a5a-88e4-1a6f1cd20f5b', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:58:45,558 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/14/xrp-etf-fails-to-bump-bulls-as-ripple-linked-token-plunges-7-3-amid-btc-selloff HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/14/xrp-etf-fails-to-bump-bulls-as-ripple-linked-token-plunges-7-3-amid-btc-selloff (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001CA76F020D0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+2025-11-16 12:58:45,560 - database.operations - ERROR - 添加文章 8eb83c9b-060c-4775-9856-3c64e40baea4 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('8eb83c9b-060c-4775-9856-3c64e40baea4', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:59:00,160 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/14/bitcoin-plunges-under-usd98-000-eth-sol-ada-down-8-as-usd880m-in-bullish-bets-liquidated HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/14/bitcoin-plunges-under-usd98-000-eth-sol-ada-down-8-as-usd880m-in-bullish-bets-liquidated (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001CA76E81610>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+2025-11-16 12:59:00,161 - database.operations - ERROR - 添加文章 ab7cab08-6d2a-4164-a1cd-0da266b38f0e 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('ab7cab08-6d2a-4164-a1cd-0da266b38f0e', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:59:00,162 - __main__ - INFO - 源 coindesk: 0/25 篇文章保存成功
+2025-11-16 12:59:00,162 - __main__ - INFO - 开始处理源: cryptoslate
+2025-11-16 12:59:00,163 - fetchers.rss_fetcher - INFO - 正在抓取: CryptoSlate - https://cryptoslate.com/feed/
+2025-11-16 12:59:01,864 - fetchers.rss_fetcher - INFO - 成功抓取 10 篇文章从 CryptoSlate
+2025-11-16 12:59:01,865 - __main__ - INFO - 从 cryptoslate 抓取到 10 篇文章
+2025-11-16 12:59:04,983 - fetchers.context_extractor - INFO - 成功提取 https://cryptoslate.com/former-sec-aide-and-uniswap-founder-clash-over-decentralizations-true-role/ 的内容
+2025-11-16 12:59:04,987 - database.operations - ERROR - 添加文章 https://cryptoslate.com/?p=507294 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('https://cryptoslate.com/?p=507294', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:59:05,542 - fetchers.context_extractor - INFO - 成功提取 https://cryptoslate.com/nebraska-joins-the-digital-asset-race-but-wyoming-laid-the-tracks/ 的内容
+2025-11-16 12:59:05,543 - database.operations - ERROR - 添加文章 https://cryptoslate.com/?p=507326 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('https://cryptoslate.com/?p=507326', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:59:05,854 - fetchers.context_extractor - INFO - 成功提取 https://cryptoslate.com/vibe-coding-is-on-notice-build-an-ai-ghost-app-in-30-mins-and-reclaim-weeks-of-your-life/ 的内容
+2025-11-16 12:59:05,856 - database.operations - ERROR - 添加文章 https://cryptoslate.com/?p=506912 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('https://cryptoslate.com/?p=506912', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:59:06,180 - fetchers.context_extractor - INFO - 成功提取 https://cryptoslate.com/at-96k-nearly-99-of-btc-investors-accumulating-in-past-155-days-are-holding-at-a-loss/ 的内容
+2025-11-16 12:59:06,182 - database.operations - ERROR - 添加文章 https://cryptoslate.com/?p=507332 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('https://cryptoslate.com/?p=507332', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:59:06,507 - fetchers.context_extractor - INFO - 成功提取 https://cryptoslate.com/the-hubris-in-pretending-bitcoins-story-doesnt-include-79k-this-year/ 的内容
+2025-11-16 12:59:06,509 - database.operations - ERROR - 添加文章 https://cryptoslate.com/?p=507252 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('https://cryptoslate.com/?p=507252', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:59:07,073 - fetchers.context_extractor - INFO - 成功提取 https://cryptoslate.com/americas-debt-machine-just-hit-368m-btc-this-years-surge-equals-100-years-of-new-bitcoin-supply/ 的内容
+2025-11-16 12:59:07,075 - database.operations - ERROR - 添加文章 https://cryptoslate.com/?p=507031 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('https://cryptoslate.com/?p=507031', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:59:07,616 - fetchers.context_extractor - INFO - 成功提取 https://cryptoslate.com/ethereum-price-prediction-2025-eth-dips-to-3200-on-holder-selling-frenzy-whales-defy-losses-ev2-presale-ignites-gaming-rally/ 的内容
+2025-11-16 12:59:07,618 - database.operations - ERROR - 添加文章 https://cryptoslate.com/?p=507288 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('https://cryptoslate.com/?p=507288', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:59:07,948 - fetchers.context_extractor - INFO - 成功提取 https://cryptoslate.com/ripple-won-the-fight-now-its-ghosting-wall-street-despite-a-40b-ipo-valuation/ 的内容
+2025-11-16 12:59:07,950 - database.operations - ERROR - 添加文章 https://cryptoslate.com/?p=507212 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('https://cryptoslate.com/?p=507212', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:59:08,288 - fetchers.context_extractor - INFO - 成功提取 https://cryptoslate.com/these-3-asian-markets-have-now-switched-on-tokenized-finance-faster-than-the-us/ 的内容
+2025-11-16 12:59:08,290 - database.operations - ERROR - 添加文章 https://cryptoslate.com/?p=506609 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('https://cryptoslate.com/?p=506609', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:59:08,631 - fetchers.context_extractor - INFO - 成功提取 https://cryptoslate.com/grayscales-ipo-filing-reveals-strategic-shift-amid-revenue-dip/ 的内容
+2025-11-16 12:59:08,633 - database.operations - ERROR - 添加文章 https://cryptoslate.com/?p=507133 失败: (sqlite3.OperationalError) no such column: articles.sentiment
+[SQL: SELECT articles.id AS articles_id, articles.source AS articles_source, articles.title AS articles_title, articles.link AS articles_link, articles.summary AS articles_summary, articles.published AS articles_published, articles.content AS articles_content, articles.author AS articles_author, articles.sentiment AS articles_sentiment, articles.sentiment_score AS articles_sentiment_score, articles.chinese_summary AS articles_chinese_summary, articles.keywords AS articles_keywords, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at, articles.ai_processed AS articles_ai_processed 
+FROM articles 
+WHERE articles.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('https://cryptoslate.com/?p=507133', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-16 12:59:08,633 - __main__ - INFO - 源 cryptoslate: 0/10 篇文章保存成功
+2025-11-16 12:59:08,633 - __main__ - INFO - 新闻抓取与保存任务完成: 总共抓取 65 篇，保存 0 篇新文章
+2025-11-16 12:59:08,634 - __main__ - INFO - 定时任务已配置: 每小时执行一次
+2025-11-16 13:08:27,620 - __main__ - INFO - 新闻定时抓取服务启动
+2025-11-16 13:08:27,621 - __main__ - INFO - 开始执行新闻抓取与保存任务...
+2025-11-16 13:08:27,646 - database.operations - INFO - 当前表中的列: ['id', 'source', 'title', 'link', 'summary', 'published', 'content', 'author', 'sentiment_score', 'chinese_summary', 'keywords', 'created_at', 'updated_at', 'ai_processed']
+2025-11-16 13:08:27,668 - database.operations - INFO - 成功添加列: sentiment
+2025-11-16 13:08:27,669 - database.operations - INFO - 列 sentiment_score 已存在，跳过
+2025-11-16 13:08:27,669 - database.operations - INFO - 列 chinese_summary 已存在，跳过
+2025-11-16 13:08:27,670 - database.operations - INFO - 列 keywords 已存在，跳过
+2025-11-16 13:08:27,670 - database.operations - INFO - 列 created_at 已存在，跳过
+2025-11-16 13:08:27,670 - database.operations - INFO - 列 updated_at 已存在，跳过
+2025-11-16 13:08:27,671 - database.operations - INFO - 列 ai_processed 已存在，跳过
+2025-11-16 13:08:27,671 - database.operations - INFO - 数据库迁移完成
+2025-11-16 13:08:27,671 - __main__ - INFO - 数据库连接成功
+2025-11-16 13:08:27,671 - __main__ - INFO - 开始处理源: cointelegraph
+2025-11-16 13:08:27,672 - fetchers.rss_fetcher - INFO - 正在抓取: Cointelegraph - https://cointelegraph.com/rss
+2025-11-16 13:08:28,078 - fetchers.rss_fetcher - INFO - 成功抓取 30 篇文章从 Cointelegraph
+2025-11-16 13:08:28,079 - __main__ - INFO - 从 cointelegraph 抓取到 30 篇文章
+2025-11-16 13:08:31,745 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/crypto-market-investor-xrp-solana-bitcoin-ethereum-coinbase-exec?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 13:08:31,774 - database.operations - INFO - 成功添加文章 https://cointelegraph.com/news/crypto-market-investor-xrp-solana-bitcoin-ethereum-coinbase-exec 到数据库
+2025-11-16 13:08:32,741 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/crypto-index-etfs-adoption-wisdomtree-will-peck-interview?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 13:08:32,763 - database.operations - INFO - 成功添加文章 https://cointelegraph.com/news/crypto-index-etfs-adoption-wisdomtree-will-peck-interview 到数据库
+2025-11-16 13:08:33,739 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 13:08:34,670 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/pro-bitcoin-steak-n-shake-el-salvador-expansion?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 13:08:34,691 - database.operations - INFO - 成功添加文章 https://cointelegraph.com/news/pro-bitcoin-steak-n-shake-el-salvador-expansion 到数据库
+2025-11-16 13:08:35,445 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/crypto-fundamentals-strong-despite-market-rout?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 13:08:35,461 - database.operations - INFO - 成功添加文章 https://cointelegraph.com/news/crypto-fundamentals-strong-despite-market-rout 到数据库
+2025-11-16 13:08:36,179 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/crypto-treasuries-blockchain-pave-way-decentralized-science?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 13:08:36,200 - database.operations - INFO - 成功添加文章 https://cointelegraph.com/news/crypto-treasuries-blockchain-pave-way-decentralized-science 到数据库
+2025-11-16 13:08:36,956 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/explained/what-happens-to-satoshi-s-1m-bitcoin-if-quantum-computers-go-live?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 13:08:37,963 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/aster-says-tokenomics-unchanged-amid-community-confusion?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 13:08:39,054 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/kiyosaki-cash-crunch-bitcoin-gold-big-print-warning?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 13:08:40,223 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/ark-invest-bitmine-bullish-share-buys-crypto-stock-dip?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 13:08:41,281 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/crypto-sentiment-index-plunges-bitcoin-macro-scares?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 13:08:42,317 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/crypto-market-bottoms-sentiment-social-media-forecasts-santiment?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 13:08:43,427 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/crypto-market-structure-bill-cftc-sec-united-states-jeff-park?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 13:08:44,424 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/bitcoin-hits-6-month-low-as-ai-fears-add-to-risk-off-mood-how-are-pro-traders-positioned?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 13:08:45,534 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/sol-drops-to-5-month-low-despite-solana-spot-etf-success-is-dollar100-next?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 13:08:46,564 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/probability-december-interest-rate-cut-below-50?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 13:08:47,711 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/ether-treasury-company-ceo-buying?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 13:08:49,075 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/public-bitcoin-miner-retreat-sharply-as-btc-pulls-back-from-recent-highs?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 13:08:50,267 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/bitcoin-s-2-year-trend-is-about-to-collapse-is-90k-programmed?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 13:08:51,989 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/binance-blackrock-buidl-off-exchange-collateral-traders?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 13:08:52,911 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/btc-market-dip-small-sentiment-freefall?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 13:08:54,082 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/strategy-s-nav-falls-under-1-critics-raise-alarm-after-dollar5-7b-bitcoin-wallet-move?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 13:08:55,818 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/eric-trump-bitcoin-volatility-american-bitcoin-btc-holdings?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 13:08:56,894 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/price-predictions-11-14-btc-eth-xrp-bnb-sol-doge-ada-hype-link-bch?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 13:08:57,994 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/bitcoin-falls-6-month-low-etf-demand-collapses-finance-redefined?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 13:08:59,074 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/cardone-capital-dats-real-estate-bitcoin-fund?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 13:08:59,973 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/eth-long-term-holders-dump-45k-ether-per-day-is-a-price-drop-to-dollar2-5k-next?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 13:09:01,097 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/michael-saylor-strategy-dumping-bitcoin?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 13:09:02,195 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/tether-expands-commodity-lending-1-5b-trade-finance?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 13:09:03,754 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/bitcoin-bull-run-might-actually-be-over-as-wyckoff-pattern-points-to-dollar86k?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-16 13:09:03,756 - __main__ - INFO - 源 cointelegraph: 5/30 篇文章保存成功
+2025-11-16 13:09:03,756 - __main__ - INFO - 开始处理源: coindesk
+2025-11-16 13:09:03,756 - fetchers.rss_fetcher - INFO - 正在抓取: CoinDesk - https://www.coindesk.com/arc/outboundfeeds/rss/?outputType=xml
+2025-11-16 13:09:04,480 - fetchers.rss_fetcher - INFO - 成功抓取 25 篇文章从 CoinDesk
+2025-11-16 13:09:04,481 - __main__ - INFO - 从 coindesk 抓取到 25 篇文章
+2025-11-16 13:09:25,547 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/15/is-2025-worse-than-2022-for-crypto-nic-carter-and-mccordic-offer-opposing-views HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/15/is-2025-worse-than-2022-for-crypto-nic-carter-and-mccordic-offer-opposing-views (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x00000206B375CF90>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-16 13:09:25,567 - database.operations - INFO - 成功添加文章 012dc39f-5cff-4bd7-864a-104ad517f76b 到数据库
+2025-11-16 13:09:46,597 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/15/harvard-endowment-takes-rare-leap-into-bitcoin-with-usd443m-bet-on-blackrock-s-ibit HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/15/harvard-endowment-takes-rare-leap-into-bitcoin-with-usd443m-bet-on-blackrock-s-ibit (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x00000206B3816390>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-16 13:09:46,618 - database.operations - INFO - 成功添加文章 ee4758bb-caf4-4dca-a202-1fc9825e8f34 到数据库
+2025-11-16 13:10:07,676 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/business/2025/11/15/alibaba-to-use-jpmorgan-s-blockchain-for-tokenized-dollar-and-euro-payments-cnbc HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /business/2025/11/15/alibaba-to-use-jpmorgan-s-blockchain-for-tokenized-dollar-and-euro-payments-cnbc (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x00000206B4123ED0>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-16 13:10:07,698 - database.operations - INFO - 成功添加文章 c68c4811-c072-43d6-ac6d-da6637097935 到数据库
+2025-11-16 13:10:28,729 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/policy/2025/11/15/state-of-crypto-what-s-in-the-new-crypto-market-structure-draft HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /policy/2025/11/15/state-of-crypto-what-s-in-the-new-crypto-market-structure-draft (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x00000206B381B3D0>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-16 13:10:28,754 - database.operations - INFO - 成功添加文章 8e1c7f3b-e89d-41a9-bb4e-d7474c4f7f5a 到数据库
+2025-11-16 13:10:49,778 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/15/crypto-market-slips-into-extreme-fear-after-bitcoin-fails-to-hold-usd100-000-level HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/15/crypto-market-slips-into-extreme-fear-after-bitcoin-fails-to-hold-usd100-000-level (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x00000206B41228D0>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-16 13:10:49,803 - database.operations - INFO - 成功添加文章 a6a69187-5e83-4d52-a691-2f57a8185c35 到数据库
+2025-11-16 13:11:10,870 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/15/negative-skew-what-it-is-why-it-s-frustrating-bitcoin-bulls-and-why-it-might-mean-a-bottom-is-near HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/15/negative-skew-what-it-is-why-it-s-frustrating-bitcoin-bulls-and-why-it-might-mean-a-bottom-is-near (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x00000206B3815210>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-16 13:11:10,894 - database.operations - INFO - 成功添加文章 21a2f714-6708-41e7-a902-3b294cd18b07 到数据库
+2025-11-16 13:11:31,960 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/business/2025/11/15/tether-eyes-usd1b-investment-in-german-robotics-startup-neura-ft HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /business/2025/11/15/tether-eyes-usd1b-investment-in-german-robotics-startup-neura-ft (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x00000206B4143850>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-16 13:11:31,984 - database.operations - INFO - 成功添加文章 17f0517f-553b-45b6-bfa1-34061e102653 到数据库
+2025-11-16 13:11:53,030 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/15/crypto-liquidity-still-hollow-after-october-crash-risking-sharp-price-swings HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/15/crypto-liquidity-still-hollow-after-october-crash-risking-sharp-price-swings (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x00000206B4142890>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-16 13:11:53,053 - database.operations - INFO - 成功添加文章 4d8af943-d65d-4baa-af3d-bf9ec2dbd4f2 到数据库
+2025-11-16 13:12:14,107 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/14/bitcoin-slides-below-usd95k-in-worst-week-since-march-analyst-sets-downside-target-at-usd84k HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/14/bitcoin-slides-below-usd95k-in-worst-week-since-march-analyst-sets-downside-target-at-usd84k (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x00000206B4141690>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-16 13:12:14,130 - database.operations - INFO - 成功添加文章 f05ccb3e-6d73-4a34-a512-df7862c23d2a 到数据库
+2025-11-16 13:16:54,207 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/policy/2025/11/14/u-s-doj-pursues-north-korea-s-illicit-money-machine-seizes-more-crypto HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /policy/2025/11/14/u-s-doj-pursues-north-korea-s-illicit-money-machine-seizes-more-crypto (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x00000206B4142190>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-16 13:16:54,623 - database.operations - INFO - 成功添加文章 a714b104-b1e9-4fcd-b909-d387227c0fd8 到数据库
+2025-11-16 13:17:15,859 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/14/xrp-slides-7-but-etf-launch-sets-stage-for-potential-reversal-above-usd2-36 HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/14/xrp-slides-7-but-etf-launch-sets-stage-for-potential-reversal-above-usd2-36 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x00000206B4142410>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-16 13:17:15,883 - database.operations - INFO - 成功添加文章 3874ecbd-4139-4666-85cb-91f2c9dfa078 到数据库
+2025-11-16 13:17:36,926 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/business/2025/11/14/blackrock-s-usd2-5b-tokenized-fund-gets-listed-as-collateral-on-binance-expands-to-bnb-chain HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /business/2025/11/14/blackrock-s-usd2-5b-tokenized-fund-gets-listed-as-collateral-on-binance-expands-to-bnb-chain (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x00000206B4125C50>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-16 13:17:36,949 - database.operations - INFO - 成功添加文章 9a36b999-86fc-44d1-949e-68df8ff931e2 到数据库
+2025-11-16 13:17:58,008 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/14/canary-likely-to-hit-pause-on-etf-filings-with-xrp-eyes-sec-shift-for-what-s-next HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/14/canary-likely-to-hit-pause-on-etf-filings-with-xrp-eyes-sec-shift-for-what-s-next (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x00000206B4124A10>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-16 13:17:58,030 - database.operations - INFO - 成功添加文章 c72a79c0-22f1-467c-928a-0abcc5ad607b 到数据库
+2025-11-16 13:18:19,097 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/13/ether-tumbles-8-as-etfs-bleed-over-usd1-4b-long-term-holders-sell HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/13/ether-tumbles-8-as-etfs-bleed-over-usd1-4b-long-term-holders-sell (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x00000206B4125E10>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-16 13:18:19,122 - database.operations - INFO - 成功添加文章 1b2bc501-b7e2-43ec-b6cf-9bf94652ffa6 到数据库
+2025-11-16 13:18:40,154 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/14/saylor-says-strategy-buying-bitcoin-shooting-down-rumors-of-sales HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/14/saylor-says-strategy-buying-bitcoin-shooting-down-rumors-of-sales (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x00000206B4141E50>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-16 13:18:40,177 - database.operations - INFO - 成功添加文章 9c08aa9c-181b-4013-be63-7550ddbf1f6b 到数据库
+2025-11-16 13:19:01,248 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/coindesk-indices/2025/11/14/coindesk-20-performance-update-aave-falls-7-8-leading-index-lower HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /coindesk-indices/2025/11/14/coindesk-20-performance-update-aave-falls-7-8-leading-index-lower (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x00000206B4141F90>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-16 13:19:01,269 - database.operations - INFO - 成功添加文章 d0c79053-d4f4-4ed6-b1a7-e611ebe305d5 到数据库
+2025-11-16 13:19:22,326 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/business/2025/11/14/tom-lee-s-ethereum-treasury-firm-bitmine-immersion-appoints-chi-tsang-as-ceo HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /business/2025/11/14/tom-lee-s-ethereum-treasury-firm-bitmine-immersion-appoints-chi-tsang-as-ceo (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x00000206B4142910>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-16 13:19:22,349 - database.operations - INFO - 成功添加文章 d09a2eb0-804c-426f-8b31-474f464c3ec7 到数据库

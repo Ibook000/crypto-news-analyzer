@@ -1,0 +1,59 @@
+2025-11-17 01:06:45,388 - __main__ - INFO - 执行单次AI处理任务
+2025-11-17 01:06:45,390 - __main__ - INFO - 开始处理未处理的新闻文章...
+2025-11-17 01:06:51,827 - __main__ - INFO - 执行单次AI处理任务
+2025-11-17 01:06:51,827 - __main__ - INFO - 开始处理未处理的新闻文章...
+2025-11-17 01:07:24,939 - __main__ - INFO - 执行单次AI处理任务
+2025-11-17 01:07:24,940 - __main__ - INFO - 开始处理未处理的新闻文章...
+2025-11-17 01:07:24,975 - database.operations - INFO - 当前表中的列: ['id', 'source', 'title', 'link', 'summary', 'published', 'content', 'author', 'sentiment_score', 'chinese_summary', 'keywords', 'created_at', 'updated_at', 'ai_processed', 'sentiment']
+2025-11-17 01:07:24,975 - database.operations - INFO - 列 sentiment 已存在，跳过
+2025-11-17 01:07:24,982 - database.operations - INFO - 列 sentiment_score 已存在，跳过
+2025-11-17 01:07:24,982 - database.operations - INFO - 列 chinese_summary 已存在，跳过
+2025-11-17 01:07:24,982 - database.operations - INFO - 列 keywords 已存在，跳过
+2025-11-17 01:07:24,983 - database.operations - INFO - 列 created_at 已存在，跳过
+2025-11-17 01:07:24,983 - database.operations - INFO - 列 updated_at 已存在，跳过
+2025-11-17 01:07:24,983 - database.operations - INFO - 列 ai_processed 已存在，跳过
+2025-11-17 01:07:24,983 - database.operations - INFO - 数据库迁移完成
+2025-11-17 01:07:27,578 - database.operations - INFO - 成功获取 5 篇未处理的文章
+2025-11-17 01:07:27,580 - __main__ - INFO - 找到 5 篇未处理的文章
+2025-11-17 01:07:27,580 - __main__ - ERROR - 处理文章 ID https://cointelegraph.com/news/crypto-market-investor-xrp-solana-bitcoin-ethereum-coinbase-exec 时出错: 'Article' object has no attribute 'url'
+2025-11-17 01:07:27,581 - __main__ - ERROR - 处理文章 ID https://cointelegraph.com/news/crypto-index-etfs-adoption-wisdomtree-will-peck-interview 时出错: 'Article' object has no attribute 'url'
+2025-11-17 01:07:27,581 - __main__ - ERROR - 处理文章 ID https://cointelegraph.com/news/pro-bitcoin-steak-n-shake-el-salvador-expansion 时出错: 'Article' object has no attribute 'url'
+2025-11-17 01:07:27,581 - __main__ - ERROR - 处理文章 ID 012dc39f-5cff-4bd7-864a-104ad517f76b 时出错: 'Article' object has no attribute 'url'
+2025-11-17 01:07:27,581 - __main__ - ERROR - 处理文章 ID ee4758bb-caf4-4dca-a202-1fc9825e8f34 时出错: 'Article' object has no attribute 'url'
+2025-11-17 01:07:27,582 - __main__ - INFO - 处理完成: 总计 0 篇，成功 0 篇，失败 5 篇
+2025-11-17 01:07:40,755 - __main__ - INFO - 执行单次AI处理任务
+2025-11-17 01:07:40,756 - __main__ - INFO - 开始处理未处理的新闻文章...
+2025-11-17 01:07:40,793 - database.operations - INFO - 当前表中的列: ['id', 'source', 'title', 'link', 'summary', 'published', 'content', 'author', 'sentiment_score', 'chinese_summary', 'keywords', 'created_at', 'updated_at', 'ai_processed', 'sentiment']
+2025-11-17 01:07:40,794 - database.operations - INFO - 列 sentiment 已存在，跳过
+2025-11-17 01:07:40,794 - database.operations - INFO - 列 sentiment_score 已存在，跳过
+2025-11-17 01:07:40,794 - database.operations - INFO - 列 chinese_summary 已存在，跳过
+2025-11-17 01:07:40,795 - database.operations - INFO - 列 keywords 已存在，跳过
+2025-11-17 01:07:40,795 - database.operations - INFO - 列 created_at 已存在，跳过
+2025-11-17 01:07:40,795 - database.operations - INFO - 列 updated_at 已存在，跳过
+2025-11-17 01:07:40,795 - database.operations - INFO - 列 ai_processed 已存在，跳过
+2025-11-17 01:07:40,795 - database.operations - INFO - 数据库迁移完成
+2025-11-17 01:07:43,364 - database.operations - INFO - 成功获取 5 篇未处理的文章
+2025-11-17 01:07:43,365 - __main__ - INFO - 找到 5 篇未处理的文章
+2025-11-17 01:07:45,819 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/crypto-market-investor-xrp-solana-bitcoin-ethereum-coinbase-exec?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-17 01:07:45,819 - __main__ - INFO - 正在处理文章 ID https://cointelegraph.com/news/crypto-market-investor-xrp-solana-bitcoin-ethereum-coinbase-exec: ‘Very wide gap’ between XRP and Solana investor in...
+2025-11-17 01:07:56,776 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-17 01:07:56,782 - ai.SentimentAnalyzer - INFO - 情感分析完成: neutral (0.1) - Coinbase资产管理部门总裁Bassili指出，在比特币、以太坊之后，Solana被视为潜在第三选择，但XRP与Solana之间存在“极大差距”，投资者对第四大资产尚无共识。尽管XRP近期ETF首日成交量创2025年新高、Ripple布局完善，市场仍质疑其网络活跃度能否支撑其跻身前四。整体而言，新闻传递出市场对主流资产排序仍存分歧，情绪中性略偏谨慎。
+2025-11-17 01:07:56,800 - database.operations - INFO - 成功更新文章 https://cointelegraph.com/news/crypto-market-investor-xrp-solana-bitcoin-ethereum-coinbase-exec
+2025-11-17 01:07:56,800 - __main__ - INFO - 文章 ID https://cointelegraph.com/news/crypto-market-investor-xrp-solana-bitcoin-ethereum-coinbase-exec 处理成功
+2025-11-17 01:07:59,349 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/crypto-index-etfs-adoption-wisdomtree-will-peck-interview?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-17 01:07:59,350 - __main__ - INFO - 正在处理文章 ID https://cointelegraph.com/news/crypto-index-etfs-adoption-wisdomtree-will-peck-interview: Crypto index ETFs will be the next wave of adoptio...
+2025-11-17 01:08:03,540 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-17 01:08:03,540 - ai.SentimentAnalyzer - INFO - 情感分析完成: positive (0.65) - WisdomTree 数字资产主管 Will Peck 预计，多币种加密指数 ETF 将成为下一轮大规模采用的催化剂，帮助投资者分散风险、降低挑选单一资产的难度。今年以来已有 21Shares、Hashdex 等机构相继推出或扩充指数 ETF，Hashdex 最新纳入 XRP、SOL、XLM。Peck 指出，现货比特币 ETF 自 2024 年 1 月上线以来累计净流入约 588 亿美元，表现超出预期，显示了市场对加密 ETF 的强劲需求，预示着更多指数型产品将加速面世。
+2025-11-17 01:08:03,563 - database.operations - INFO - 成功更新文章 https://cointelegraph.com/news/crypto-index-etfs-adoption-wisdomtree-will-peck-interview
+2025-11-17 01:08:03,563 - __main__ - INFO - 文章 ID https://cointelegraph.com/news/crypto-index-etfs-adoption-wisdomtree-will-peck-interview 处理成功
+2025-11-17 01:08:05,182 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/pro-bitcoin-steak-n-shake-el-salvador-expansion?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-17 01:08:05,183 - __main__ - INFO - 正在处理文章 ID https://cointelegraph.com/news/pro-bitcoin-steak-n-shake-el-salvador-expansion: Pro-Bitcoin restaurant Steak 'n Shake announces El...
+2025-11-17 01:08:08,637 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-17 01:08:08,638 - ai.SentimentAnalyzer - INFO - 情感分析完成: positive (0.68) - 美国连锁快餐 Steak 'n Shake 宣布将在比特币国家萨尔瓦多扩张，并重申只接受比特币支付，放弃此前考虑接入 ETH 的计划。公司称启用 BTC 支付后，Q2 同店销售增长 11%，Q3 增长 15%，领涨快餐业。该事件强化了“比特币用于日常支付”的叙事，利好 BTC 市场情绪与采用预期。
+2025-11-17 01:08:08,658 - database.operations - INFO - 成功更新文章 https://cointelegraph.com/news/pro-bitcoin-steak-n-shake-el-salvador-expansion
+2025-11-17 01:08:08,658 - __main__ - INFO - 文章 ID https://cointelegraph.com/news/pro-bitcoin-steak-n-shake-el-salvador-expansion 处理成功
+2025-11-17 01:08:30,716 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/15/is-2025-worse-than-2022-for-crypto-nic-carter-and-mccordic-offer-opposing-views HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/15/is-2025-worse-than-2022-for-crypto-nic-carter-and-mccordic-offer-opposing-views (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x00000215CA542B50>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-17 01:08:30,716 - __main__ - WARNING - 文章 ID 012dc39f-5cff-4bd7-864a-104ad517f76b 缺少标题或内容，跳过处理
+2025-11-17 01:08:51,739 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/15/harvard-endowment-takes-rare-leap-into-bitcoin-with-usd443m-bet-on-blackrock-s-ibit HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/15/harvard-endowment-takes-rare-leap-into-bitcoin-with-usd443m-bet-on-blackrock-s-ibit (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x00000215CA4DCF90>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-17 01:08:51,740 - __main__ - WARNING - 文章 ID ee4758bb-caf4-4dca-a202-1fc9825e8f34 缺少标题或内容，跳过处理
+2025-11-17 01:08:51,740 - __main__ - INFO - 处理完成: 总计 3 篇，成功 3 篇，失败 0 篇
