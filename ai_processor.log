@@ -57,3 +57,328 @@
 2025-11-17 01:08:51,739 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/15/harvard-endowment-takes-rare-leap-into-bitcoin-with-usd443m-bet-on-blackrock-s-ibit HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/15/harvard-endowment-takes-rare-leap-into-bitcoin-with-usd443m-bet-on-blackrock-s-ibit (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x00000215CA4DCF90>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
 2025-11-17 01:08:51,740 - __main__ - WARNING - 文章 ID ee4758bb-caf4-4dca-a202-1fc9825e8f34 缺少标题或内容，跳过处理
 2025-11-17 01:08:51,740 - __main__ - INFO - 处理完成: 总计 3 篇，成功 3 篇，失败 0 篇
+2025-11-18 09:35:38,659 - __main__ - INFO - 执行单次AI处理任务
+2025-11-18 09:35:38,660 - __main__ - INFO - 开始处理未处理的新闻文章...
+2025-11-18 09:35:38,684 - database.operations - INFO - 当前表中的列: ['id', 'source', 'title', 'link', 'summary', 'published', 'content', 'author', 'sentiment', 'sentiment_score', 'chinese_summary', 'keywords', 'created_at', 'updated_at', 'ai_processed']
+2025-11-18 09:35:38,685 - database.operations - INFO - 列 sentiment 已存在，跳过
+2025-11-18 09:35:38,685 - database.operations - INFO - 列 sentiment_score 已存在，跳过
+2025-11-18 09:35:38,686 - database.operations - INFO - 列 chinese_summary 已存在，跳过
+2025-11-18 09:35:38,686 - database.operations - INFO - 列 keywords 已存在，跳过
+2025-11-18 09:35:38,686 - database.operations - INFO - 列 created_at 已存在，跳过
+2025-11-18 09:35:38,687 - database.operations - INFO - 列 updated_at 已存在，跳过
+2025-11-18 09:35:38,687 - database.operations - INFO - 列 ai_processed 已存在，跳过
+2025-11-18 09:35:38,687 - database.operations - INFO - 数据库迁移完成
+2025-11-18 09:35:44,302 - database.operations - INFO - 成功获取 5 篇未处理的文章
+2025-11-18 09:35:44,303 - __main__ - INFO - 找到 5 篇未处理的文章
+2025-11-18 09:35:44,303 - fetchers.context_extractor - WARNING - trafilatura提取失败 https://cointelegraph.com/news/digital-chamber-state-network-crypto-policy-education?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound: fetch_url() got an unexpected keyword argument 'timeout'
+2025-11-18 09:35:44,304 - __main__ - WARNING - 文章 ID https://cointelegraph.com/news/digital-chamber-state-network-crypto-policy-education 缺少标题或内容，跳过处理
+2025-11-18 09:35:44,304 - fetchers.context_extractor - WARNING - trafilatura提取失败 https://cointelegraph.com/news/white-house-mulls-taxing-foreign-crypto-accounts-under-carf?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound: fetch_url() got an unexpected keyword argument 'timeout'
+2025-11-18 09:35:44,304 - __main__ - WARNING - 文章 ID https://cointelegraph.com/news/white-house-mulls-taxing-foreign-crypto-accounts-under-carf 缺少标题或内容，跳过处理
+2025-11-18 09:35:44,305 - fetchers.context_extractor - WARNING - trafilatura提取失败 https://www.coindesk.com/markets/2025/11/18/asia-morning-briefing-even-prediction-markets-didn-t-see-bitcoin-s-selloff-coming: fetch_url() got an unexpected keyword argument 'timeout'
+2025-11-18 09:35:44,305 - __main__ - WARNING - 文章 ID f9ab6304-c318-4547-be63-c7c4094c5e1b 缺少标题或内容，跳过处理
+2025-11-18 09:35:44,306 - fetchers.context_extractor - WARNING - trafilatura提取失败 https://cointelegraph.com/news/crypto-friendly-levelfield-approved-to-buy-chicago-bank?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound: fetch_url() got an unexpected keyword argument 'timeout'
+2025-11-18 09:35:44,306 - __main__ - WARNING - 文章 ID https://cointelegraph.com/news/crypto-friendly-levelfield-approved-to-buy-chicago-bank 缺少标题或内容，跳过处理
+2025-11-18 09:35:44,306 - fetchers.context_extractor - WARNING - trafilatura提取失败 https://www.coindesk.com/business/2025/11/17/E: fetch_url() got an unexpected keyword argument 'timeout'
+2025-11-18 09:35:44,307 - __main__ - WARNING - 文章 ID fbd9571b-f7ab-4615-8082-242388247e7d 缺少标题或内容，跳过处理
+2025-11-18 09:35:44,307 - __main__ - INFO - 处理完成: 总计 0 篇，成功 0 篇，失败 0 篇
+2025-11-18 09:36:47,898 - __main__ - INFO - 执行单次AI处理任务
+2025-11-18 09:36:47,899 - __main__ - INFO - 开始处理未处理的新闻文章...
+2025-11-18 09:36:47,923 - database.operations - INFO - 当前表中的列: ['id', 'source', 'title', 'link', 'summary', 'published', 'content', 'author', 'sentiment', 'sentiment_score', 'chinese_summary', 'keywords', 'created_at', 'updated_at', 'ai_processed']
+2025-11-18 09:36:47,923 - database.operations - INFO - 列 sentiment 已存在，跳过
+2025-11-18 09:36:47,923 - database.operations - INFO - 列 sentiment_score 已存在，跳过
+2025-11-18 09:36:47,924 - database.operations - INFO - 列 chinese_summary 已存在，跳过
+2025-11-18 09:36:47,924 - database.operations - INFO - 列 keywords 已存在，跳过
+2025-11-18 09:36:47,924 - database.operations - INFO - 列 created_at 已存在，跳过
+2025-11-18 09:36:47,924 - database.operations - INFO - 列 updated_at 已存在，跳过
+2025-11-18 09:36:47,925 - database.operations - INFO - 列 ai_processed 已存在，跳过
+2025-11-18 09:36:47,925 - database.operations - INFO - 数据库迁移完成
+2025-11-18 09:36:53,600 - database.operations - INFO - 成功获取 5 篇未处理的文章
+2025-11-18 09:36:53,605 - __main__ - INFO - 找到 5 篇未处理的文章
+2025-11-18 09:36:57,042 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/digital-chamber-state-network-crypto-policy-education?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-18 09:36:57,042 - __main__ - INFO - 正在处理文章 ID https://cointelegraph.com/news/digital-chamber-state-network-crypto-policy-education: Digital Chamber seeks to guide crypto policy acros...
+2025-11-18 09:37:00,799 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-18 09:37:00,811 - ai.SentimentAnalyzer - INFO - 情感分析完成: positive (0.68) - 加密货币游说团体Digital Chamber推出“州级网络”计划，目标在2026年中期选举前统一并推动各州数字资产立法，成员包括Strategy、Hedera、Input Output等行业重要参与者；配套教育未来议员、微资助基层协会及2026年巡回宣介，直接利好比特币及主流加密生态的长期合规扩张。
+2025-11-18 09:37:00,836 - database.operations - INFO - 成功更新文章 https://cointelegraph.com/news/digital-chamber-state-network-crypto-policy-education
+2025-11-18 09:37:00,837 - __main__ - INFO - 文章 ID https://cointelegraph.com/news/digital-chamber-state-network-crypto-policy-education 处理成功
+2025-11-18 09:37:02,592 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/white-house-mulls-taxing-foreign-crypto-accounts-under-carf?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-18 09:37:02,592 - __main__ - INFO - 正在处理文章 ID https://cointelegraph.com/news/white-house-mulls-taxing-foreign-crypto-accounts-under-carf: White House weighs IRS bid to tax foreign crypto a...
+2025-11-18 09:37:05,310 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-18 09:37:05,313 - ai.SentimentAnalyzer - ERROR - 情感分析失败: Expecting property name enclosed in double quotes: line 5 column 1 (char 214) - 标题: White House weighs IRS bid to tax foreign crypto accounts via CARF
+2025-11-18 09:37:05,334 - database.operations - INFO - 成功更新文章 https://cointelegraph.com/news/white-house-mulls-taxing-foreign-crypto-accounts-under-carf
+2025-11-18 09:37:05,335 - __main__ - INFO - 文章 ID https://cointelegraph.com/news/white-house-mulls-taxing-foreign-crypto-accounts-under-carf 处理成功
+2025-11-18 09:37:27,469 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/18/asia-morning-briefing-even-prediction-markets-didn-t-see-bitcoin-s-selloff-coming HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/18/asia-morning-briefing-even-prediction-markets-didn-t-see-bitcoin-s-selloff-coming (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000002135785B7D0>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-18 09:37:27,471 - __main__ - WARNING - 文章 ID f9ab6304-c318-4547-be63-c7c4094c5e1b 缺少标题或内容，跳过处理
+2025-11-18 09:37:28,232 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/crypto-friendly-levelfield-approved-to-buy-chicago-bank?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-18 09:37:28,232 - __main__ - INFO - 正在处理文章 ID https://cointelegraph.com/news/crypto-friendly-levelfield-approved-to-buy-chicago-bank: Crypto firm LevelField secures Illinois approval t...
+2025-11-18 09:37:30,551 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-18 09:37:30,552 - ai.SentimentAnalyzer - ERROR - 情感分析失败: Expecting property name enclosed in double quotes: line 5 column 1 (char 168) - 标题: Crypto firm LevelField secures Illinois approval to buy Chicago bank
+2025-11-18 09:37:30,575 - database.operations - INFO - 成功更新文章 https://cointelegraph.com/news/crypto-friendly-levelfield-approved-to-buy-chicago-bank
+2025-11-18 09:37:30,575 - __main__ - INFO - 文章 ID https://cointelegraph.com/news/crypto-friendly-levelfield-approved-to-buy-chicago-bank 处理成功
+2025-11-18 09:37:52,620 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/business/2025/11/17/E HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /business/2025/11/17/E (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000002135785E290>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-18 09:37:52,621 - __main__ - WARNING - 文章 ID fbd9571b-f7ab-4615-8082-242388247e7d 缺少标题或内容，跳过处理
+2025-11-18 09:37:52,622 - __main__ - INFO - 处理完成: 总计 3 篇，成功 3 篇，失败 0 篇
+2025-11-18 10:00:56,037 - __main__ - INFO - 执行单次AI处理任务
+2025-11-18 10:00:56,037 - __main__ - INFO - 开始处理未处理的新闻文章...
+2025-11-18 10:00:56,051 - database.operations - INFO - 当前表中的列: ['id', 'source', 'title', 'link', 'summary', 'published', 'content', 'author', 'sentiment', 'sentiment_score', 'chinese_summary', 'keywords', 'created_at', 'updated_at', 'ai_processed']
+2025-11-18 10:00:56,051 - database.operations - INFO - 列 sentiment 已存在，跳过
+2025-11-18 10:00:56,051 - database.operations - INFO - 列 sentiment_score 已存在，跳过
+2025-11-18 10:00:56,052 - database.operations - INFO - 列 chinese_summary 已存在，跳过
+2025-11-18 10:00:56,052 - database.operations - INFO - 列 keywords 已存在，跳过
+2025-11-18 10:00:56,052 - database.operations - INFO - 列 created_at 已存在，跳过
+2025-11-18 10:00:56,052 - database.operations - INFO - 列 updated_at 已存在，跳过
+2025-11-18 10:00:56,052 - database.operations - INFO - 列 ai_processed 已存在，跳过
+2025-11-18 10:00:56,053 - database.operations - INFO - 数据库迁移完成
+2025-11-18 10:00:58,686 - database.operations - INFO - 成功获取 5 篇未处理的文章
+2025-11-18 10:00:58,686 - __main__ - INFO - 找到 5 篇未处理的文章
+2025-11-18 10:01:19,726 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/18/asia-morning-briefing-even-prediction-markets-didn-t-see-bitcoin-s-selloff-coming HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/18/asia-morning-briefing-even-prediction-markets-didn-t-see-bitcoin-s-selloff-coming (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001B7C709D490>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-18 10:01:19,728 - __main__ - WARNING - 文章 ID f9ab6304-c318-4547-be63-c7c4094c5e1b 缺少标题或内容，跳过处理
+2025-11-18 10:01:40,772 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/business/2025/11/17/E HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /business/2025/11/17/E (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001B7C709F210>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-18 10:01:40,773 - __main__ - WARNING - 文章 ID fbd9571b-f7ab-4615-8082-242388247e7d 缺少标题或内容，跳过处理
+2025-11-18 10:01:46,908 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/eth-falls-to-4-month-low-under-3k-is-the-bull-market-over?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-18 10:01:46,910 - __main__ - INFO - 正在处理文章 ID https://cointelegraph.com/news/eth-falls-to-4-month-low-under-3k-is-the-bull-market-over: ETH falls to 4-month low under $3K: Is the bull ma...
+2025-11-18 10:01:50,834 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-18 10:01:50,859 - ai.SentimentAnalyzer - INFO - 情感分析完成: negative (-0.65) - 以太坊跌破3000美元创四个月新低，链上与杠杆需求均显著萎缩，市场担心牛市终结。宏观风险、链上活跃度下降及杠杆资金撤离共同压制价格，短期情绪偏空。
+2025-11-18 10:01:50,910 - database.operations - INFO - 成功更新文章 https://cointelegraph.com/news/eth-falls-to-4-month-low-under-3k-is-the-bull-market-over
+2025-11-18 10:01:50,911 - __main__ - INFO - 文章 ID https://cointelegraph.com/news/eth-falls-to-4-month-low-under-3k-is-the-bull-market-over 处理成功
+2025-11-18 10:01:52,724 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/aave-launches-retails-savings-app-to-compete-with-fintech-and-traditional-banks?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-18 10:01:52,725 - __main__ - INFO - 正在处理文章 ID https://cointelegraph.com/news/aave-launches-retails-savings-app-to-compete-with-fintech-and-traditional-banks: Aave launches retail savings app with up to 9% APY...
+2025-11-18 10:01:55,982 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-18 10:01:55,986 - ai.SentimentAnalyzer - ERROR - 情感分析失败: Expecting property name enclosed in double quotes: line 5 column 1 (char 198) - 标题: Aave launches retail savings app with up to 9% APY to compete with banks
+2025-11-18 10:01:56,014 - database.operations - INFO - 成功更新文章 https://cointelegraph.com/news/aave-launches-retails-savings-app-to-compete-with-fintech-and-traditional-banks
+2025-11-18 10:01:56,015 - __main__ - INFO - 文章 ID https://cointelegraph.com/news/aave-launches-retails-savings-app-to-compete-with-fintech-and-traditional-banks 处理成功
+2025-11-18 10:01:57,937 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/crypto-market-structure-influence-us-midterms?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-18 10:01:57,938 - __main__ - INFO - 正在处理文章 ID https://cointelegraph.com/news/crypto-market-structure-influence-us-midterms: How market structure votes could influence 2026 cr...
+2025-11-18 10:02:00,649 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-18 10:02:00,652 - ai.SentimentAnalyzer - ERROR - 情感分析失败: Expecting property name enclosed in double quotes: line 5 column 1 (char 230) - 标题: How market structure votes could influence 2026 crypto voters
+2025-11-18 10:02:00,686 - database.operations - INFO - 成功更新文章 https://cointelegraph.com/news/crypto-market-structure-influence-us-midterms
+2025-11-18 10:02:00,688 - __main__ - INFO - 文章 ID https://cointelegraph.com/news/crypto-market-structure-influence-us-midterms 处理成功
+2025-11-18 10:02:01,690 - __main__ - INFO - 处理完成: 总计 3 篇，成功 3 篇，失败 0 篇
+2025-11-18 10:04:28,631 - __main__ - INFO - 执行单次AI处理任务
+2025-11-18 10:04:28,631 - __main__ - INFO - 开始处理未处理的新闻文章...
+2025-11-18 10:04:28,654 - database.operations - INFO - 当前表中的列: ['id', 'source', 'title', 'link', 'summary', 'published', 'content', 'author', 'sentiment', 'sentiment_score', 'chinese_summary', 'keywords', 'created_at', 'updated_at', 'ai_processed']
+2025-11-18 10:04:28,654 - database.operations - INFO - 列 sentiment 已存在，跳过
+2025-11-18 10:04:28,655 - database.operations - INFO - 列 sentiment_score 已存在，跳过
+2025-11-18 10:04:28,655 - database.operations - INFO - 列 chinese_summary 已存在，跳过
+2025-11-18 10:04:28,656 - database.operations - INFO - 列 keywords 已存在，跳过
+2025-11-18 10:04:28,657 - database.operations - INFO - 列 created_at 已存在，跳过
+2025-11-18 10:04:28,657 - database.operations - INFO - 列 updated_at 已存在，跳过
+2025-11-18 10:04:28,657 - database.operations - INFO - 列 ai_processed 已存在，跳过
+2025-11-18 10:04:28,658 - database.operations - INFO - 数据库迁移完成
+2025-11-18 10:04:31,446 - database.operations - INFO - 成功获取 20 篇未处理的文章
+2025-11-18 10:04:31,446 - __main__ - INFO - 找到 20 篇未处理的文章
+2025-11-18 10:04:52,520 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/18/asia-morning-briefing-even-prediction-markets-didn-t-see-bitcoin-s-selloff-coming HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/18/asia-morning-briefing-even-prediction-markets-didn-t-see-bitcoin-s-selloff-coming (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001E0C235DB90>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-18 10:04:52,520 - __main__ - WARNING - 文章 ID f9ab6304-c318-4547-be63-c7c4094c5e1b 缺少标题或内容，跳过处理
+2025-11-18 10:05:13,582 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/business/2025/11/17/E HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /business/2025/11/17/E (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001E0C2370A10>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-18 10:05:13,583 - __main__ - WARNING - 文章 ID fbd9571b-f7ab-4615-8082-242388247e7d 缺少标题或内容，跳过处理
+2025-11-18 10:05:16,207 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/xrp-traders-hope-fresh-wave-of-etf-launches-will-restore-the-bull-trend?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-18 10:05:16,207 - __main__ - INFO - 正在处理文章 ID https://cointelegraph.com/news/xrp-traders-hope-fresh-wave-of-etf-launches-will-restore-the-bull-trend: XRP traders hope fresh wave of ETF launches will r...
+2025-11-18 10:05:20,559 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-18 10:05:20,567 - ai.SentimentAnalyzer - ERROR - 情感分析失败: Expecting property name enclosed in double quotes: line 5 column 1 (char 245) - 标题: XRP traders hope fresh wave of ETF launches will restore the bull trend
+2025-11-18 10:05:20,589 - database.operations - INFO - 成功更新文章 https://cointelegraph.com/news/xrp-traders-hope-fresh-wave-of-etf-launches-will-restore-the-bull-trend
+2025-11-18 10:05:20,590 - __main__ - INFO - 文章 ID https://cointelegraph.com/news/xrp-traders-hope-fresh-wave-of-etf-launches-will-restore-the-bull-trend 处理成功
+2025-11-18 10:05:22,425 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-18 10:05:22,426 - __main__ - INFO - 正在处理文章 ID https://cointelegraph.com/news/what-happened-in-crypto-today: Here’s what happened in crypto today...
+2025-11-18 10:05:24,925 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-18 10:05:24,939 - ai.SentimentAnalyzer - INFO - 情感分析完成: negative (-0.65) - Republic Technologies 以零利率融资1亿美元买入ETH的单一利好，不敌宏观抛压：上周全球加密ETP流出20亿美元（为二月以来最大），美国占97%，BTC与ETH相关产品首当其冲；BTC周日一度跌破93,000美元抹去2025全年涨幅，市场整体恐慌加剧。
+2025-11-18 10:05:24,961 - database.operations - INFO - 成功更新文章 https://cointelegraph.com/news/what-happened-in-crypto-today
+2025-11-18 10:05:24,962 - __main__ - INFO - 文章 ID https://cointelegraph.com/news/what-happened-in-crypto-today 处理成功
+2025-11-18 10:05:26,771 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/price-predictions-11-17-spx-dxy-btc-eth-xrp-bnb-sol-doge-ada-hype?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-18 10:05:26,771 - __main__ - INFO - 正在处理文章 ID https://cointelegraph.com/news/price-predictions-11-17-spx-dxy-btc-eth-xrp-bnb-sol-doge-ada-hype: Price predictions 11/17: SPX, DXY, BTC, ETH, XRP, ...
+2025-11-18 10:05:29,147 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-18 10:05:29,149 - ai.SentimentAnalyzer - INFO - 情感分析完成: negative (-0.72) - 比特币连跌三周，加密ETP资金流出达32亿美元，创2月以来最大单周流出；多数主流币缺乏买盘，技术面普遍承压，短期内若无法收复20日EMA，恐继续下探更低支撑。
+2025-11-18 10:05:29,170 - database.operations - INFO - 成功更新文章 https://cointelegraph.com/news/price-predictions-11-17-spx-dxy-btc-eth-xrp-bnb-sol-doge-ada-hype
+2025-11-18 10:05:29,170 - __main__ - INFO - 文章 ID https://cointelegraph.com/news/price-predictions-11-17-spx-dxy-btc-eth-xrp-bnb-sol-doge-ada-hype 处理成功
+2025-11-18 10:05:30,867 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/cboe-perpetual-style-bitcoin-ether-futures-us-dec-15?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-18 10:05:30,867 - __main__ - INFO - 正在处理文章 ID https://cointelegraph.com/news/cboe-perpetual-style-bitcoin-ether-futures-us-dec-15: Cboe to launch perpetual-style Bitcoin and Ether f...
+2025-11-18 10:05:33,874 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-18 10:05:33,875 - ai.SentimentAnalyzer - ERROR - 情感分析失败: Expecting property name enclosed in double quotes: line 5 column 1 (char 215) - 标题: Cboe to launch perpetual-style Bitcoin and Ether futures in US
+2025-11-18 10:05:33,893 - database.operations - INFO - 成功更新文章 https://cointelegraph.com/news/cboe-perpetual-style-bitcoin-ether-futures-us-dec-15
+2025-11-18 10:05:33,893 - __main__ - INFO - 文章 ID https://cointelegraph.com/news/cboe-perpetual-style-bitcoin-ether-futures-us-dec-15 处理成功
+2025-11-18 10:05:55,925 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/17/bitcoin-slips-below-usd93k-as-crypto-weakness-worsens-but-local-bottom-could-be-near-analysts-say HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/17/bitcoin-slips-below-usd93k-as-crypto-weakness-worsens-but-local-bottom-could-be-near-analysts-say (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001E0C2CE7BD0>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-18 10:05:55,926 - __main__ - WARNING - 文章 ID c42306cb-80f1-4e5d-a87d-9469b56f9144 缺少标题或内容，跳过处理
+2025-11-18 10:06:16,956 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/18/what-next-for-dogecoin-as-bitcoin-death-cross-puts-major-memecoin-in-crosshairs HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/18/what-next-for-dogecoin-as-bitcoin-death-cross-puts-major-memecoin-in-crosshairs (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001E0C2CCD310>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-18 10:06:16,958 - __main__ - WARNING - 文章 ID 1fc91b63-2f37-4ae9-a6fd-e33a9bfd311f 缺少标题或内容，跳过处理
+2025-11-18 10:06:17,738 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/dollar1t-crypto-market-drawdown-masks-bitcoin-s-strong-fundamentals-coinbase-exec?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-18 10:06:17,739 - __main__ - INFO - 正在处理文章 ID https://cointelegraph.com/news/dollar1t-crypto-market-drawdown-masks-bitcoin-s-strong-fundamentals-coinbase-exec: $1T crypto market drawdown masks Bitcoin’s strong ...
+2025-11-18 10:06:21,037 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-18 10:06:21,041 - ai.SentimentAnalyzer - INFO - 情感分析完成: positive (0.62) - 尽管加密总市值蒸发1.1万亿美元，但报道强调这是杠杆清算与资金轮换的“结构性回撤”，而非基本面恶化。捷克央行买入比特币、华尔街大行测试稳定币、ETF需求坚挺均被视作长期利好。链上数据显示长期囤币者已吸收超18.6万枚BTC，供应压力缓解。整体传递“价格打折、价值未变”的逢低布局信号。
+2025-11-18 10:06:21,073 - database.operations - INFO - 成功更新文章 https://cointelegraph.com/news/dollar1t-crypto-market-drawdown-masks-bitcoin-s-strong-fundamentals-coinbase-exec
+2025-11-18 10:06:21,074 - __main__ - INFO - 文章 ID https://cointelegraph.com/news/dollar1t-crypto-market-drawdown-masks-bitcoin-s-strong-fundamentals-coinbase-exec 处理成功
+2025-11-18 10:06:43,107 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/18/xrp-slumps-5-as-bitcoin-s-break-under-usd93-000-leads-to-bearish-outlook-for-majors HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/18/xrp-slumps-5-as-bitcoin-s-break-under-usd93-000-leads-to-bearish-outlook-for-majors (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001E0C2D0BCD0>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-18 10:06:43,110 - __main__ - WARNING - 文章 ID 43f7a831-c3d2-4a01-a48a-b7181cc5f4b2 缺少标题或内容，跳过处理
+2025-11-18 10:07:04,155 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/17/kindly-md-delays-earnings-report-filing-as-merger-losses-mount-shares-drop HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/17/kindly-md-delays-earnings-report-filing-as-merger-losses-mount-shares-drop (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001E0C2D70C90>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-18 10:07:04,156 - __main__ - WARNING - 文章 ID 9d8367e9-6525-4655-bcce-bd1361355b49 缺少标题或内容，跳过处理
+2025-11-18 10:07:25,231 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/17/figure-stock-jumps-as-druckenmiller-invests-usd77m-analysts-raise-price-targets HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/17/figure-stock-jumps-as-druckenmiller-invests-usd77m-analysts-raise-price-targets (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001E0C2D722D0>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-18 10:07:25,232 - __main__ - WARNING - 文章 ID 5bd546ef-9e8e-41e1-92b5-44c026049c17 缺少标题或内容，跳过处理
+2025-11-18 10:07:25,996 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/rare-bitcoin-futures-signal-could-catch-traders-off-guard-is-a-bottom-forming?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-18 10:07:25,996 - __main__ - INFO - 正在处理文章 ID https://cointelegraph.com/news/rare-bitcoin-futures-signal-could-catch-traders-off-guard-is-a-bottom-forming: Rare Bitcoin futures signal could catch traders of...
+2025-11-18 10:07:30,550 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-18 10:07:30,556 - ai.SentimentAnalyzer - ERROR - 情感分析失败: Expecting property name enclosed in double quotes: line 5 column 1 (char 135) - 标题: Rare Bitcoin futures signal could catch traders off-guard: Is a bottom forming?
+2025-11-18 10:07:30,577 - database.operations - INFO - 成功更新文章 https://cointelegraph.com/news/rare-bitcoin-futures-signal-could-catch-traders-off-guard-is-a-bottom-forming
+2025-11-18 10:07:30,577 - __main__ - INFO - 文章 ID https://cointelegraph.com/news/rare-bitcoin-futures-signal-could-catch-traders-off-guard-is-a-bottom-forming 处理成功
+2025-11-18 10:07:32,312 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/figment-opentrade-debut-solana-based-stablecoin-yield-product?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-18 10:07:32,312 - __main__ - INFO - 正在处理文章 ID https://cointelegraph.com/news/figment-opentrade-debut-solana-based-stablecoin-yield-product: Figment, OpenTrade debut Solana-based stablecoin p...
+2025-11-18 10:07:35,269 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-18 10:07:35,269 - ai.SentimentAnalyzer - ERROR - 情感分析失败: Expecting property name enclosed in double quotes: line 5 column 1 (char 232) - 标题: Figment, OpenTrade debut Solana-based stablecoin product targeting 15% APR
+2025-11-18 10:07:35,283 - database.operations - INFO - 成功更新文章 https://cointelegraph.com/news/figment-opentrade-debut-solana-based-stablecoin-yield-product
+2025-11-18 10:07:35,283 - __main__ - INFO - 文章 ID https://cointelegraph.com/news/figment-opentrade-debut-solana-based-stablecoin-yield-product 处理成功
+2025-11-18 10:07:57,331 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/business/2025/11/17/trump-s-maldives-hotel-will-be-a-tokenized-real-estate-project HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /business/2025/11/17/trump-s-maldives-hotel-will-be-a-tokenized-real-estate-project (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001E0C2D139D0>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-18 10:07:57,332 - __main__ - WARNING - 文章 ID 5e6ddec6-3f35-4fe3-8a41-52d39942462e 缺少标题或内容，跳过处理
+2025-11-18 10:08:18,353 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/17/cboe-to-debut-bitcoin-ether-perpetual-style-crypto-futures-on-dec-15 HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/17/cboe-to-debut-bitcoin-ether-perpetual-style-crypto-futures-on-dec-15 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001E0C2D13E10>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-18 10:08:18,354 - __main__ - WARNING - 文章 ID a17a03aa-7ca9-4769-93c4-b18dbe212248 缺少标题或内容，跳过处理
+2025-11-18 10:08:19,146 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/dappradar-shut-down-financial-unsustainability?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-18 10:08:19,147 - __main__ - INFO - 正在处理文章 ID https://cointelegraph.com/news/dappradar-shut-down-financial-unsustainability: DappRadar's token price plummets after platform an...
+2025-11-18 10:08:21,285 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-18 10:08:21,290 - ai.SentimentAnalyzer - ERROR - 情感分析失败: Expecting property name enclosed in double quotes: line 5 column 1 (char 165) - 标题: DappRadar's token price plummets after platform announces shutdown
+2025-11-18 10:08:21,309 - database.operations - INFO - 成功更新文章 https://cointelegraph.com/news/dappradar-shut-down-financial-unsustainability
+2025-11-18 10:08:21,310 - __main__ - INFO - 文章 ID https://cointelegraph.com/news/dappradar-shut-down-financial-unsustainability 处理成功
+2025-11-18 10:08:43,352 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/17/stellar-slips-as-key-support-breaks-signaling-mounting-bearish-momentum HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/17/stellar-slips-as-key-support-breaks-signaling-mounting-bearish-momentum (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001E0C2D10ED0>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-18 10:08:43,352 - __main__ - WARNING - 文章 ID 473cc295-e4d7-4dbc-8055-45206b3ec5fa 缺少标题或内容，跳过处理
+2025-11-18 10:09:04,407 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/17/high-stakes-gambler-liquidated-for-usd168m-after-shorting-the-bottom-of-crypto-plunge HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/17/high-stakes-gambler-liquidated-for-usd168m-after-shorting-the-bottom-of-crypto-plunge (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001E0C2D71390>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-18 10:09:04,408 - __main__ - WARNING - 文章 ID 246a2285-0f14-4568-95c5-88d0c6084b93 缺少标题或内容，跳过处理
+2025-11-18 10:15:34,740 - __main__ - INFO - 执行单次AI处理任务
+2025-11-18 10:15:34,741 - __main__ - INFO - 开始处理未处理的新闻文章...
+2025-11-18 10:15:34,754 - database.operations - INFO - 当前表中的列: ['id', 'source', 'title', 'link', 'summary', 'published', 'content', 'author', 'sentiment', 'sentiment_score', 'chinese_summary', 'keywords', 'created_at', 'updated_at', 'ai_processed']
+2025-11-18 10:15:34,755 - database.operations - INFO - 列 sentiment 已存在，跳过
+2025-11-18 10:15:34,755 - database.operations - INFO - 列 sentiment_score 已存在，跳过
+2025-11-18 10:15:34,755 - database.operations - INFO - 列 chinese_summary 已存在，跳过
+2025-11-18 10:15:34,756 - database.operations - INFO - 列 keywords 已存在，跳过
+2025-11-18 10:15:34,756 - database.operations - INFO - 列 created_at 已存在，跳过
+2025-11-18 10:15:34,756 - database.operations - INFO - 列 updated_at 已存在，跳过
+2025-11-18 10:15:34,756 - database.operations - INFO - 列 ai_processed 已存在，跳过
+2025-11-18 10:15:34,756 - database.operations - INFO - 数据库迁移完成
+2025-11-18 10:15:37,474 - database.operations - INFO - 成功获取 20 篇未处理的文章
+2025-11-18 10:15:37,474 - __main__ - INFO - 找到 20 篇未处理的文章
+2025-11-18 10:15:58,543 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/18/asia-morning-briefing-even-prediction-markets-didn-t-see-bitcoin-s-selloff-coming HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/18/asia-morning-briefing-even-prediction-markets-didn-t-see-bitcoin-s-selloff-coming (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000025651BFDBD0>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-18 10:15:58,543 - __main__ - WARNING - 文章 ID f9ab6304-c318-4547-be63-c7c4094c5e1b 缺少标题或内容
+2025-11-18 10:15:58,544 - __main__ - INFO - 正在处理文章 ID f9ab6304-c318-4547-be63-c7c4094c5e1b: Asia Morning Briefing: Even Prediction Markets Did...
+2025-11-18 10:16:01,264 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-18 10:16:01,273 - ai.SentimentAnalyzer - INFO - 情感分析完成: negative (-0.65) - 连预测市场都未能预料到的比特币暴跌，凸显行情突发性与恐慌情绪，短期看空情绪加剧。
+2025-11-18 10:16:01,299 - database.operations - INFO - 成功更新文章 f9ab6304-c318-4547-be63-c7c4094c5e1b
+2025-11-18 10:16:01,299 - __main__ - INFO - 文章 ID f9ab6304-c318-4547-be63-c7c4094c5e1b 处理成功
+2025-11-18 10:16:23,338 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/business/2025/11/17/E HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /business/2025/11/17/E (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000002565261ABD0>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-18 10:16:23,339 - __main__ - WARNING - 文章 ID fbd9571b-f7ab-4615-8082-242388247e7d 缺少标题或内容
+2025-11-18 10:16:23,339 - __main__ - INFO - 正在处理文章 ID fbd9571b-f7ab-4615-8082-242388247e7d: DappRadar Shuts Down, Citing ‘Financially Unsustai...
+2025-11-18 10:16:29,180 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-18 10:16:29,184 - ai.SentimentAnalyzer - ERROR - 情感分析失败: Expecting property name enclosed in double quotes: line 5 column 1 (char 171) - 标题: DappRadar Shuts Down, Citing ‘Financially Unsustainable’ Market
+2025-11-18 10:16:29,204 - database.operations - INFO - 成功更新文章 fbd9571b-f7ab-4615-8082-242388247e7d
+2025-11-18 10:16:29,205 - __main__ - INFO - 文章 ID fbd9571b-f7ab-4615-8082-242388247e7d 处理成功
+2025-11-18 10:16:51,257 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/17/bitcoin-slips-below-usd93k-as-crypto-weakness-worsens-but-local-bottom-could-be-near-analysts-say HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/17/bitcoin-slips-below-usd93k-as-crypto-weakness-worsens-but-local-bottom-could-be-near-analysts-say (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000025652642690>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-18 10:16:51,258 - __main__ - WARNING - 文章 ID c42306cb-80f1-4e5d-a87d-9469b56f9144 缺少标题或内容
+2025-11-18 10:16:51,258 - __main__ - INFO - 正在处理文章 ID c42306cb-80f1-4e5d-a87d-9469b56f9144: Bitcoin Slips Below $93K as Crypto Weakness Worsen...
+2025-11-18 10:16:53,561 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-18 10:16:53,563 - ai.SentimentAnalyzer - ERROR - 情感分析失败: Expecting property name enclosed in double quotes: line 5 column 1 (char 124) - 标题: Bitcoin Slips Below $93K as Crypto Weakness Worsens, but Local Bottom Could Be Near, Analysts Say
+2025-11-18 10:16:53,584 - database.operations - INFO - 成功更新文章 c42306cb-80f1-4e5d-a87d-9469b56f9144
+2025-11-18 10:16:53,585 - __main__ - INFO - 文章 ID c42306cb-80f1-4e5d-a87d-9469b56f9144 处理成功
+2025-11-18 10:17:15,626 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/18/what-next-for-dogecoin-as-bitcoin-death-cross-puts-major-memecoin-in-crosshairs HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/18/what-next-for-dogecoin-as-bitcoin-death-cross-puts-major-memecoin-in-crosshairs (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x00000256526435D0>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-18 10:17:15,627 - __main__ - WARNING - 文章 ID 1fc91b63-2f37-4ae9-a6fd-e33a9bfd311f 缺少标题或内容
+2025-11-18 10:17:15,627 - __main__ - INFO - 正在处理文章 ID 1fc91b63-2f37-4ae9-a6fd-e33a9bfd311f: What Next For Dogecoin as Bitcoin 'Death Cross' Pu...
+2025-11-18 10:17:17,497 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-18 10:17:17,504 - ai.SentimentAnalyzer - INFO - 情感分析完成: negative (-0.32) - 比特币出现“死亡交叉”技术形态，引发市场对整体加密资产的担忧，连带将大型模因币Dogecoin推至空头关注焦点。
+2025-11-18 10:17:17,525 - database.operations - INFO - 成功更新文章 1fc91b63-2f37-4ae9-a6fd-e33a9bfd311f
+2025-11-18 10:17:17,525 - __main__ - INFO - 文章 ID 1fc91b63-2f37-4ae9-a6fd-e33a9bfd311f 处理成功
+2025-11-18 10:17:39,584 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/18/xrp-slumps-5-as-bitcoin-s-break-under-usd93-000-leads-to-bearish-outlook-for-majors HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/18/xrp-slumps-5-as-bitcoin-s-break-under-usd93-000-leads-to-bearish-outlook-for-majors (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000025652653590>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-18 10:17:39,584 - __main__ - WARNING - 文章 ID 43f7a831-c3d2-4a01-a48a-b7181cc5f4b2 缺少标题或内容
+2025-11-18 10:17:39,584 - __main__ - INFO - 正在处理文章 ID 43f7a831-c3d2-4a01-a48a-b7181cc5f4b2: XRP Slumps 5% as Bitcoin's Break Under $93,000 Lea...
+2025-11-18 10:17:41,476 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-18 10:17:41,481 - ai.SentimentAnalyzer - INFO - 情感分析完成: negative (-0.65) - 比特币跌破93,000美元引发连锁抛售，XRP随之急挫5%，整体主流币种短线情绪转空。
+2025-11-18 10:17:41,504 - database.operations - INFO - 成功更新文章 43f7a831-c3d2-4a01-a48a-b7181cc5f4b2
+2025-11-18 10:17:41,505 - __main__ - INFO - 文章 ID 43f7a831-c3d2-4a01-a48a-b7181cc5f4b2 处理成功
+2025-11-18 10:18:03,577 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/17/kindly-md-delays-earnings-report-filing-as-merger-losses-mount-shares-drop HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/17/kindly-md-delays-earnings-report-filing-as-merger-losses-mount-shares-drop (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000025652650E10>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-18 10:18:03,577 - __main__ - WARNING - 文章 ID 9d8367e9-6525-4655-bcce-bd1361355b49 缺少标题或内容
+2025-11-18 10:18:03,578 - __main__ - INFO - 正在处理文章 ID 9d8367e9-6525-4655-bcce-bd1361355b49: Kindly MD Delays Earnings Report Filing as Merger ...
+2025-11-18 10:18:06,224 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-18 10:18:06,229 - ai.SentimentAnalyzer - ERROR - 情感分析失败: Expecting property name enclosed in double quotes: line 5 column 1 (char 135) - 标题: Kindly MD Delays Earnings Report Filing as Merger Losses Mount; Shares Drop
+2025-11-18 10:18:06,249 - database.operations - INFO - 成功更新文章 9d8367e9-6525-4655-bcce-bd1361355b49
+2025-11-18 10:18:06,249 - __main__ - INFO - 文章 ID 9d8367e9-6525-4655-bcce-bd1361355b49 处理成功
+2025-11-18 10:18:28,311 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/17/figure-stock-jumps-as-druckenmiller-invests-usd77m-analysts-raise-price-targets HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/17/figure-stock-jumps-as-druckenmiller-invests-usd77m-analysts-raise-price-targets (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000025652651190>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-18 10:18:28,312 - __main__ - WARNING - 文章 ID 5bd546ef-9e8e-41e1-92b5-44c026049c17 缺少标题或内容
+2025-11-18 10:18:28,312 - __main__ - INFO - 正在处理文章 ID 5bd546ef-9e8e-41e1-92b5-44c026049c17: Figure Stock Jumps as Druckenmiller Invests $77M, ...
+2025-11-18 10:18:31,333 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-18 10:18:31,341 - ai.SentimentAnalyzer - ERROR - 情感分析失败: Expecting property name enclosed in double quotes: line 5 column 1 (char 166) - 标题: Figure Stock Jumps as Druckenmiller Invests $77M, Analysts Raise Price Targets
+2025-11-18 10:18:31,362 - database.operations - INFO - 成功更新文章 5bd546ef-9e8e-41e1-92b5-44c026049c17
+2025-11-18 10:18:31,363 - __main__ - INFO - 文章 ID 5bd546ef-9e8e-41e1-92b5-44c026049c17 处理成功
+2025-11-18 10:18:53,459 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/business/2025/11/17/trump-s-maldives-hotel-will-be-a-tokenized-real-estate-project HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /business/2025/11/17/trump-s-maldives-hotel-will-be-a-tokenized-real-estate-project (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000002565261A910>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-18 10:18:53,459 - __main__ - WARNING - 文章 ID 5e6ddec6-3f35-4fe3-8a41-52d39942462e 缺少标题或内容
+2025-11-18 10:18:53,459 - __main__ - INFO - 正在处理文章 ID 5e6ddec6-3f35-4fe3-8a41-52d39942462e: Trump’s Maldives Hotel Will Be a Tokenized Real Es...
+2025-11-18 10:18:57,052 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-18 10:18:57,057 - ai.SentimentAnalyzer - ERROR - 情感分析失败: Expecting property name enclosed in double quotes: line 5 column 1 (char 151) - 标题: Trump’s Maldives Hotel Will Be a Tokenized Real Estate Project
+2025-11-18 10:18:57,077 - database.operations - INFO - 成功更新文章 5e6ddec6-3f35-4fe3-8a41-52d39942462e
+2025-11-18 10:18:57,077 - __main__ - INFO - 文章 ID 5e6ddec6-3f35-4fe3-8a41-52d39942462e 处理成功
+2025-11-18 10:19:19,116 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/17/cboe-to-debut-bitcoin-ether-perpetual-style-crypto-futures-on-dec-15 HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/17/cboe-to-debut-bitcoin-ether-perpetual-style-crypto-futures-on-dec-15 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000002565261AF50>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-18 10:19:19,117 - __main__ - WARNING - 文章 ID a17a03aa-7ca9-4769-93c4-b18dbe212248 缺少标题或内容
+2025-11-18 10:19:19,117 - __main__ - INFO - 正在处理文章 ID a17a03aa-7ca9-4769-93c4-b18dbe212248: Cboe to Debut Bitcoin, Ether ‘Perpetual-Style’ Cry...
+2025-11-18 10:19:21,227 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-18 10:19:21,232 - ai.SentimentAnalyzer - INFO - 情感分析完成: positive (0.65) - Cboe将于12月15日推出比特币和以太坊的永续合约式期货，为美国合规市场首次提供类似永续合约的产品，提升两大主流资产的流动性与机构参与度，整体利好市场情绪。
+2025-11-18 10:19:21,254 - database.operations - INFO - 成功更新文章 a17a03aa-7ca9-4769-93c4-b18dbe212248
+2025-11-18 10:19:21,255 - __main__ - INFO - 文章 ID a17a03aa-7ca9-4769-93c4-b18dbe212248 处理成功
+2025-11-18 10:19:43,303 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/17/stellar-slips-as-key-support-breaks-signaling-mounting-bearish-momentum HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/17/stellar-slips-as-key-support-breaks-signaling-mounting-bearish-momentum (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000025652655D10>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-18 10:19:43,304 - __main__ - WARNING - 文章 ID 473cc295-e4d7-4dbc-8055-45206b3ec5fa 缺少标题或内容
+2025-11-18 10:19:43,304 - __main__ - INFO - 正在处理文章 ID 473cc295-e4d7-4dbc-8055-45206b3ec5fa: Stellar Slips as Key Support Breaks, Signaling Mou...
+2025-11-18 10:19:44,870 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-18 10:19:44,871 - ai.SentimentAnalyzer - ERROR - 情感分析失败: Expecting property name enclosed in double quotes: line 5 column 1 (char 119) - 标题: Stellar Slips as Key Support Breaks, Signaling Mounting Bearish Momentum
+2025-11-18 10:19:44,892 - database.operations - INFO - 成功更新文章 473cc295-e4d7-4dbc-8055-45206b3ec5fa
+2025-11-18 10:19:44,892 - __main__ - INFO - 文章 ID 473cc295-e4d7-4dbc-8055-45206b3ec5fa 处理成功
+2025-11-18 10:20:06,939 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/17/high-stakes-gambler-liquidated-for-usd168m-after-shorting-the-bottom-of-crypto-plunge HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/17/high-stakes-gambler-liquidated-for-usd168m-after-shorting-the-bottom-of-crypto-plunge (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000025652657590>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-18 10:20:06,940 - __main__ - WARNING - 文章 ID 246a2285-0f14-4568-95c5-88d0c6084b93 缺少标题或内容
+2025-11-18 10:20:06,940 - __main__ - INFO - 正在处理文章 ID 246a2285-0f14-4568-95c5-88d0c6084b93: High-Stakes Gambler Liquidated for $168M After Sho...
+2025-11-18 10:20:09,330 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-18 10:20:09,331 - ai.SentimentAnalyzer - INFO - 情感分析完成: positive (0.65) - 一名高杠杆大户在市场底部做空被清算1.68亿美元，表明空头过度拥挤后遭到强平，可能触发短线报复性反弹，整体市场情绪短期内将偏向多头。
+2025-11-18 10:20:09,351 - database.operations - INFO - 成功更新文章 246a2285-0f14-4568-95c5-88d0c6084b93
+2025-11-18 10:20:09,352 - __main__ - INFO - 文章 ID 246a2285-0f14-4568-95c5-88d0c6084b93 处理成功
+2025-11-18 10:20:31,390 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/17/hbar-breaks-key-support-as-bearish-sentiment-overpowers-defi-momentum HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/17/hbar-breaks-key-support-as-bearish-sentiment-overpowers-defi-momentum (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000025652654050>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-18 10:20:31,391 - __main__ - WARNING - 文章 ID 13ad8464-e9ba-4277-92a8-39fe43be8829 缺少标题或内容
+2025-11-18 10:20:31,391 - __main__ - INFO - 正在处理文章 ID 13ad8464-e9ba-4277-92a8-39fe43be8829: HBAR Breaks Key Support as Bearish Sentiment Overp...
+2025-11-18 10:20:33,178 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-18 10:20:33,183 - ai.SentimentAnalyzer - INFO - 情感分析完成: negative (-0.65) - HBAR跌破关键支撑位，看跌情绪压倒其DeFi生态的短期利好，价格面临进一步下行风险。
+2025-11-18 10:20:33,203 - database.operations - INFO - 成功更新文章 13ad8464-e9ba-4277-92a8-39fe43be8829
+2025-11-18 10:20:33,204 - __main__ - INFO - 文章 ID 13ad8464-e9ba-4277-92a8-39fe43be8829 处理成功
+2025-11-18 10:20:36,234 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/strategy-bitcoin-buy-purchase-november?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-18 10:20:36,235 - __main__ - INFO - 正在处理文章 ID https://cointelegraph.com/news/strategy-bitcoin-buy-purchase-november: Strategy steps up Bitcoin buys with 8,178 BTC purc...
+2025-11-18 10:20:38,412 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-18 10:20:38,418 - ai.SentimentAnalyzer - INFO - 情感分析完成: positive (0.72) - MicroStrategy 在比特币大跌之际逆势加仓，用约 8.35 亿美元一次性购入 8,178 枚 BTC，强化其“长期囤币”叙事，传递出机构对后市继续看好的强烈信心信号，有望缓解市场恐慌并吸引跟风买盘。
+2025-11-18 10:20:38,438 - database.operations - INFO - 成功更新文章 https://cointelegraph.com/news/strategy-bitcoin-buy-purchase-november
+2025-11-18 10:20:38,438 - __main__ - INFO - 文章 ID https://cointelegraph.com/news/strategy-bitcoin-buy-purchase-november 处理成功
+2025-11-18 10:20:40,159 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/young-bitcoin-holders-panic-sell-148k-btc-as-analysts-call-for-sub-dollar90k-btc-bottom?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-18 10:20:40,159 - __main__ - INFO - 正在处理文章 ID https://cointelegraph.com/news/young-bitcoin-holders-panic-sell-148k-btc-as-analysts-call-for-sub-dollar90k-btc-bottom: Young Bitcoin holders panic sell 148K BTC as analy...
+2025-11-18 10:20:43,636 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-18 10:20:43,638 - ai.SentimentAnalyzer - INFO - 情感分析完成: negative (-0.68) - 比特币短线投资者因恐慌在周五抛售14.8万枚BTC，均价显著低于买入区间（10.2–10.7万美元）。跌破关键技术位（50周均线、93,000美元年度开盘价）后，市场普遍预期将下探90,000美元甚至更低，引发进一步止损盘。短期内情绪极度悲观，被视为“弱手出清”，但链上观点认为长期资金正在低价接盘。
+2025-11-18 10:20:43,661 - database.operations - INFO - 成功更新文章 https://cointelegraph.com/news/young-bitcoin-holders-panic-sell-148k-btc-as-analysts-call-for-sub-dollar90k-btc-bottom
+2025-11-18 10:20:43,661 - __main__ - INFO - 文章 ID https://cointelegraph.com/news/young-bitcoin-holders-panic-sell-148k-btc-as-analysts-call-for-sub-dollar90k-btc-bottom 处理成功
+2025-11-18 10:20:45,356 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/republic-technologies-100m-ethereum-financing?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-18 10:20:45,357 - __main__ - INFO - 正在处理文章 ID https://cointelegraph.com/news/republic-technologies-100m-ethereum-financing: Republic raises $100M for ETH purchases under unus...
+2025-11-18 10:20:47,986 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-18 10:20:47,988 - ai.SentimentAnalyzer - INFO - 情感分析完成: positive (0.7) - Republic以0%利息、无需追加抵押的超优条件融资1亿美元专买ETH并扩建以太坊验证节点，极大降低杠杆风险，同时公开对比同行高稀释融资，凸显其资本策略优势；加上多家上市公司持续囤ETH、交易所余额降至三年低点，强化了市场对ETH供应收紧的乐观预期，整体情绪明显偏正向。
+2025-11-18 10:20:48,008 - database.operations - INFO - 成功更新文章 https://cointelegraph.com/news/republic-technologies-100m-ethereum-financing
+2025-11-18 10:20:48,009 - __main__ - INFO - 文章 ID https://cointelegraph.com/news/republic-technologies-100m-ethereum-financing 处理成功
+2025-11-18 10:20:49,646 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/explained/how-the-new-us-crypto-bill-could-finally-define-commodities-and-securities?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-18 10:20:49,647 - __main__ - INFO - 正在处理文章 ID https://cointelegraph.com/explained/how-the-new-us-crypto-bill-could-finally-define-commodities-and-securities: How the new US crypto bill could finally define co...
+2025-11-18 10:20:52,024 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-18 10:20:52,029 - ai.SentimentAnalyzer - ERROR - 情感分析失败: Expecting property name enclosed in double quotes: line 5 column 1 (char 156) - 标题: How the new US crypto bill could finally define commodities and securities
+2025-11-18 10:20:52,051 - database.operations - INFO - 成功更新文章 https://cointelegraph.com/explained/how-the-new-us-crypto-bill-could-finally-define-commodities-and-securities
+2025-11-18 10:20:52,051 - __main__ - INFO - 文章 ID https://cointelegraph.com/explained/how-the-new-us-crypto-bill-could-finally-define-commodities-and-securities 处理成功
+2025-11-18 10:20:53,867 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/why-brazil-is-using-bitcoin-as-a-treasury-asset-and-what-other-nations-can-learn?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-18 10:20:53,868 - __main__ - INFO - 正在处理文章 ID https://cointelegraph.com/news/why-brazil-is-using-bitcoin-as-a-treasury-asset-and-what-other-nations-can-learn: Why Brazil is using Bitcoin as a treasury asset an...
+2025-11-18 10:20:56,804 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-18 10:20:56,807 - ai.SentimentAnalyzer - ERROR - 情感分析失败: Expecting property name enclosed in double quotes: line 5 column 1 (char 219) - 标题: Why Brazil is using Bitcoin as a treasury asset and what other nations can learn
+2025-11-18 10:20:56,827 - database.operations - INFO - 成功更新文章 https://cointelegraph.com/news/why-brazil-is-using-bitcoin-as-a-treasury-asset-and-what-other-nations-can-learn
+2025-11-18 10:20:56,827 - __main__ - INFO - 文章 ID https://cointelegraph.com/news/why-brazil-is-using-bitcoin-as-a-treasury-asset-and-what-other-nations-can-learn 处理成功
+2025-11-18 10:20:58,483 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/trump-tokenized-luxury-resort-development-maldives?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-18 10:20:58,483 - __main__ - INFO - 正在处理文章 ID https://cointelegraph.com/news/trump-tokenized-luxury-resort-development-maldives: Trump Organization to tokenize Maldives resort dev...
+2025-11-18 10:21:02,676 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-18 10:21:02,677 - ai.SentimentAnalyzer - ERROR - 情感分析失败: Expecting property name enclosed in double quotes: line 5 column 1 (char 199) - 标题: Trump Organization to tokenize Maldives resort development for early investors
+2025-11-18 10:21:02,696 - database.operations - INFO - 成功更新文章 https://cointelegraph.com/news/trump-tokenized-luxury-resort-development-maldives
+2025-11-18 10:21:02,696 - __main__ - INFO - 文章 ID https://cointelegraph.com/news/trump-tokenized-luxury-resort-development-maldives 处理成功
+2025-11-18 10:21:04,409 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/chat-control-eu-retreats-from-mandatory-scanning?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-18 10:21:04,409 - __main__ - INFO - 正在处理文章 ID https://cointelegraph.com/news/chat-control-eu-retreats-from-mandatory-scanning: Chat Control stumbles again as EU retreats from ma...
+2025-11-18 10:21:06,602 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-18 10:21:06,606 - ai.SentimentAnalyzer - INFO - 情感分析完成: positive (0.55) - 欧盟再次放弃强制扫描私人消息的“Chat Control”条款，移除客户端扫描后门，被视为隐私与加密技术的一次阶段性胜利。事件强化了去中心化、抗审查叙事，利好BTC等强调隐私与密码朋克精神的加密资产，预计短期情绪偏多。
+2025-11-18 10:21:06,627 - database.operations - INFO - 成功更新文章 https://cointelegraph.com/news/chat-control-eu-retreats-from-mandatory-scanning
+2025-11-18 10:21:06,627 - __main__ - INFO - 文章 ID https://cointelegraph.com/news/chat-control-eu-retreats-from-mandatory-scanning 处理成功
+2025-11-18 10:21:08,640 - fetchers.context_extractor - INFO - 成功提取 https://cointelegraph.com/news/corporate-bitcoin-holdings-decentralization-debate?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound 的内容
+2025-11-18 10:21:08,640 - __main__ - INFO - 正在处理文章 ID https://cointelegraph.com/news/corporate-bitcoin-holdings-decentralization-debate: Corporate buying stirs debate over Bitcoin’s long-...
+2025-11-18 10:21:11,206 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-18 10:21:11,207 - ai.SentimentAnalyzer - ERROR - 情感分析失败: Expecting property name enclosed in double quotes: line 5 column 1 (char 167) - 标题: Corporate buying stirs debate over Bitcoin’s long-term decentralization
+2025-11-18 10:21:11,226 - database.operations - INFO - 成功更新文章 https://cointelegraph.com/news/corporate-bitcoin-holdings-decentralization-debate
+2025-11-18 10:21:11,226 - __main__ - INFO - 文章 ID https://cointelegraph.com/news/corporate-bitcoin-holdings-decentralization-debate 处理成功
+2025-11-18 10:21:12,228 - __main__ - INFO - 处理完成: 总计 20 篇，成功 20 篇，失败 0 篇
