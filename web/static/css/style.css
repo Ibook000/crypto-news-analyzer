@@ -1,0 +1,709 @@
+/* 苹果风格全局变量 */
+:root {
+    /* 苹果风格颜色系统 */
+    --apple-blue: #007AFF;
+    --apple-gray: #8E8E93;
+    --apple-light-gray: #C7C7CC;
+    --apple-ultra-light-gray: #F2F2F7;
+    --apple-background: #FFFFFF;
+    --apple-secondary-background: #F2F2F7;
+    --apple-tertiary-background: #FFFFFF;
+    --apple-label: #000000;
+    --apple-secondary-label: #3C3C43;
+    --apple-tertiary-label: #3C3C4399;
+    --apple-quaternary-label: #3C3C432E;
+    
+    /* 情感颜色 - 苹果风格 */
+    --sentiment-positive: #34C759;
+    --sentiment-negative: #FF3B30;
+    --sentiment-neutral: #FF9500;
+    
+    /* 阴影 */
+    --apple-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    --apple-shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.08);
+    
+    /* 圆角 */
+    --apple-radius: 12px;
+    --apple-radius-small: 8px;
+    --apple-radius-large: 16px;
+    
+    /* 间距 */
+    --apple-spacing: 16px;
+    --apple-spacing-small: 8px;
+    --apple-spacing-large: 24px;
+    
+    /* 字体 */
+    --apple-font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* 全局样式 */
+body {
+    font-family: var(--apple-font-family);
+    background-color: var(--apple-secondary-background);
+    color: var(--apple-label);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 导航栏 - 苹果风格 */
+.navbar {
+    background-color: var(--apple-background) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--apple-light-gray);
+    box-shadow: var(--apple-shadow);
+    padding: var(--apple-spacing-small) 0;
+}
+
+.navbar-brand {
+    color: var(--apple-label) !important;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.navbar-nav .nav-link {
+    color: var(--apple-secondary-label) !important;
+    font-weight: 500;
+    margin: 0 var(--apple-spacing-small);
+    padding: var(--apple-spacing-small) var(--apple-spacing);
+    border-radius: var(--apple-radius-small);
+    transition: all 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--apple-blue) !important;
+    background-color: rgba(0, 122, 255, 0.1);
+}
+
+.navbar-toggler {
+    border: none;
+    padding: 0;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* 卡片 - 苹果风格 */
+.card {
+    border: none;
+    border-radius: var(--apple-radius);
+    box-shadow: var(--apple-shadow);
+    transition: all 0.3s ease;
+    background-color: var(--apple-background);
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--apple-shadow-hover);
+}
+
+.card-header {
+    background-color: var(--apple-background);
+    border-bottom: 1px solid var(--apple-light-gray);
+    padding: var(--apple-spacing) var(--apple-spacing-large);
+    font-weight: 600;
+}
+
+.card-body {
+    padding: var(--apple-spacing-large);
+}
+
+/* 统计卡片 - 苹果风格 */
+#stats-cards .card {
+    border-radius: var(--apple-radius-large);
+    padding: var(--apple-spacing-large);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+#stats-cards .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%);
+}
+
+#stats-cards .card:hover {
+    transform: translateY(-4px);
+}
+
+#stats-cards .card-title {
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0.9;
+    margin-bottom: var(--apple-spacing-small);
+}
+
+#stats-cards .card-text {
+    font-weight: 700;
+    font-size: 2rem;
+    margin: 0;
+}
+
+/* 覆盖Bootstrap颜色 */
+.bg-primary {
+    background-color: var(--apple-blue) !important;
+}
+
+.bg-success {
+    background-color: var(--sentiment-positive) !important;
+}
+
+.bg-danger {
+    background-color: var(--sentiment-negative) !important;
+}
+
+.bg-warning {
+    background-color: var(--sentiment-neutral) !important;
+}
+
+/* 文章卡片 - 苹果风格 */
+.article-card {
+    border-radius: var(--apple-radius);
+    margin-bottom: var(--apple-spacing-large);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    border: 1px solid var(--apple-light-gray);
+}
+
+.article-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--apple-shadow-hover);
+}
+
+/* 文章内容中的图片样式 */
+.article-summary img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px 0;
+    border-radius: var(--apple-radius-small);
+    box-shadow: var(--apple-shadow);
+}
+
+/* 右侧浮动图片样式 */
+.article-summary p[style*="float: right"] img {
+    float: right;
+    margin-left: var(--apple-spacing);
+    margin-bottom: var(--apple-spacing-small);
+    max-width: 240px;
+    height: auto;
+}
+
+/* 左侧浮动图片样式 */
+.article-summary p[style*="float: left"] img {
+    float: left;
+    margin-right: var(--apple-spacing);
+    margin-bottom: var(--apple-spacing-small);
+    max-width: 240px;
+    height: auto;
+}
+
+/* 文章详情模态框中的图片样式 */
+#articleModal .modal-body img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: var(--apple-spacing) auto;
+    border-radius: var(--apple-radius-small);
+    box-shadow: var(--apple-shadow);
+}
+
+.article-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--apple-spacing-small);
+}
+
+.article-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--apple-label);
+}
+
+.article-meta {
+    font-size: 0.85rem;
+    color: var(--apple-tertiary-label);
+}
+
+.article-summary {
+    margin: var(--apple-spacing-small) 0;
+    color: var(--apple-secondary-label);
+}
+
+.article-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--apple-spacing-small);
+}
+
+/* 情感标签样式 - 苹果风格 */
+.sentiment-badge {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+    border-radius: var(--apple-radius-small);
+    font-weight: 500;
+}
+
+.sentiment-positive {
+    background-color: rgba(52, 199, 89, 0.1) !important;
+    color: var(--sentiment-positive) !important;
+    border: 1px solid rgba(52, 199, 89, 0.2);
+}
+
+.sentiment-negative {
+    background-color: rgba(255, 59, 48, 0.1) !important;
+    color: var(--sentiment-negative) !important;
+    border: 1px solid rgba(255, 59, 48, 0.2);
+}
+
+.sentiment-neutral {
+    background-color: rgba(255, 149, 0, 0.1) !important;
+    color: var(--sentiment-neutral) !important;
+    border: 1px solid rgba(255, 149, 0, 0.2);
+}
+
+/* 来源标签样式 - 苹果风格 */
+.source-badge {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+    border-radius: var(--apple-radius-small);
+    background-color: var(--apple-secondary-background);
+    color: var(--apple-secondary-label);
+    border: 1px solid var(--apple-light-gray);
+}
+
+/* AI处理状态样式 - 苹果风格 */
+.ai-processed-badge {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+    border-radius: var(--apple-radius-small);
+    font-weight: 500;
+}
+
+.ai-processed-true {
+    background-color: rgba(0, 122, 255, 0.1);
+    color: var(--apple-blue);
+    border: 1px solid rgba(0, 122, 255, 0.2);
+}
+
+.ai-processed-false {
+    background-color: var(--apple-secondary-background);
+    color: var(--apple-tertiary-label);
+    border: 1px solid var(--apple-light-gray);
+}
+
+/* 分页 - 苹果风格 */
+.pagination .page-link {
+    border: none;
+    color: var(--apple-blue);
+    padding: var(--apple-spacing-small) var(--apple-spacing);
+    margin: 0 2px;
+    border-radius: var(--apple-radius-small);
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.pagination .page-link:hover {
+    background-color: rgba(0, 122, 255, 0.1);
+    color: var(--apple-blue);
+}
+
+.pagination .page-item.active .page-link {
+    background-color: var(--apple-blue);
+    color: white;
+    border: none;
+}
+
+/* 统计卡片样式 */
+.stats-card {
+    transition: transform 0.3s ease;
+}
+
+.stats-card:hover {
+    transform: scale(1.05);
+}
+
+/* 加载动画 */
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+/* 响应式调整 */
+/* 移动设备优化 */
+@media (max-width: 768px) {
+    /* 导航栏优化 */
+    .navbar-brand {
+        font-size: 1.1rem;
+    }
+    
+    /* 统计卡片优化 */
+    .stats-card .card-body h2 {
+        font-size: 1.8rem;
+    }
+    
+    .stats-card .card-body h5 {
+        font-size: 0.9rem;
+    }
+    
+    /* 筛选表单优化 */
+    .filter-form .row {
+        gap: 10px;
+    }
+    
+    .filter-form .col-md-3 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    
+    /* 文章卡片优化 */
+    .article-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .article-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .article-title {
+        font-size: 1.1rem;
+        line-height: 1.4;
+    }
+    
+    .article-summary {
+        font-size: 0.9rem;
+    }
+    
+    /* 移动设备图片优化 */
+    .article-summary img {
+        max-width: 100% !important;
+        height: auto !important;
+        float: none !important;
+        margin: 10px 0 !important;
+        display: block;
+    }
+    
+    .article-summary p[style*="float: right"] img,
+    .article-summary p[style*="float: left"] img {
+        float: none !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        max-width: 100% !important;
+    }
+    
+    /* 模态框优化 */
+    .modal-dialog {
+        margin: 0.5rem;
+        max-width: calc(100% - 1rem);
+    }
+    
+    #articleModal .modal-body {
+        max-height: calc(100vh - 200px);
+    }
+    
+    /* 分页优化 */
+    .pagination {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .pagination .page-link {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.875rem;
+    }
+    
+    /* 标签优化 */
+    .sentiment-badge, .source-badge, .ai-processed-badge {
+        font-size: 0.75rem;
+        padding: 3px 6px;
+    }
+    
+    /* 关键词标签优化 */
+    .keyword-tag {
+        font-size: 0.75rem;
+        padding: 2px 6px;
+    }
+}
+
+/* 平板设备优化 */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* 统计卡片优化 */
+    .stats-card .card-body h2 {
+        font-size: 2rem;
+    }
+    
+    /* 筛选表单优化 */
+    .filter-form .col-md-3 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    
+    /* 文章卡片优化 */
+    .article-title {
+        font-size: 1.15rem;
+    }
+    
+    /* 平板设备图片优化 */
+    .article-summary p[style*="float: right"] img {
+        max-width: 200px !important;
+    }
+    
+    .article-summary p[style*="float: left"] img {
+        max-width: 200px !important;
+    }
+    
+    /* 模态框优化 */
+    .modal-dialog {
+        max-width: 90%;
+    }
+}
+
+/* 大屏幕优化 */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+    
+    .article-card {
+        margin-bottom: 25px;
+    }
+    
+    .article-title {
+        font-size: 1.25rem;
+    }
+}
+
+/* 超小屏幕优化 */
+@media (max-width: 576px) {
+    /* 统计卡片在小屏幕上垂直堆叠 */
+    #stats-cards .col-md-3 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    
+    /* 导航栏优化 */
+    .navbar-brand {
+        font-size: 1rem;
+    }
+    
+    /* 按钮优化 */
+    .btn {
+        font-size: 0.875rem;
+        padding: 0.375rem 0.75rem;
+    }
+    
+    /* 表单元素优化 */
+    .form-control, .form-select {
+        font-size: 0.875rem;
+    }
+    
+    /* 卡片标题优化 */
+    .card-title {
+        font-size: 1rem;
+    }
+}
+
+/* 文章详情模态框样式 - 苹果风格 */
+#articleModal .modal-body {
+    max-height: 70vh;
+    overflow-y: auto;
+    padding: var(--apple-spacing-large);
+    color: var(--apple-label);
+}
+
+.article-detail-section {
+    margin-bottom: var(--apple-spacing-large);
+}
+
+.article-detail-title {
+    font-weight: 600;
+    margin-bottom: var(--apple-spacing-small);
+    color: var(--apple-secondary-label);
+}
+
+/* 关键词标签样式 - 苹果风格 */
+.keyword-tag {
+    display: inline-block;
+    background-color: var(--apple-secondary-background);
+    color: var(--apple-secondary-label);
+    padding: 3px 8px;
+    margin: 2px;
+    border-radius: var(--apple-radius-small);
+    font-size: 0.8rem;
+    border: 1px solid var(--apple-light-gray);
+}
+
+/* 情感分数条样式 - 苹果风格 */
+.sentiment-score-bar {
+    height: 8px;
+    border-radius: 4px;
+    margin-top: var(--apple-spacing-small);
+    background-color: var(--apple-light-gray);
+    overflow: hidden;
+}
+
+.sentiment-score-fill {
+    height: 100%;
+    transition: width 0.5s ease;
+}
+
+.sentiment-score-fill.positive {
+    background-color: var(--sentiment-positive);
+}
+
+.sentiment-score-fill.negative {
+    background-color: var(--sentiment-negative);
+}
+
+.sentiment-score-fill.neutral {
+    background-color: var(--sentiment-neutral);
+}
+
+/* 模态框 - 苹果风格 */
+.modal-content {
+    border: none;
+    border-radius: var(--apple-radius-large);
+    box-shadow: var(--apple-shadow-hover);
+    background-color: var(--apple-background);
+    overflow: hidden;
+}
+
+.modal-header {
+    border-bottom: 1px solid var(--apple-light-gray);
+    padding: var(--apple-spacing-large);
+    background-color: var(--apple-background);
+}
+
+.modal-title {
+    font-weight: 600;
+    color: var(--apple-label);
+}
+
+.modal-body {
+    padding: var(--apple-spacing-large);
+    color: var(--apple-label);
+}
+
+.modal-footer {
+    border-top: 1px solid var(--apple-light-gray);
+    padding: var(--apple-spacing) var(--apple-spacing-large);
+    background-color: var(--apple-background);
+}
+
+.btn-close {
+    background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%238E8E93'%3e%3cpath d='m.235.867 8.832 8.832-8.832 8.832a.5.5 0 0 0 .707.707L9.804 10.4l8.832 8.832a.5.5 0 0 0 .707-.707L10.511 9.699l8.832-8.832a.5.5 0 0 0-.707-.707L9.804 9.492.972.66a.5.5 0 0 0-.737.207z'/%3e%3c/svg%3e") center/1em auto no-repeat;
+    opacity: 0.5;
+}
+
+.btn-close:hover {
+    opacity: 0.8;
+}
+
+/* 加载动画 - 苹果风格 */
+.spinner-border {
+    border-color: var(--apple-light-gray);
+    border-right-color: var(--apple-blue);
+    width: 2rem;
+    height: 2rem;
+}
+
+/* 空状态 - 苹果风格 */
+.empty-state {
+    text-align: center;
+    padding: var(--apple-spacing-large) var(--apple-spacing-large) calc(var(--apple-spacing-large) * 2);
+    color: var(--apple-tertiary-label);
+}
+
+.empty-state i {
+    font-size: 3rem;
+    margin-bottom: var(--apple-spacing);
+    opacity: 0.5;
+}
+
+.empty-state h5 {
+    color: var(--apple-secondary-label);
+    font-weight: 500;
+    margin-bottom: var(--apple-spacing-small);
+}
+
+.empty-state p {
+    color: var(--apple-tertiary-label);
+    font-size: 0.95rem;
+}
+
+/* 筛选表单 - 苹果风格 */
+.filter-form {
+    background-color: var(--apple-secondary-background);
+    padding: var(--apple-spacing);
+    border-radius: var(--apple-radius);
+    margin-bottom: var(--apple-spacing-large);
+    border: 1px solid var(--apple-light-gray);
+}
+
+.form-label {
+    font-weight: 500;
+    color: var(--apple-label);
+    margin-bottom: var(--apple-spacing-small);
+}
+
+.form-control, .form-select {
+    border: 1px solid var(--apple-light-gray);
+    border-radius: var(--apple-radius-small);
+    padding: var(--apple-spacing-small) var(--apple-spacing);
+    background-color: var(--apple-background);
+    color: var(--apple-label);
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--apple-blue);
+    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+    outline: none;
+}
+
+/* 按钮 - 苹果风格 */
+.btn {
+    border-radius: var(--apple-radius-small);
+    font-weight: 500;
+    padding: var(--apple-spacing-small) var(--apple-spacing-large);
+    transition: all 0.2s ease;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--apple-blue);
+}
+
+.btn-primary:hover {
+    background-color: #0056CC;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background-color: var(--apple-secondary-background);
+    color: var(--apple-label);
+    border: 1px solid var(--apple-light-gray);
+}
+
+.btn-secondary:hover {
+    background-color: var(--apple-light-gray);
+    transform: translateY(-1px);
+}

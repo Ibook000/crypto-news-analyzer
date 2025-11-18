@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>加密货币新闻分析器</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-graph-up-arrow"></i> 加密货币新闻分析器
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" id="home-link">
+                            <i class="bi bi-house"></i> 首页
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="stats-link">
+                            <i class="bi bi-bar-chart"></i> 统计
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主内容区 -->
+    <div class="container mt-4">
+        <!-- 统计卡片 -->
+        <div class="row mb-4" id="stats-cards">
+            <div class="col-md-3 mb-3">
+                <div class="card bg-primary text-white">
+                    <div class="card-body">
+                        <h5 class="card-title">总文章数</h5>
+                        <h2 class="card-text" id="total-articles">-</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card bg-success text-white">
+                    <div class="card-body">
+                        <h5 class="card-title">积极情感</h5>
+                        <h2 class="card-text" id="positive-sentiment">-</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card bg-danger text-white">
+                    <div class="card-body">
+                        <h5 class="card-title">消极情感</h5>
+                        <h2 class="card-text" id="negative-sentiment">-</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card bg-warning text-white">
+                    <div class="card-body">
+                        <h5 class="card-title">中性情感</h5>
+                        <h2 class="card-text" id="neutral-sentiment">-</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 筛选区域 -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="bi bi-funnel"></i> 筛选条件
+                </h5>
+            </div>
+            <div class="card-body">
+                <form id="filter-form">
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <label for="source-filter" class="form-label">新闻来源</label>
+                            <select class="form-select" id="source-filter">
+                                <option value="">全部来源</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="sentiment-filter" class="form-label">情感类型</label>
+                            <select class="form-select" id="sentiment-filter">
+                                <option value="">全部情感</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="start-date" class="form-label">开始日期</label>
+                            <input type="date" class="form-control" id="start-date">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="end-date" class="form-label">结束日期</label>
+                            <input type="date" class="form-control" id="end-date">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <label for="ai-processed-filter" class="form-label">AI处理状态</label>
+                            <select class="form-select" id="ai-processed-filter">
+                                <option value="">全部</option>
+                                <option value="true">已处理</option>
+                                <option value="false">未处理</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3 mb-3 d-flex align-items-end">
+                            <button type="submit" class="btn btn-primary w-100">
+                                <i class="bi bi-search"></i> 搜索
+                            </button>
+                        </div>
+                        <div class="col-md-3 mb-3 d-flex align-items-end">
+                            <button type="button" class="btn btn-secondary w-100" id="reset-filter">
+                                <i class="bi bi-arrow-clockwise"></i> 重置
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- 文章列表 -->
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">
+                    <i class="bi bi-newspaper"></i> 文章列表
+                </h5>
+                <div>
+                    <span id="article-count" class="badge bg-secondary">0 篇文章</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <!-- 加载中 -->
+                <div id="loading" class="text-center py-4">
+                    <div class="spinner-border" role="status">
+                        <span class="visually-hidden">加载中...</span>
+                    </div>
+                </div>
+
+                <!-- 文章列表容器 -->
+                <div id="articles-container" class="d-none">
+                    <!-- 文章将通过JavaScript动态加载 -->
+                </div>
+
+                <!-- 分页 -->
+                <nav aria-label="文章分页" id="pagination-container" class="mt-4">
+                    <ul class="pagination justify-content-center">
+                        <!-- 分页将通过JavaScript动态生成 -->
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- 文章详情模态框 -->
+    <div class="modal fade" id="articleModal" tabindex="-1" aria-labelledby="articleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="articleModalLabel">文章详情</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="article-modal-body">
+                    <!-- 文章详情将通过JavaScript动态加载 -->
+                </div>
+                <div class="modal-footer">
+                    <a href="#" id="article-link" target="_blank" class="btn btn-primary">
+                        <i class="bi bi-box-arrow-up-right"></i> 查看原文
+                    </a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

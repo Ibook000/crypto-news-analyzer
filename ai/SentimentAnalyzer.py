@@ -12,7 +12,83 @@ class SentimentAnalyzer:
         self.client = openai.OpenAI(base_url=base_url, api_key=api_key)
         self.model = model
     
-    def analyze(self, title: str, content: str) -> Tuple[str, float]:
+    def analyze_with_tools(self, title: str, content: str) -> Tuple[str, float, str]:
+        """
+        使用工具函数模式分析新闻情感（备用方案）
+        返回: (情感类型, 情感分数, 中文摘要)
+        """
+        try:
+            # 定义工具函数
+            tools = [
+                {
+                    "type": "function",
+                    "function": {
+                        "name": "analyze_sentiment",
+                        "description": "分析加密货币新闻的情感倾向",
+                        "parameters": {
+                            "type": "object",
+                            "properties": {
+                                "sentiment": {
+                                    "type": "string",
+                                    "enum": ["positive", "negative", "neutral"],
+                                    "description": "新闻的情感倾向"
+                                },
+                                "score": {
+                                    "type": "number",
+                                    "description": "情感分数，范围从-1.0到1.0"
+                                },
+                                "chinese_summary": {
+                                    "type": "string",
+                                    "description": "新闻的中文摘要"
+                                }
+                            },
+                            "required": ["sentiment", "score", "chinese_summary"]
+                        }
+                    }
+                }
+            ]
+            
+            # 构建提示词
+            prompt = f"""
+            请分析以下加密货币新闻的情感倾向：
+            
+            标题: {title}
+            内容: {content}
+            
+            请使用analyze_sentiment工具返回分析结果。
+            """
+            
+            # 调用API
+            response = self.client.chat.completions.create(
+                model=self.model,
+                messages=[
+                    {"role": "system", "content": "你是专业的加密货币市场分析师，擅长分析新闻对市场情绪的影响。"},
+                    {"role": "user", "content": prompt}
+                ],
+                tools=tools,
+                tool_choice={"type": "function", "function": {"name": "analyze_sentiment"}}
+            )
+            
+            # 解析工具调用响应
+            tool_call = response.choices[0].message.tool_calls[0]
+            function_args = json.loads(tool_call.function.arguments)
+            
+            sentiment = function_args.get('sentiment', 'neutral')
+            score = float(function_args.get('score', 0))
+            chinese_summary = function_args.get('chinese_summary', '')
+            
+            # 验证情感类型
+            if sentiment not in ['positive', 'negative', 'neutral']:
+                sentiment = 'neutral'
+            
+            logger.info(f"工具函数模式分析完成: {sentiment} ({score}) - {chinese_summary}")
+            return sentiment, score, chinese_summary
+            
+        except Exception as e:
+            logger.error(f"工具函数模式分析失败: {e} - 标题: {title}", exc_info=True)
+            return "neutral", 0.0, "工具函数分析失败"
+
+    def analyze(self, title: str, content: str) -> Tuple[str, float, str]:
         """
         分析新闻情感
         返回: (情感类型, 情感分数)
@@ -40,15 +116,17 @@ class SentimentAnalyzer:
             {{
                 "sentiment": "positive/negative/neutral",
                 "score": 0.0,
-                "chinese_summary": "新闻的中文摘要",
+                "chinese_summary": "新闻的中文摘要"
             }}
             
             ## 示例
             {{
                 "sentiment": "positive",
                 "score": 0.75,
-                "chinese_summary": "比特币减半事件预期将减少供应，历史上常引发价格上涨。",
+                "chinese_summary": "比特币减半事件预期将减少供应，历史上常引发价格上涨。"
             }}
+            
+            请只返回JSON格式的结果，不要包含任何其他文本。
             """
             
             response = self.client.chat.completions.create(
@@ -60,7 +138,31 @@ class SentimentAnalyzer:
                 response_format={"type": "json_object"}
             )
             
-            result = json.loads(response.choices[0].message.content)
+            # 获取响应内容
+            response_content = response.choices[0].message.content
+            logger.debug(f"API原始响应: {response_content}")
+            
+            # 尝试解析JSON
+            try:
+                result = json.loads(response_content)
+            except json.JSONDecodeError as e:
+                logger.error(f"JSON解析错误: {e} - 原始内容: {response_content}")
+                # 尝试修复常见的JSON格式问题
+                try:
+                    # 移除可能的前后缀非JSON内容
+                    json_start = response_content.find('{')
+                    json_end = response_content.rfind('}') + 1
+                    if json_start >= 0 and json_end > json_start:
+                        cleaned_json = response_content[json_start:json_end]
+                        result = json.loads(cleaned_json)
+                    else:
+                        raise ValueError("无法找到有效的JSON内容")
+                except Exception as fix_error:
+                    logger.error(f"JSON修复尝试失败: {fix_error}")
+                    logger.warning("JSON模式完全失败，切换到工具函数模式")
+                    # 切换到工具函数模式作为备用
+                    return self.analyze_with_tools(title, content)
+            
             chinese_summary = result.get('chinese_summary', '')
             sentiment = result.get('sentiment', 'neutral')
             score = float(result.get('score', 0))
@@ -70,8 +172,8 @@ class SentimentAnalyzer:
                 sentiment = 'neutral'
             
             logger.info(f"情感分析完成: {sentiment} ({score}) - {chinese_summary}")
-            return sentiment, score,chinese_summary
+            return sentiment, score, chinese_summary
             
         except Exception as e:
-            logger.error(f"情感分析失败: {e} - 标题: {title}")
+            logger.error(f"情感分析失败: {e} - 标题: {title}", exc_info=True)
             return "neutral", 0.0, "分析失败"

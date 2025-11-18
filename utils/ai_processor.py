@@ -23,7 +23,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-def process_unprocessed_articles(batch_size: int = 10, delay: float = 1.0) -> Dict[str, Any]:
+def process_unprocessed_articles(batch_size, delay: float = 1.0) -> Dict[str, Any]:
     """
     处理数据库中未经过AI处理的新闻文章
     
@@ -41,7 +41,7 @@ def process_unprocessed_articles(batch_size: int = 10, delay: float = 1.0) -> Di
     analyzer = SentimentAnalyzer()
     
     # 获取未处理的文章
-    unprocessed_articles = db.get_unprocessed_articles(limit=batch_size)
+    unprocessed_articles = db.get_unprocessed_articles()
     
     if not unprocessed_articles:
         logger.info("没有需要处理的文章")
@@ -59,26 +59,29 @@ def process_unprocessed_articles(batch_size: int = 10, delay: float = 1.0) -> Di
             article_id = article.id
             title = article.title or ''
             content = extract_with_trafilatura(article.link)
-            
+            keywords = article.keywords
+            if content == None:
+                content = article.content
+            if keywords == None:
+                keywords = extract_keywords(title, content)
             # 检查标题和内容是否为空
             if not title or not content:
-                logger.warning(f"文章 ID {article_id} 缺少标题或内容，跳过处理")
-                continue
+                logger.warning(f"文章 ID {article_id} 缺少标题或内容")
+                #continue
             
             logger.info(f"正在处理文章 ID {article_id}: {title[:50]}...")
             
             # 进行AI分析
             sentiment, sentiment_score, chinese_summary = analyzer.analyze(title, content)
-            
-            # 提取关键词（简单实现，可以根据需要改进）
-            #keywords = extract_keywords(title, content)
+
+
             
             # 更新数据库中的文章
             update_data = {
                 'sentiment': sentiment,
                 'sentiment_score': sentiment_score,
                 'chinese_summary': chinese_summary,
-                #'keywords': keywords,
+                'keywords': keywords,
                 'ai_processed': True
             }
             
