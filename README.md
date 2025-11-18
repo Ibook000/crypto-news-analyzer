@@ -314,6 +314,10 @@ GET /api/sentiments
 
 启动Web服务器后，在浏览器中访问 http://localhost:8000 即可使用。
 
+### 界面预览
+
+![Web界面截图](screenshot_with_search.png)
+
 ### 情感分析混合模式
 
 我们的情感分析器采用了创新的混合模式，结合了两种Function Call方法：
