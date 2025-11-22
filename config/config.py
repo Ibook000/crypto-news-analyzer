@@ -25,9 +25,14 @@ API_KEY = os.getenv("API_KEY")
 MODEL = os.getenv("MODEL")
 
 # 抓取配置
-FETCH_INTERVAL = 300  # 抓取间隔（秒）
+FETCH_INTERVAL = 300
 MAX_RETRIES = 3
 TIMEOUT = 30
+# 调度参数
+FETCH_INTERVAL_MINUTES = 10
+PROCESS_INTERVAL_MINUTES = 10
+PROCESS_BATCH_SIZE = int(os.getenv("PROCESS_BATCH_SIZE", "20"))
+PROCESS_DELAY_SEC = float(os.getenv("PROCESS_DELAY_SEC", "0.5"))
 #数据库配置
 DB_URL='sqlite:///f:/PyCode/crypto-news-analyzer/database/crypto_news.db'
 if __name__ == "__main__":

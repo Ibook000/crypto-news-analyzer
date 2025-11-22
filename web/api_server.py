@@ -6,7 +6,7 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.dirname(current_dir)
 sys.path.insert(0, project_root)
 
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, HTTPException, Query, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
@@ -18,6 +18,11 @@ from sqlalchemy import func
 
 # 导入数据库操作
 from database.operations import Database, Article
+from utils.ai_processor import process_unprocessed_articles
+from utils.fetch_and_save import fetch_and_save
+import uuid
+import threading
+from datetime import datetime
 from config.config import DB_URL
 
 # 配置日志
@@ -26,7 +31,7 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('api_server.log'),
+        logging.FileHandler('api_server.log', encoding='utf-8'),
         logging.StreamHandler()
     ]
 )
@@ -86,6 +91,22 @@ class ArticleListResponse(BaseModel):
     page: int
     page_size: int
 
+class ProcessRequest(BaseModel):
+    batch_size: int = 10
+    delay: float = 0.5
+
+# 简易任务状态存储
+TASKS = {}
+TASKS_LOCK = threading.Lock()
+
+def _set_task(task_id: str, data: dict):
+    with TASKS_LOCK:
+        TASKS[task_id] = data
+
+def _get_task(task_id: str):
+    with TASKS_LOCK:
+        return TASKS.get(task_id)
+
 # 辅助函数：将Article对象转换为响应模型
 def article_to_response(article: Article) -> ArticleResponse:
     return ArticleResponse(
@@ -128,54 +149,42 @@ async def get_articles(
     end_date: Optional[str] = Query(None, description="结束日期 (YYYY-MM-DD)"),
     ai_processed: Optional[bool] = Query(None, description="是否已AI处理")
 ):
-    """
-    获取文章列表，支持分页和筛选
-    """
     try:
-        # 根据筛选条件获取文章
-        if source:
-            articles = db.get_articles_by_source(source)
-        elif sentiment:
-            articles = db.get_sentiment_articles(sentiment)
-        elif ai_processed is not None:
-            if ai_processed:
-                # 获取已处理的文章
-                session = db.get_session()
+        session = db.get_session()
+        try:
+            query = session.query(Article)
+            if source:
+                query = query.filter(Article.source == source)
+            if sentiment:
+                query = query.filter(Article.sentiment == sentiment)
+            if ai_processed is not None:
+                query = query.filter(Article.ai_processed == ai_processed)
+            if start_date and end_date:
                 try:
-                    query = session.query(Article).filter_by(ai_processed=True).order_by(Article.published.desc())
-                    articles = query.all()
-                finally:
-                    session.close()
-            else:
-                articles = db.get_unprocessed_articles()
-        elif start_date and end_date:
-            try:
-                start_dt = datetime.strptime(start_date, "%Y-%m-%d")
-                end_dt = datetime.strptime(end_date, "%Y-%m-%d")
-                articles = db.get_articles_by_date_range(start_dt, end_dt)
-            except ValueError:
-                raise HTTPException(status_code=400, detail="日期格式错误，请使用YYYY-MM-DD格式")
-        else:
-            articles = db.get_all_articles()
-        
-        # 分页处理
-        total = len(articles)
-        start_index = (page - 1) * page_size
-        end_index = start_index + page_size
-        paginated_articles = articles[start_index:end_index]
-        
-        # 转换为响应模型
-        article_responses = [article_to_response(article) for article in paginated_articles]
-        
-        return ArticleListResponse(
-            articles=article_responses,
-            total=total,
-            page=page,
-            page_size=page_size
-        )
+                    start_dt = datetime.strptime(start_date, "%Y-%m-%d")
+                    end_dt = datetime.strptime(end_date, "%Y-%m-%d")
+                except ValueError:
+                    raise HTTPException(status_code=400, detail="日期格式错误，请使用YYYY-MM-DD格式")
+                query = query.filter(Article.published.between(start_dt, end_dt))
+            total = query.count()
+            paginated_articles = (
+                query.order_by(Article.published.desc())
+                .offset((page - 1) * page_size)
+                .limit(page_size)
+                .all()
+            )
+            article_responses = [article_to_response(a) for a in paginated_articles]
+            return ArticleListResponse(
+                articles=article_responses,
+                total=total,
+                page=page,
+                page_size=page_size
+            )
+        finally:
+            session.close()
+    except HTTPException:
+        raise
     except Exception as e:
-        # 记录详细错误信息到日志
-        import logging
         logger = logging.getLogger(__name__)
         logger.error(f"获取文章失败: {str(e)}", exc_info=True)
         raise HTTPException(status_code=500, detail=f"获取文章失败: {str(e)}")
@@ -302,6 +311,87 @@ async def get_stats():
         logger = logging.getLogger(__name__)
         logger.error(f"获取统计信息失败: {str(e)}", exc_info=True)
         raise HTTPException(status_code=500, detail=f"获取统计信息失败: {str(e)}")
+
+@app.post("/api/process-unprocessed")
+async def process_unprocessed(req: ProcessRequest, background_tasks: BackgroundTasks):
+    """后台触发处理未AI文章，立即返回任务ID"""
+    try:
+        task_id = str(uuid.uuid4())
+        _set_task(task_id, {
+            "type": "process",
+            "status": "running",
+            "started_at": datetime.utcnow().isoformat()
+        })
+
+        def _run():
+            try:
+                result = process_unprocessed_articles(batch_size=req.batch_size, delay=req.delay)
+                _set_task(task_id, {
+                    "type": "process",
+                    "status": "completed",
+                    "started_at": _get_task(task_id)["started_at"],
+                    "finished_at": datetime.utcnow().isoformat(),
+                    "detail": result
+                })
+            except Exception as e:
+                _set_task(task_id, {
+                    "type": "process",
+                    "status": "failed",
+                    "started_at": _get_task(task_id)["started_at"],
+                    "finished_at": datetime.utcnow().isoformat(),
+                    "detail": {"error": str(e)}
+                })
+
+        background_tasks.add_task(_run)
+        return {"task_id": task_id, "message": "处理任务已触发"}
+    except Exception as e:
+        logger = logging.getLogger(__name__)
+        logger.error(f"触发处理任务失败: {str(e)}", exc_info=True)
+        raise HTTPException(status_code=500, detail=f"触发失败: {str(e)}")
+
+@app.post("/api/fetch-latest")
+async def fetch_latest(background_tasks: BackgroundTasks):
+    """后台触发抓取任务，立即返回任务ID"""
+    try:
+        task_id = str(uuid.uuid4())
+        _set_task(task_id, {
+            "type": "fetch",
+            "status": "running",
+            "started_at": datetime.utcnow().isoformat()
+        })
+
+        def _run():
+            try:
+                fetch_and_save()
+                _set_task(task_id, {
+                    "type": "fetch",
+                    "status": "completed",
+                    "started_at": _get_task(task_id)["started_at"],
+                    "finished_at": datetime.utcnow().isoformat()
+                })
+            except Exception as e:
+                _set_task(task_id, {
+                    "type": "fetch",
+                    "status": "failed",
+                    "started_at": _get_task(task_id)["started_at"],
+                    "finished_at": datetime.utcnow().isoformat(),
+                    "detail": {"error": str(e)}
+                })
+
+        background_tasks.add_task(_run)
+        return {"task_id": task_id, "message": "抓取任务已触发"}
+    except Exception as e:
+        logger = logging.getLogger(__name__)
+        logger.error(f"触发抓取任务失败: {str(e)}", exc_info=True)
+        raise HTTPException(status_code=500, detail=f"触发失败: {str(e)}")
+
+@app.get("/api/task-status")
+async def task_status(task_id: str = Query(..., description="任务ID")):
+    """查询后台任务状态"""
+    task = _get_task(task_id)
+    if not task:
+        raise HTTPException(status_code=404, detail="任务不存在")
+    return task
 
 # 启动服务器时的提示
 if __name__ == "__main__":

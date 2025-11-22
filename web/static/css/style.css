@@ -36,6 +36,33 @@
     --apple-font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+/* 暗色主题变量 */
+:root[data-theme="dark"] {
+    /* 深色配色 */
+    --apple-blue: #3B82F6;
+    --apple-gray: #9AA3AF;
+    --apple-light-gray: #374151;
+    --apple-ultra-light-gray: #111827;
+    --apple-background: #0B0F14;
+    --apple-secondary-background: #0F141B;
+    --apple-tertiary-background: #151A24;
+    --apple-label: #E5E7EB;
+    --apple-secondary-label: #C7CFD9;
+    --apple-tertiary-label: #9AA3AF;
+    --apple-quaternary-label: #6B7280;
+
+    /* 情感颜色 */
+    --sentiment-positive: #10B981;
+    --sentiment-negative: #EF4444;
+    --sentiment-neutral: #F59E0B;
+
+    /* 阴影在深色下更柔和 */
+    --apple-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    --apple-shadow-hover: 0 10px 28px rgba(0, 0, 0, 0.5);
+
+    /* 圆角与间距沿用默认 */
+}
+
 /* 全局样式 */
 body {
     font-family: var(--apple-font-family);
@@ -92,7 +119,7 @@ body {
     border-radius: var(--apple-radius);
     box-shadow: var(--apple-shadow);
     transition: all 0.3s ease;
-    background-color: var(--apple-background);
+    background-color: var(--apple-tertiary-background);
     overflow: hidden;
 }
 
@@ -102,7 +129,7 @@ body {
 }
 
 .card-header {
-    background-color: var(--apple-background);
+    background-color: var(--apple-tertiary-background);
     border-bottom: 1px solid var(--apple-light-gray);
     padding: var(--apple-spacing) var(--apple-spacing-large);
     font-weight: 600;
@@ -581,14 +608,14 @@ body {
     border: none;
     border-radius: var(--apple-radius-large);
     box-shadow: var(--apple-shadow-hover);
-    background-color: var(--apple-background);
+    background-color: var(--apple-tertiary-background);
     overflow: hidden;
 }
 
 .modal-header {
     border-bottom: 1px solid var(--apple-light-gray);
     padding: var(--apple-spacing-large);
-    background-color: var(--apple-background);
+    background-color: var(--apple-tertiary-background);
 }
 
 .modal-title {
@@ -604,7 +631,7 @@ body {
 .modal-footer {
     border-top: 1px solid var(--apple-light-gray);
     padding: var(--apple-spacing) var(--apple-spacing-large);
-    background-color: var(--apple-background);
+    background-color: var(--apple-tertiary-background);
 }
 
 .btn-close {
@@ -706,4 +733,20 @@ body {
 .btn-secondary:hover {
     background-color: var(--apple-light-gray);
     transform: translateY(-1px);
+}
+
+/* 主题切换按钮样式 */
+.theme-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    border-radius: var(--apple-radius-small);
+    border: 1px solid var(--apple-light-gray);
+    background-color: transparent;
+    color: var(--apple-label);
+}
+
+.theme-toggle-btn:hover {
+    background-color: rgba(255, 255, 255, 0.06);
 }

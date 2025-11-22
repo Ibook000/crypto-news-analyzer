@@ -134,8 +134,8 @@ if __name__ == "__main__":
         print(f"作者: {article['author']}")
         print(f"分类: {article['categories']}")
         print(f"摘要: {article['description'][:100]}...")
-        extractor = ContentExtractor()
-        full_content = extractor.extract_full_content(article['link'])
+        from fetchers.context_extractor import extract_with_trafilatura
+        full_content = extract_with_trafilatura(article['link'])
         if full_content:
             print(f"完整内容: {full_content}")
         else:

@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Web服务器启动脚本
 用于启动FastAPI后端服务和静态文件服务

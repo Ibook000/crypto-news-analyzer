@@ -1,34 +1,56 @@
 import sys
 import os
+import threading
+import time
+import schedule
+import uvicorn
 
-# 添加项目根目录到 Python 路径
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from utils.fetch_and_save import fetch_and_save, logger
-import schedule
-import time
+from utils.ai_processor import process_unprocessed_articles
+from config.config import (
+    FETCH_INTERVAL_MINUTES,
+    PROCESS_INTERVAL_MINUTES,
+    PROCESS_BATCH_SIZE,
+    PROCESS_DELAY_SEC,
+)
+
+_lock = threading.Lock()
+
+def drain_unprocessed():
+    if not _lock.acquire(blocking=False):
+        return
+    try:
+        loops = 0
+        while loops < 10:
+            result = process_unprocessed_articles(
+                batch_size=PROCESS_BATCH_SIZE,
+                delay=PROCESS_DELAY_SEC,
+            )
+            if not result or result.get("processed", 0) == 0:
+                break
+            loops += 1
+    finally:
+        _lock.release()
+
+def run_api():
+    p = int(os.getenv("PORT", "8002"))
+    uvicorn.run("web.api_server:app", host="0.0.0.0", port=p, log_level="info")
 
 def main():
-    """主函数：启动加密货币新闻抓取服务"""
-    logger.info("🚀 加密货币新闻分析器启动")
-    
-    # 立即执行一次抓取
-    logger.info("📰 执行首次新闻抓取...")
+    logger.info("启动主入口")
+    api_thread = threading.Thread(target=run_api, daemon=True)
+    api_thread.start()
     fetch_and_save()
-    
-    # 配置定时任务，每小时执行一次
-    schedule.every(1).hours.do(fetch_and_save)
-    logger.info("⏰ 定时任务已配置: 每小时执行一次")
-    
+    schedule.every(FETCH_INTERVAL_MINUTES).minutes.do(fetch_and_save)
+    schedule.every(PROCESS_INTERVAL_MINUTES).minutes.do(drain_unprocessed)
     try:
         while True:
             schedule.run_pending()
-            time.sleep(60)  # 每分钟检查一次任务
+            time.sleep(60)
     except KeyboardInterrupt:
-        logger.info("👋 新闻定时抓取服务已停止")
-    except Exception as e:
-        logger.error(f"❌ 服务异常终止: {e}")
-        raise
+        pass
 
 if __name__ == "__main__":
     main()

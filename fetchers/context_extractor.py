@@ -1,13 +1,18 @@
-import trafilatura
 import logging
 from typing import Optional
+try:
+    import trafilatura
+    _TRAFILATURA_AVAILABLE = True
+except Exception:
+    _TRAFILATURA_AVAILABLE = False
 
 
 logger = logging.getLogger(__name__)
 
 
 def extract_with_trafilatura(url: str) -> Optional[str]:
-    """使用trafilatura提取"""
+    if not _TRAFILATURA_AVAILABLE:
+        return None
     try:
         downloaded = trafilatura.fetch_url(url)
         if downloaded:
@@ -21,12 +26,9 @@ def extract_with_trafilatura(url: str) -> Optional[str]:
                 include_images=False,
                 output_format="txt"
             )
-            logger.info(f"成功提取 {url} 的内容")
             return content
         return None
-        
-    except Exception as e:
-        logger.warning(f"trafilatura提取失败 {url}: {e}")
+    except Exception:
         return None
 
 if __name__ == "__main__":

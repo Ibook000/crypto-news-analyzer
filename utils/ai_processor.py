@@ -9,7 +9,13 @@ import logging
 from typing import List, Dict, Any
 from database.operations import Database
 from ai.SentimentAnalyzer import SentimentAnalyzer
-from fetchers.context_extractor import extract_with_trafilatura
+try:
+    # 优先使用抓取器抽取正文
+    from fetchers.context_extractor import extract_with_trafilatura
+except Exception:
+    # 当依赖未安装或导入失败时，提供降级函数，返回None
+    def extract_with_trafilatura(url: str):
+        return None
 from config.config import DB_URL
 import time
 # 配置日志
@@ -17,7 +23,7 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('ai_processor.log'),
+        logging.FileHandler('ai_processor.log', encoding='utf-8'),
         logging.StreamHandler()
     ]
 )
@@ -41,7 +47,7 @@ def process_unprocessed_articles(batch_size, delay: float = 1.0) -> Dict[str, An
     analyzer = SentimentAnalyzer()
     
     # 获取未处理的文章
-    unprocessed_articles = db.get_unprocessed_articles()
+    unprocessed_articles = db.get_unprocessed_articles(limit=batch_size)
     
     if not unprocessed_articles:
         logger.info("没有需要处理的文章")

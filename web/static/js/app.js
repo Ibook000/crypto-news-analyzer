@@ -7,11 +7,21 @@ let currentFilters = {};
 // DOM加载完成后执行
 document.addEventListener('DOMContentLoaded', function() {
     // 初始化页面
+    initializeTheme();
     initializePage();
     
     // 绑定事件
     bindEvents();
 });
+
+function escapeHTML(s) {
+    if (s === null || s === undefined) return '';
+    return String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[m]));
+}
+
+function isSafeHttpUrl(u) {
+    try { return /^https?:\/\//i.test(u || ''); } catch { return false; }
+}
 
 // 初始化页面
 async function initializePage() {
@@ -48,6 +58,57 @@ function bindEvents() {
         e.preventDefault();
         // 可以在这里添加统计页面逻辑
     });
+
+    // 处理未AI文章按钮
+    const processBtn = document.getElementById('process-unprocessed-btn');
+    if (processBtn) {
+        processBtn.addEventListener('click', handleProcessUnprocessed);
+    }
+
+    // 即时抓取按钮
+    const fetchBtn = document.getElementById('fetch-latest-btn');
+    if (fetchBtn) {
+        fetchBtn.addEventListener('click', handleFetchLatestProgress);
+    }
+
+    // 主题切换按钮
+    const themeBtn = document.getElementById('theme-toggle');
+    if (themeBtn) {
+        themeBtn.addEventListener('click', toggleTheme);
+    }
+}
+
+// 初始化主题（支持暗色/亮色切换）
+function initializeTheme() {
+    try {
+        const saved = localStorage.getItem('theme');
+        const theme = saved === 'light' || saved === 'dark' ? saved : 'dark';
+        applyTheme(theme);
+    } catch (e) {
+        applyTheme('dark');
+    }
+}
+
+// 应用主题到根元素并更新切换按钮文案
+function applyTheme(theme) {
+    const root = document.documentElement;
+    root.setAttribute('data-theme', theme);
+    const icon = document.getElementById('theme-toggle-icon');
+    const text = document.getElementById('theme-toggle-text');
+    if (icon) {
+        icon.className = theme === 'dark' ? 'bi bi-moon' : 'bi bi-sun';
+    }
+    if (text) {
+        text.textContent = theme === 'dark' ? '暗色' : '亮色';
+    }
+}
+
+// 切换主题并持久化
+function toggleTheme() {
+    const current = document.documentElement.getAttribute('data-theme') || 'dark';
+    const next = current === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
+    try { localStorage.setItem('theme', next); } catch {}
 }
 
 // 加载统计数据
@@ -63,6 +124,110 @@ async function loadStats() {
         document.getElementById('neutral-sentiment').textContent = stats.sentiment_stats.neutral || 0;
     } catch (error) {
         console.error('加载统计数据失败:', error);
+    }
+}
+
+// 触发服务端处理未经过AI的文章（带进度）
+async function handleProcessUnprocessed() {
+    const btn = document.getElementById('process-unprocessed-btn');
+    const modalEl = document.getElementById('taskModal');
+    if (!btn || !modalEl || typeof bootstrap === 'undefined') return;
+    const originalHTML = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '<span class="spinner-border spinner-border-sm me-1" role="status" aria-hidden="true"></span> 处理中…';
+
+    const bar = document.getElementById('task-progress-bar');
+    const status = document.getElementById('task-status');
+    const modal = new bootstrap.Modal(modalEl);
+    bar.className = 'progress-bar progress-bar-striped progress-bar-animated';
+    bar.style.width = '0%';
+    bar.textContent = '0%';
+    status.textContent = '正在计算未处理文章总数…';
+    modal.show();
+
+    try {
+        const statsResp = await fetch('/api/stats');
+        const stats = await statsResp.json();
+        const totalUnprocessed = stats.unprocessed_articles || 0;
+        if (totalUnprocessed <= 0) {
+            status.textContent = '没有未处理文章';
+            bar.className = 'progress-bar';
+            bar.style.width = '100%';
+            bar.textContent = '100%';
+            return;
+        }
+        status.textContent = `待处理 ${totalUnprocessed} 篇文章…`;
+
+        let processedSum = 0;
+        const batchSize = 10;
+        const maxLoops = Math.ceil(totalUnprocessed / batchSize) + 5;
+        for (let i = 0; i < maxLoops; i++) {
+            const resp = await fetch('/api/process-unprocessed', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ batch_size: batchSize, delay: 0 })
+            });
+            if (!resp.ok) throw new Error(`HTTP错误: ${resp.status} ${resp.statusText}`);
+            const data = await resp.json();
+            const processed = Number(data.processed || 0);
+            processedSum += processed;
+            const pct = Math.min(100, Math.round((processedSum / totalUnprocessed) * 100));
+            bar.className = 'progress-bar';
+            bar.style.width = pct + '%';
+            bar.textContent = pct + '%';
+            status.textContent = `已处理 ${processedSum}/${totalUnprocessed} 篇…`;
+            if (processed === 0 || processedSum >= totalUnprocessed) break;
+        }
+        status.textContent = '处理完成，刷新数据…';
+        await loadStats();
+        await loadArticles();
+    } catch (error) {
+        console.error('处理未AI文章失败:', error);
+        status.textContent = '处理失败：' + error.message;
+        bar.className = 'progress-bar bg-danger';
+    } finally {
+        btn.disabled = false;
+        btn.innerHTML = originalHTML;
+        setTimeout(() => { try { const m = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl); m.hide(); } catch {} }, 1200);
+    }
+}
+
+// 即时抓取（带进度）
+async function handleFetchLatestProgress() {
+    const btn = document.getElementById('fetch-latest-btn');
+    const modalEl = document.getElementById('taskModal');
+    if (!btn || !modalEl || typeof bootstrap === 'undefined') return;
+    const originalHTML = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '<span class="spinner-border spinner-border-sm me-1" role="status" aria-hidden="true"></span> 抓取中…';
+
+    const bar = document.getElementById('task-progress-bar');
+    const status = document.getElementById('task-status');
+    const modal = new bootstrap.Modal(modalEl);
+    bar.className = 'progress-bar progress-bar-striped progress-bar-animated';
+    bar.style.width = '25%';
+    bar.textContent = '';
+    status.textContent = '正在抓取最新新闻…';
+    modal.show();
+
+    try {
+        const resp = await fetch('/api/fetch-latest', { method: 'POST' });
+        if (!resp.ok) throw new Error(`HTTP错误: ${resp.status} ${resp.statusText}`);
+        const data = await resp.json();
+        bar.className = 'progress-bar';
+        bar.style.width = '100%';
+        bar.textContent = '100%';
+        status.textContent = `抓取完成：文章总数 ${data.total_articles}，未处理 ${data.unprocessed_articles}`;
+        await loadStats();
+        await loadArticles();
+    } catch (error) {
+        console.error('即时抓取失败:', error);
+        status.textContent = '抓取失败：' + error.message;
+        bar.className = 'progress-bar bg-danger';
+    } finally {
+        btn.disabled = false;
+        btn.innerHTML = originalHTML;
+        setTimeout(() => { try { const m = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl); m.hide(); } catch {} }, 1200);
     }
 }
 
@@ -275,12 +440,12 @@ function createArticleCard(article) {
                 </div>
                 
                 <div class="article-summary">
-                    ${article.summary ? article.summary : '无摘要'}
+                    ${escapeHTML(article.summary || '无摘要')}
                 </div>
                 
                 ${article.chinese_summary ? `
                     <div class="article-chinese-summary">
-                        <strong>中文摘要:</strong> ${article.chinese_summary}
+                        <strong>中文摘要:</strong> ${escapeHTML(article.chinese_summary)}
                     </div>
                 ` : ''}
                 
@@ -418,12 +583,13 @@ async function showArticleDetails(articleId) {
         console.log('生成的HTML:', detailHTML);
         modalBody.innerHTML = detailHTML;
         
-        // 设置原文链接
-        if (article.link) {
-            document.getElementById('article-link').href = article.link;
-            document.getElementById('article-link').style.display = 'inline-block';
+        const linkEl = document.getElementById('article-link');
+        if (isSafeHttpUrl(article.link)) {
+            linkEl.href = article.link;
+            linkEl.style.display = 'inline-block';
         } else {
-            document.getElementById('article-link').style.display = 'none';
+            linkEl.removeAttribute('href');
+            linkEl.style.display = 'none';
         }
         
         // 显示模态框
@@ -487,13 +653,13 @@ function createArticleDetailHTML(article) {
     return `
         <div class="article-detail-section">
             <div class="article-detail-title">标题</div>
-            <div>${title}</div>
+            <div>${escapeHTML(title)}</div>
         </div>
         
         <div class="article-detail-section">
             <div class="article-detail-title">来源</div>
             <div>
-                <span class="source-badge">${source}</span>
+                <span class="source-badge">${escapeHTML(source)}</span>
                 ${article.author ? `<span class="ms-2">作者: ${article.author}</span>` : ''}
             </div>
         </div>
@@ -505,20 +671,20 @@ function createArticleDetailHTML(article) {
         
         <div class="article-detail-section">
             <div class="article-detail-title">摘要</div>
-            <div>${summary}</div>
+            <div>${escapeHTML(summary)}</div>
         </div>
         
         ${article.chinese_summary !== null && article.chinese_summary !== undefined && article.chinese_summary.trim() !== '' ? `
             <div class="article-detail-section">
                 <div class="article-detail-title">中文摘要</div>
-                <div>${article.chinese_summary}</div>
+                <div>${escapeHTML(article.chinese_summary)}</div>
             </div>
         ` : ''}
         
         ${article.content !== null && article.content !== undefined && article.content.trim() !== '' ? `
             <div class="article-detail-section">
                 <div class="article-detail-title">内容</div>
-                <div>${article.content}</div>
+                <div>${escapeHTML(article.content)}</div>
             </div>
         ` : `
             <div class="article-detail-section">
