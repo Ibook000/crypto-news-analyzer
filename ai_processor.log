@@ -382,3 +382,263 @@
 2025-11-18 10:21:11,226 - database.operations - INFO - �ɹ��������� https://cointelegraph.com/news/corporate-bitcoin-holdings-decentralization-debate
 2025-11-18 10:21:11,226 - __main__ - INFO - ���� ID https://cointelegraph.com/news/corporate-bitcoin-holdings-decentralization-debate �����ɹ�
 2025-11-18 10:21:12,228 - __main__ - INFO - �������: �ܼ� 20 ƪ���ɹ� 20 ƪ��ʧ�� 0 ƪ
+2025-11-22 23:25:01,165 - database.operations - INFO - 当前表中的列: ['id', 'source', 'title', 'link', 'summary', 'published', 'content', 'author', 'sentiment', 'sentiment_score', 'chinese_summary', 'keywords', 'created_at', 'updated_at', 'ai_processed']
+2025-11-22 23:25:01,166 - database.operations - INFO - 列 sentiment 已存在，跳过
+2025-11-22 23:25:01,166 - database.operations - INFO - 列 sentiment_score 已存在，跳过
+2025-11-22 23:25:01,166 - database.operations - INFO - 列 chinese_summary 已存在，跳过
+2025-11-22 23:25:01,166 - database.operations - INFO - 列 keywords 已存在，跳过
+2025-11-22 23:25:01,167 - database.operations - INFO - 列 created_at 已存在，跳过
+2025-11-22 23:25:01,167 - database.operations - INFO - 列 updated_at 已存在，跳过
+2025-11-22 23:25:01,167 - database.operations - INFO - 列 ai_processed 已存在，跳过
+2025-11-22 23:25:01,167 - database.operations - INFO - 数据库迁移完成
+2025-11-22 23:25:01,167 - web.api_server - INFO - 数据库连接成功
+2025-11-22 23:25:56,832 - database.operations - INFO - 当前表中的列: ['id', 'source', 'title', 'link', 'summary', 'published', 'content', 'author', 'sentiment', 'sentiment_score', 'chinese_summary', 'keywords', 'created_at', 'updated_at', 'ai_processed']
+2025-11-22 23:25:56,832 - database.operations - INFO - 列 sentiment 已存在，跳过
+2025-11-22 23:25:56,832 - database.operations - INFO - 列 sentiment_score 已存在，跳过
+2025-11-22 23:25:56,833 - database.operations - INFO - 列 chinese_summary 已存在，跳过
+2025-11-22 23:25:56,833 - database.operations - INFO - 列 keywords 已存在，跳过
+2025-11-22 23:25:56,833 - database.operations - INFO - 列 created_at 已存在，跳过
+2025-11-22 23:25:56,834 - database.operations - INFO - 列 updated_at 已存在，跳过
+2025-11-22 23:25:56,834 - database.operations - INFO - 列 ai_processed 已存在，跳过
+2025-11-22 23:25:56,834 - database.operations - INFO - 数据库迁移完成
+2025-11-22 23:25:56,834 - __main__ - INFO - 数据库连接成功
+2025-11-22 23:26:05,775 - database.operations - INFO - 当前表中的列: ['id', 'source', 'title', 'link', 'summary', 'published', 'content', 'author', 'sentiment', 'sentiment_score', 'chinese_summary', 'keywords', 'created_at', 'updated_at', 'ai_processed']
+2025-11-22 23:26:05,775 - database.operations - INFO - 列 sentiment 已存在，跳过
+2025-11-22 23:26:05,776 - database.operations - INFO - 列 sentiment_score 已存在，跳过
+2025-11-22 23:26:05,776 - database.operations - INFO - 列 chinese_summary 已存在，跳过
+2025-11-22 23:26:05,776 - database.operations - INFO - 列 keywords 已存在，跳过
+2025-11-22 23:26:05,776 - database.operations - INFO - 列 created_at 已存在，跳过
+2025-11-22 23:26:05,776 - database.operations - INFO - 列 updated_at 已存在，跳过
+2025-11-22 23:26:05,776 - database.operations - INFO - 列 ai_processed 已存在，跳过
+2025-11-22 23:26:05,776 - database.operations - INFO - 数据库迁移完成
+2025-11-22 23:26:05,776 - web.api_server - INFO - 数据库连接成功
+2025-11-22 23:27:30,161 - utils.ai_processor - INFO - 开始处理未处理的新闻文章...
+2025-11-22 23:27:30,164 - database.operations - INFO - 当前表中的列: ['id', 'source', 'title', 'link', 'summary', 'published', 'content', 'author', 'sentiment', 'sentiment_score', 'chinese_summary', 'keywords', 'created_at', 'updated_at', 'ai_processed']
+2025-11-22 23:27:30,164 - database.operations - INFO - 列 sentiment 已存在，跳过
+2025-11-22 23:27:30,164 - database.operations - INFO - 列 sentiment_score 已存在，跳过
+2025-11-22 23:27:30,164 - database.operations - INFO - 列 chinese_summary 已存在，跳过
+2025-11-22 23:27:30,164 - database.operations - INFO - 列 keywords 已存在，跳过
+2025-11-22 23:27:30,164 - database.operations - INFO - 列 created_at 已存在，跳过
+2025-11-22 23:27:30,165 - database.operations - INFO - 列 updated_at 已存在，跳过
+2025-11-22 23:27:30,165 - database.operations - INFO - 列 ai_processed 已存在，跳过
+2025-11-22 23:27:30,165 - database.operations - INFO - 数据库迁移完成
+2025-11-22 23:27:31,710 - database.operations - INFO - 成功获取 8 篇未处理的文章
+2025-11-22 23:27:31,711 - utils.ai_processor - INFO - 找到 8 篇未处理的文章
+2025-11-22 23:27:31,711 - utils.ai_processor - INFO - 正在处理文章 ID https://cointelegraph.com/news/crypto-etps-largest-outflows-since-february-global-trends: Crypto ETPs see biggest weekly outflows since Febr...
+2025-11-22 23:27:42,686 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-22 23:27:42,709 - ai.SentimentAnalyzer - INFO - 情感分析完成: negative (-0.72) - 加密ETP单周流出20亿美元创2月以来新高，连续三周累计32亿；美区占97%，BTC与ETH产品分别失血14亿和7亿美元，AUM较高点蒸发27%。资金转投多资产与做空比特币ETP，显示避险情绪升温。
+2025-11-22 23:27:42,744 - database.operations - INFO - 成功更新文章 https://cointelegraph.com/news/crypto-etps-largest-outflows-since-february-global-trends
+2025-11-22 23:27:42,745 - utils.ai_processor - INFO - 文章 ID https://cointelegraph.com/news/crypto-etps-largest-outflows-since-february-global-trends 处理成功
+2025-11-22 23:27:43,246 - utils.ai_processor - INFO - 正在处理文章 ID https://cointelegraph.com/news/singapore-exchange-bitcoin-ether-perpetual-futures-institutional-demand: Singapore’s SGX to launch Bitcoin and Ether perps ...
+2025-11-22 23:27:52,358 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-22 23:27:52,362 - ai.SentimentAnalyzer - INFO - 情感分析完成: positive (0.68) - 新加坡交易所SGX将于11月24日上线受MAS监管的BTC与ETH永续期货，面向合格机构投资者，标志着主流 TradFi 平台加码数字资产，强化亚洲机构资金合规入口，提振市场信心。
+2025-11-22 23:27:52,389 - database.operations - INFO - 成功更新文章 https://cointelegraph.com/news/singapore-exchange-bitcoin-ether-perpetual-futures-institutional-demand
+2025-11-22 23:27:52,390 - utils.ai_processor - INFO - 文章 ID https://cointelegraph.com/news/singapore-exchange-bitcoin-ether-perpetual-futures-institutional-demand 处理成功
+2025-11-22 23:27:52,892 - utils.ai_processor - INFO - 正在处理文章 ID https://cointelegraph.com/news/btc-price-bull-market-lost-5-things-bitcoin-this-week: BTC price bull market lost? 5 things to know in Bi...
+2025-11-22 23:28:05,574 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-22 23:28:05,577 - ai.SentimentAnalyzer - INFO - 情感分析完成: negative (-0.72) - 比特币跌破50周均线与年初开盘价，CME缺口91.8k-92.7k未回补，情绪指数跌至10/100“极度恐慌”，与纳指高相关而与黄金脱钩，市场担忧牛市终结，短期关键支撑88k-90k。
+2025-11-22 23:28:05,606 - database.operations - INFO - 成功更新文章 https://cointelegraph.com/news/btc-price-bull-market-lost-5-things-bitcoin-this-week
+2025-11-22 23:28:05,608 - utils.ai_processor - INFO - 文章 ID https://cointelegraph.com/news/btc-price-bull-market-lost-5-things-bitcoin-this-week 处理成功
+2025-11-22 23:28:06,110 - utils.ai_processor - INFO - 正在处理文章 ID https://cointelegraph.com/news/ubs-ant-tokenized-deposits-cross-border-payments: UBS and Ant bet on blockchain to break bottleneck ...
+2025-11-22 23:28:14,996 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-22 23:28:14,998 - ai.SentimentAnalyzer - INFO - 情感分析完成: positive (0.65) - 瑞银与蚂蚁国际合作试点代币化存款，用于实时跨境支付与全球流动性管理，直接利好区块链在机构级支付场景的落地，强化市场对“许可链+代币化银行货币”的信心，短线提振以太坊等公链及RWA概念代币情绪。
+2025-11-22 23:28:15,035 - database.operations - INFO - 成功更新文章 https://cointelegraph.com/news/ubs-ant-tokenized-deposits-cross-border-payments
+2025-11-22 23:28:15,041 - utils.ai_processor - INFO - 文章 ID https://cointelegraph.com/news/ubs-ant-tokenized-deposits-cross-border-payments 处理成功
+2025-11-22 23:28:15,542 - utils.ai_processor - INFO - 正在处理文章 ID https://cointelegraph.com/news/bitcoin-95-percent-supply-milestone-scarcity-maturity: 95% of Bitcoin has now been mined: Here’s why it’s...
+2025-11-22 23:28:25,041 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-22 23:28:25,044 - ai.SentimentAnalyzer - INFO - 情感分析完成: neutral (0.05) - 比特币流通量已达2100万上限的95%，凸显其稀缺性与抗通胀属性，但分析师普遍认为这一里程碑更多是叙事强化而非即时价格催化剂，市场早已预期该变化，矿工经济模型长期将转向依赖交易费。
+2025-11-22 23:28:25,074 - database.operations - INFO - 成功更新文章 https://cointelegraph.com/news/bitcoin-95-percent-supply-milestone-scarcity-maturity
+2025-11-22 23:28:25,075 - utils.ai_processor - INFO - 文章 ID https://cointelegraph.com/news/bitcoin-95-percent-supply-milestone-scarcity-maturity 处理成功
+2025-11-22 23:28:25,578 - utils.ai_processor - INFO - 正在处理文章 ID https://cointelegraph.com/news/bitcoin-quantum-threat-decades-post-quantum-migration: Adam Back: Bitcoin faces no quantum risk for next ...
+2025-11-22 23:28:34,458 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-22 23:28:34,462 - ai.SentimentAnalyzer - INFO - 情感分析完成: positive (0.68) - 比特币早期密码学家Adam Back表示，量子计算在未来20–40年内不会对比特币构成实质威胁，且已有NIST后量子加密标准可提前部署，缓解市场对量子风险的担忧。
+2025-11-22 23:28:34,490 - database.operations - INFO - 成功更新文章 https://cointelegraph.com/news/bitcoin-quantum-threat-decades-post-quantum-migration
+2025-11-22 23:28:34,490 - utils.ai_processor - INFO - 文章 ID https://cointelegraph.com/news/bitcoin-quantum-threat-decades-post-quantum-migration 处理成功
+2025-11-22 23:28:34,992 - utils.ai_processor - INFO - 正在处理文章 ID https://cointelegraph.com/news/bitcoin-etf-outflows-1-1b-mini-bear-market-fears: Bitcoin ETFs bleed $1.1B as analysts warn of ‘mini...
+2025-11-22 23:28:45,787 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-22 23:28:45,789 - ai.SentimentAnalyzer - INFO - 情感分析完成: negative (-0.72) - 美国现货比特币ETF连续三周净流出，上周失血11亿美元，创史上第四大单周流出；BTC周跌幅近10%，Matrixport称市场正进入“迷你”熊市，缺乏增量催化剂，宏观与政策前景成唯一指望。
+2025-11-22 23:28:45,815 - database.operations - INFO - 成功更新文章 https://cointelegraph.com/news/bitcoin-etf-outflows-1-1b-mini-bear-market-fears
+2025-11-22 23:28:45,816 - utils.ai_processor - INFO - 文章 ID https://cointelegraph.com/news/bitcoin-etf-outflows-1-1b-mini-bear-market-fears 处理成功
+2025-11-22 23:28:46,320 - utils.ai_processor - INFO - 正在处理文章 ID https://cointelegraph.com/news/ecb-stablecoin-shock-monetary-policy-risk-2025: Stablecoin panic could upend ECB policy, Dutch cen...
+2025-11-22 23:28:55,470 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-22 23:28:55,473 - ai.SentimentAnalyzer - INFO - 情感分析完成: negative (-0.55) - 荷兰央行行长警告：美元稳定币若出现脱锚，可能迫使欧洲央行因金融稳定风险而调整货币政策，并引发资产抛售与通胀冲击；官员呼吁加速数字欧元以对冲美元稳定币主导地位。
+2025-11-22 23:28:56,006 - database.operations - INFO - 成功更新文章 https://cointelegraph.com/news/ecb-stablecoin-shock-monetary-policy-risk-2025
+2025-11-22 23:28:56,008 - utils.ai_processor - INFO - 文章 ID https://cointelegraph.com/news/ecb-stablecoin-shock-monetary-policy-risk-2025 处理成功
+2025-11-22 23:28:56,509 - utils.ai_processor - INFO - 处理完成: 总计 8 篇，成功 8 篇，失败 0 篇
+2025-11-22 23:51:12,631 - database.operations - INFO - 当前表中的列: ['id', 'source', 'title', 'link', 'summary', 'published', 'content', 'author', 'sentiment', 'sentiment_score', 'chinese_summary', 'keywords', 'created_at', 'updated_at', 'ai_processed']
+2025-11-22 23:51:12,632 - database.operations - INFO - 列 sentiment 已存在，跳过
+2025-11-22 23:51:12,632 - database.operations - INFO - 列 sentiment_score 已存在，跳过
+2025-11-22 23:51:12,633 - database.operations - INFO - 列 chinese_summary 已存在，跳过
+2025-11-22 23:51:12,633 - database.operations - INFO - 列 keywords 已存在，跳过
+2025-11-22 23:51:12,634 - database.operations - INFO - 列 created_at 已存在，跳过
+2025-11-22 23:51:12,634 - database.operations - INFO - 列 updated_at 已存在，跳过
+2025-11-22 23:51:12,634 - database.operations - INFO - 列 ai_processed 已存在，跳过
+2025-11-22 23:51:12,635 - database.operations - INFO - 数据库迁移完成
+2025-11-22 23:51:12,635 - web.api_server - INFO - 数据库连接成功
+2025-11-22 23:51:18,071 - database.operations - INFO - 当前表中的列: ['id', 'source', 'title', 'link', 'summary', 'published', 'content', 'author', 'sentiment', 'sentiment_score', 'chinese_summary', 'keywords', 'created_at', 'updated_at', 'ai_processed']
+2025-11-22 23:51:18,072 - database.operations - INFO - 列 sentiment 已存在，跳过
+2025-11-22 23:51:18,073 - database.operations - INFO - 列 sentiment_score 已存在，跳过
+2025-11-22 23:51:18,074 - database.operations - INFO - 列 chinese_summary 已存在，跳过
+2025-11-22 23:51:18,075 - database.operations - INFO - 列 keywords 已存在，跳过
+2025-11-22 23:51:18,076 - database.operations - INFO - 列 created_at 已存在，跳过
+2025-11-22 23:51:18,076 - database.operations - INFO - 列 updated_at 已存在，跳过
+2025-11-22 23:51:18,077 - database.operations - INFO - 列 ai_processed 已存在，跳过
+2025-11-22 23:51:18,078 - database.operations - INFO - 数据库迁移完成
+2025-11-22 23:51:18,078 - web.api_server - INFO - 数据库连接成功
+2025-11-22 23:52:08,487 - utils.ai_processor - INFO - 开始处理未处理的新闻文章...
+2025-11-22 23:52:08,489 - database.operations - INFO - 当前表中的列: ['id', 'source', 'title', 'link', 'summary', 'published', 'content', 'author', 'sentiment', 'sentiment_score', 'chinese_summary', 'keywords', 'created_at', 'updated_at', 'ai_processed']
+2025-11-22 23:52:08,490 - database.operations - INFO - 列 sentiment 已存在，跳过
+2025-11-22 23:52:08,490 - database.operations - INFO - 列 sentiment_score 已存在，跳过
+2025-11-22 23:52:08,490 - database.operations - INFO - 列 chinese_summary 已存在，跳过
+2025-11-22 23:52:08,490 - database.operations - INFO - 列 keywords 已存在，跳过
+2025-11-22 23:52:08,491 - database.operations - INFO - 列 created_at 已存在，跳过
+2025-11-22 23:52:08,491 - database.operations - INFO - 列 updated_at 已存在，跳过
+2025-11-22 23:52:08,491 - database.operations - INFO - 列 ai_processed 已存在，跳过
+2025-11-22 23:52:08,491 - database.operations - INFO - 数据库迁移完成
+2025-11-22 23:52:10,004 - database.operations - INFO - 成功获取 10 篇未处理的文章
+2025-11-22 23:52:10,005 - utils.ai_processor - INFO - 找到 10 篇未处理的文章
+2025-11-22 23:52:31,071 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/business/2025/11/22/uk-crime-network-worth-billions-used-crypto-to-funnel-drug-cash-to-russia-nca-says HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /business/2025/11/22/uk-crime-network-worth-billions-used-crypto-to-funnel-drug-cash-to-russia-nca-says (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000026C943470E0>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-22 23:52:31,072 - utils.ai_processor - WARNING - 文章 ID 64b970f6-be57-4955-bc34-974c16132b75 缺少标题或内容
+2025-11-22 23:52:31,072 - utils.ai_processor - INFO - 正在处理文章 ID 64b970f6-be57-4955-bc34-974c16132b75: UK Crime Network, Worth Billions, Used Crypto to F...
+2025-11-22 23:52:46,286 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-22 23:52:46,297 - ai.SentimentAnalyzer - INFO - 情感分析完成: negative (-0.65) - 英国国家犯罪局披露，一个价值数十亿英镑的犯罪网络利用加密货币将毒品资金转移至俄罗斯，强化监管担忧并利空市场情绪。
+2025-11-22 23:52:46,322 - database.operations - INFO - 成功更新文章 64b970f6-be57-4955-bc34-974c16132b75
+2025-11-22 23:52:46,323 - utils.ai_processor - INFO - 文章 ID 64b970f6-be57-4955-bc34-974c16132b75 处理成功
+2025-11-22 23:53:07,879 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/web3/2025/11/22/aerodrome-finance-hit-by-front-end-attack-users-urged-to-avoid-main-domain HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /web3/2025/11/22/aerodrome-finance-hit-by-front-end-attack-users-urged-to-avoid-main-domain (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000026C95C81BD0>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-22 23:53:07,880 - utils.ai_processor - WARNING - 文章 ID 1169a8a6-c388-4843-a273-eaef5f4570e2 缺少标题或内容
+2025-11-22 23:53:07,880 - utils.ai_processor - INFO - 正在处理文章 ID 1169a8a6-c388-4843-a273-eaef5f4570e2: Aerodrome Finance Hit by 'Front-End' Attack, Users...
+2025-11-22 23:53:18,526 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-22 23:53:18,532 - ai.SentimentAnalyzer - INFO - 情感分析完成: negative (-0.65) - Aerodrome Finance前端遭攻击，官方紧急提醒用户避开主域名，安全事件打击DeFi板块信心。
+2025-11-22 23:53:18,551 - database.operations - INFO - 成功更新文章 1169a8a6-c388-4843-a273-eaef5f4570e2
+2025-11-22 23:53:18,552 - utils.ai_processor - INFO - 文章 ID 1169a8a6-c388-4843-a273-eaef5f4570e2 处理成功
+2025-11-22 23:53:40,105 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/business/2025/11/22/turning-usd11k-to-half-a-billion-dollars-from-trading-memecoins-tales-from-a-crypto-wealth-manager HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /business/2025/11/22/turning-usd11k-to-half-a-billion-dollars-from-trading-memecoins-tales-from-a-crypto-wealth-manager (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000026C95C834D0>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-22 23:53:40,105 - utils.ai_processor - WARNING - 文章 ID e27867d9-6626-4e6f-b966-c1cf2740d5d6 缺少标题或内容
+2025-11-22 23:53:40,105 - utils.ai_processor - INFO - 正在处理文章 ID e27867d9-6626-4e6f-b966-c1cf2740d5d6: Turning ‘$11K to Half a Billion Dollars From Tradi...
+2025-11-22 23:53:57,937 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-22 23:53:57,939 - ai.SentimentAnalyzer - INFO - 情感分析完成: positive (0.65) - 加密财富经理分享将1.1万美元通过交易模因币滚至5亿美元的故事，强化散户对高波动模因币财富效应的FOMO情绪，短线资金或加速流入相关赛道。
+2025-11-22 23:53:57,960 - database.operations - INFO - 成功更新文章 e27867d9-6626-4e6f-b966-c1cf2740d5d6
+2025-11-22 23:53:57,960 - utils.ai_processor - INFO - 文章 ID e27867d9-6626-4e6f-b966-c1cf2740d5d6 处理成功
+2025-11-22 23:54:19,527 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/business/2025/11/14/bitcoin-treasuries-to-move-beyond-hodl-to-yield-hedging-and-share-buybacks-as-nav-discount-bites HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /business/2025/11/14/bitcoin-treasuries-to-move-beyond-hodl-to-yield-hedging-and-share-buybacks-as-nav-discount-bites (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000026C95C839D0>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-22 23:54:19,528 - utils.ai_processor - WARNING - 文章 ID b596f220-5e67-4a68-8a69-f2e026aaae50 缺少标题或内容
+2025-11-22 23:54:19,528 - utils.ai_processor - INFO - 正在处理文章 ID b596f220-5e67-4a68-8a69-f2e026aaae50: Bitcoin Treasuries to Move Beyond HODL to Yield, H...
+2025-11-22 23:54:31,513 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-22 23:54:31,514 - ai.SentimentAnalyzer - INFO - 情感分析完成: positive (0.65) - 持有大量比特币的上市公司因净资产折价压力，开始探索质押收益、对冲及股票回购等新策略，有望激活沉睡筹码并提升市场对比特币金融化应用的预期。
+2025-11-22 23:54:31,534 - database.operations - INFO - 成功更新文章 b596f220-5e67-4a68-8a69-f2e026aaae50
+2025-11-22 23:54:31,534 - utils.ai_processor - INFO - 文章 ID b596f220-5e67-4a68-8a69-f2e026aaae50 处理成功
+2025-11-22 23:54:53,108 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/22/bitcoin-greed-and-fear-index-shows-extreme-pessimism-tactical-bottom-may-be-near HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/22/bitcoin-greed-and-fear-index-shows-extreme-pessimism-tactical-bottom-may-be-near (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000026C95C83ED0>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-22 23:54:53,109 - utils.ai_processor - WARNING - 文章 ID fa7644d2-8c7b-4d16-80f4-d5485b4865fe 缺少标题或内容
+2025-11-22 23:54:53,109 - utils.ai_processor - INFO - 正在处理文章 ID fa7644d2-8c7b-4d16-80f4-d5485b4865fe: Bitcoin Greed & Fear Index Shows Extreme Pessimism...
+2025-11-22 23:55:02,672 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-22 23:55:02,674 - ai.SentimentAnalyzer - INFO - 情感分析完成: positive (0.6) - 分析师指出比特币贪婪与恐惧指数显示极度悲观，暗示战术性底部或已临近。
+2025-11-22 23:55:02,699 - database.operations - INFO - 成功更新文章 fa7644d2-8c7b-4d16-80f4-d5485b4865fe
+2025-11-22 23:55:02,699 - utils.ai_processor - INFO - 文章 ID fa7644d2-8c7b-4d16-80f4-d5485b4865fe 处理成功
+2025-11-22 23:55:04,977 - utils.ai_processor - INFO - 正在处理文章 ID https://cointelegraph.com/news/bitcoin-s-death-cross-confirmation-signals-start-of-btc-bear-market: Bitcoin’s death cross confirmation may mean BTC is...
+2025-11-22 23:55:17,205 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-22 23:55:17,207 - ai.SentimentAnalyzer - INFO - 情感分析完成: negative (-0.82) - 比特币日线确认“死亡交叉”，同时跌破50周与100周均线，宏观上升趋势被否定；链上数据显示短期持有者恐慌割肉，7日已实现亏损超8亿美元，市场担忧重演2022年熊市，情绪极度悲观。
+2025-11-22 23:55:17,228 - database.operations - INFO - 成功更新文章 https://cointelegraph.com/news/bitcoin-s-death-cross-confirmation-signals-start-of-btc-bear-market
+2025-11-22 23:55:17,228 - utils.ai_processor - INFO - 文章 ID https://cointelegraph.com/news/bitcoin-s-death-cross-confirmation-signals-start-of-btc-bear-market 处理成功
+2025-11-22 23:55:18,435 - utils.ai_processor - INFO - 正在处理文章 ID https://cointelegraph.com/news/anchorage-digital-adds-hype-staking-support-through-partnership-figment: Anchorage Digital adds HYPE staking support throug...
+2025-11-22 23:55:35,455 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-22 23:55:35,456 - ai.SentimentAnalyzer - INFO - 情感分析完成: positive (0.68) - 美国唯一持联邦牌照的加密银行Anchorage Digital新增HYPE质押服务，并联手Figment提供验证器基础设施，同时覆盖HyperEVM与HyperCORE双链，强化对Hyperliquid生态的托管与收益入口。此举被视为机构级DeFi质押需求升温的最新信号，有望带动HYPE锁仓量与链上活跃度提升，并对同类型L1与质押资产产生情绪外溢。
+2025-11-22 23:55:35,477 - database.operations - INFO - 成功更新文章 https://cointelegraph.com/news/anchorage-digital-adds-hype-staking-support-through-partnership-figment
+2025-11-22 23:55:35,477 - utils.ai_processor - INFO - 文章 ID https://cointelegraph.com/news/anchorage-digital-adds-hype-staking-support-through-partnership-figment 处理成功
+2025-11-22 23:55:36,708 - utils.ai_processor - INFO - 正在处理文章 ID https://cointelegraph.com/news/bitcoin-rout-crypto-treasuries-reckoning-finance-redefined: Bitcoin rout continues as crypto treasuries face r...
+2025-11-22 23:55:51,536 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-22 23:55:51,538 - ai.SentimentAnalyzer - INFO - 情感分析完成: negative (-0.75) - 比特币连续四周下跌并创半年新低，全球最大企业ETH持仓公司BitMine浮亏37亿美元，企业加密资产库（DATs）因净资产值缩水融资困难且面临MSCI指数剔除风险，整体市场情绪低迷。
+2025-11-22 23:55:51,559 - database.operations - INFO - 成功更新文章 https://cointelegraph.com/news/bitcoin-rout-crypto-treasuries-reckoning-finance-redefined
+2025-11-22 23:55:51,559 - utils.ai_processor - INFO - 文章 ID https://cointelegraph.com/news/bitcoin-rout-crypto-treasuries-reckoning-finance-redefined 处理成功
+2025-11-22 23:55:52,752 - utils.ai_processor - INFO - 正在处理文章 ID https://cointelegraph.com/news/bitcoin-s-fastest-bear-market-hides-potentially-positive-year-end-outcome-for-btc: Bitcoin’s ‘fastest bear market’ hides potentially ...
+2025-11-22 23:56:08,337 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-22 23:56:08,339 - ai.SentimentAnalyzer - INFO - 情感分析完成: positive (0.62) - 比特币月内暴跌23%并带动加密总市值蒸发33%，创2022年以来最快熊市；但NFCI金融条件指数正快速走低，历史显示其领先BTC 4-6周，且12月美联储或变相注入流动性，宏观拐点或已临近，为年末反弹埋下伏笔。
+2025-11-22 23:56:08,361 - database.operations - INFO - 成功更新文章 https://cointelegraph.com/news/bitcoin-s-fastest-bear-market-hides-potentially-positive-year-end-outcome-for-btc
+2025-11-22 23:56:08,362 - utils.ai_processor - INFO - 文章 ID https://cointelegraph.com/news/bitcoin-s-fastest-bear-market-hides-potentially-positive-year-end-outcome-for-btc 处理成功
+2025-11-22 23:56:29,952 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/21/grayscale-s-doge-xrp-etfs-to-go-live-on-nyse-monday HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/21/grayscale-s-doge-xrp-etfs-to-go-live-on-nyse-monday (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000026C95C83890>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-22 23:56:29,952 - utils.ai_processor - WARNING - 文章 ID f0379a04-9223-4c49-a25b-adc5a8198610 缺少标题或内容
+2025-11-22 23:56:29,952 - utils.ai_processor - INFO - 正在处理文章 ID f0379a04-9223-4c49-a25b-adc5a8198610: Grayscale's DOGE, XRP ETFs to Go Live on NYSE Mond...
+2025-11-22 23:56:39,795 - httpx - INFO - HTTP Request: POST https://apis.iflow.cn/v1/chat/completions "HTTP/1.1 200 "
+2025-11-22 23:56:39,796 - ai.SentimentAnalyzer - INFO - 情感分析完成: positive (0.82) - 灰度宣布其DOGE与XRP现货ETF将于下周一在纽交所正式交易，为两大山寨币带来合规资金入口，短期情绪显著提振。
+2025-11-22 23:56:39,816 - database.operations - INFO - 成功更新文章 f0379a04-9223-4c49-a25b-adc5a8198610
+2025-11-22 23:56:39,816 - utils.ai_processor - INFO - 文章 ID f0379a04-9223-4c49-a25b-adc5a8198610 处理成功
+2025-11-22 23:56:40,317 - utils.ai_processor - INFO - 处理完成: 总计 10 篇，成功 10 篇，失败 0 篇
+2025-11-22 23:58:13,865 - database.operations - INFO - 当前表中的列: ['id', 'source', 'title', 'link', 'summary', 'published', 'content', 'author', 'sentiment', 'sentiment_score', 'chinese_summary', 'keywords', 'created_at', 'updated_at', 'ai_processed']
+2025-11-22 23:58:13,866 - database.operations - INFO - 列 sentiment 已存在，跳过
+2025-11-22 23:58:13,866 - database.operations - INFO - 列 sentiment_score 已存在，跳过
+2025-11-22 23:58:13,866 - database.operations - INFO - 列 chinese_summary 已存在，跳过
+2025-11-22 23:58:13,866 - database.operations - INFO - 列 keywords 已存在，跳过
+2025-11-22 23:58:13,867 - database.operations - INFO - 列 created_at 已存在，跳过
+2025-11-22 23:58:13,867 - database.operations - INFO - 列 updated_at 已存在，跳过
+2025-11-22 23:58:13,867 - database.operations - INFO - 列 ai_processed 已存在，跳过
+2025-11-22 23:58:13,867 - database.operations - INFO - 数据库迁移完成
+2025-11-22 23:58:13,868 - web.api_server - INFO - 数据库连接成功
+2025-11-23 00:01:08,987 - utils.fetch_and_save - INFO - 开始执行新闻抓取与保存任务...
+2025-11-23 00:01:08,991 - database.operations - INFO - 当前表中的列: ['id', 'source', 'title', 'link', 'summary', 'published', 'content', 'author', 'sentiment', 'sentiment_score', 'chinese_summary', 'keywords', 'created_at', 'updated_at', 'ai_processed']
+2025-11-23 00:01:08,991 - database.operations - INFO - 列 sentiment 已存在，跳过
+2025-11-23 00:01:08,991 - database.operations - INFO - 列 sentiment_score 已存在，跳过
+2025-11-23 00:01:08,992 - database.operations - INFO - 列 chinese_summary 已存在，跳过
+2025-11-23 00:01:08,992 - database.operations - INFO - 列 keywords 已存在，跳过
+2025-11-23 00:01:08,992 - database.operations - INFO - 列 created_at 已存在，跳过
+2025-11-23 00:01:08,993 - database.operations - INFO - 列 updated_at 已存在，跳过
+2025-11-23 00:01:08,993 - database.operations - INFO - 列 ai_processed 已存在，跳过
+2025-11-23 00:01:08,993 - database.operations - INFO - 数据库迁移完成
+2025-11-23 00:01:08,994 - utils.fetch_and_save - INFO - 数据库连接成功
+2025-11-23 00:01:08,994 - utils.fetch_and_save - INFO - 开始处理源: cointelegraph
+2025-11-23 00:01:08,994 - fetchers.rss_fetcher - INFO - 正在抓取: Cointelegraph - https://cointelegraph.com/rss
+2025-11-23 00:01:09,821 - fetchers.rss_fetcher - INFO - 成功抓取 30 篇文章从 Cointelegraph
+2025-11-23 00:01:09,821 - utils.fetch_and_save - INFO - 从 cointelegraph 抓取到 30 篇文章
+2025-11-23 00:01:32,377 - utils.fetch_and_save - INFO - 源 cointelegraph: 0/30 篇文章保存成功
+2025-11-23 00:01:32,377 - utils.fetch_and_save - INFO - 开始处理源: coindesk
+2025-11-23 00:01:32,377 - fetchers.rss_fetcher - INFO - 正在抓取: CoinDesk - https://www.coindesk.com/arc/outboundfeeds/rss/?outputType=xml
+2025-11-23 00:01:32,931 - fetchers.rss_fetcher - INFO - 成功抓取 25 篇文章从 CoinDesk
+2025-11-23 00:01:32,931 - utils.fetch_and_save - INFO - 从 coindesk 抓取到 25 篇文章
+2025-11-23 00:01:53,990 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/22/coinbase-negative-premium-at-widest-level-since-q1-signalling-weak-u-s-demand HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/22/coinbase-negative-premium-at-widest-level-since-q1-signalling-weak-u-s-demand (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000002032A33D090>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-23 00:01:54,008 - database.operations - INFO - 成功添加文章 ce80f568-d57f-4185-bd72-d43e7704d4a2 到数据库
+2025-11-23 00:02:15,053 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/business/2025/11/22/uk-crime-network-worth-billions-used-crypto-to-funnel-drug-cash-to-russia-nca-says HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /business/2025/11/22/uk-crime-network-worth-billions-used-crypto-to-funnel-drug-cash-to-russia-nca-says (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000002032A33D1D0>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-23 00:02:36,130 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/web3/2025/11/22/aerodrome-finance-hit-by-front-end-attack-users-urged-to-avoid-main-domain HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /web3/2025/11/22/aerodrome-finance-hit-by-front-end-attack-users-urged-to-avoid-main-domain (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000002032A33D590>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-23 00:02:57,203 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/business/2025/11/22/turning-usd11k-to-half-a-billion-dollars-from-trading-memecoins-tales-from-a-crypto-wealth-manager HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /business/2025/11/22/turning-usd11k-to-half-a-billion-dollars-from-trading-memecoins-tales-from-a-crypto-wealth-manager (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000002032A33D6D0>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-23 00:03:18,265 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/business/2025/11/14/bitcoin-treasuries-to-move-beyond-hodl-to-yield-hedging-and-share-buybacks-as-nav-discount-bites HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /business/2025/11/14/bitcoin-treasuries-to-move-beyond-hodl-to-yield-hedging-and-share-buybacks-as-nav-discount-bites (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000002032A33D810>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-23 00:03:39,310 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/22/bitcoin-greed-and-fear-index-shows-extreme-pessimism-tactical-bottom-may-be-near HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/22/bitcoin-greed-and-fear-index-shows-extreme-pessimism-tactical-bottom-may-be-near (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000002032A33D950>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-23 00:04:00,383 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/21/grayscale-s-doge-xrp-etfs-to-go-live-on-nyse-monday HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/21/grayscale-s-doge-xrp-etfs-to-go-live-on-nyse-monday (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000020329E07C50>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-23 00:04:21,453 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/21/icp-breaks-major-support-as-volume-spike-confirms-accelerated-downtrend HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/21/icp-breaks-major-support-as-volume-spike-confirms-accelerated-downtrend (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000002032A33DA90>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-23 00:04:42,517 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/business/2025/11/21/bitmine-immersion-sitting-on-usd4b-unrealized-loss-on-ether-bet-as-analyst-warns-of-structural-issues HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /business/2025/11/21/bitmine-immersion-sitting-on-usd4b-unrealized-loss-on-ether-bet-as-analyst-warns-of-structural-issues (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000020329E07C50>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-23 00:05:03,584 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/business/2025/11/21/japanese-bitcoin-treasury-firms-keep-beating-btc-tax-policy-makes-outperforming-u-s-peers-the-easy-part HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /business/2025/11/21/japanese-bitcoin-treasury-firms-keep-beating-btc-tax-policy-makes-outperforming-u-s-peers-the-easy-part (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000002032A27BD90>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-23 00:05:24,622 - trafilatura.downloads - ERROR - download error: https://www.coindesk.com/markets/2025/11/21/hbar-crashes-11-5-breaking-below-key-support-levels HTTPSConnectionPool(host='www.coindesk.com', port=443): Max retries exceeded with url: /markets/2025/11/21/hbar-crashes-11-5-breaking-below-key-support-levels (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000002032A27BED0>, 'Connection to www.coindesk.com timed out. (connect timeout=30)'))
+2025-11-23 00:27:59,448 - database.operations - INFO - 当前表中的列: ['id', 'source', 'title', 'link', 'summary', 'published', 'content', 'author', 'sentiment', 'sentiment_score', 'chinese_summary', 'keywords', 'created_at', 'updated_at', 'ai_processed']
+2025-11-23 00:27:59,452 - database.operations - INFO - 列 sentiment 已存在，跳过
+2025-11-23 00:27:59,452 - database.operations - INFO - 列 sentiment_score 已存在，跳过
+2025-11-23 00:27:59,453 - database.operations - INFO - 列 chinese_summary 已存在，跳过
+2025-11-23 00:27:59,454 - database.operations - INFO - 列 keywords 已存在，跳过
+2025-11-23 00:27:59,455 - database.operations - INFO - 列 created_at 已存在，跳过
+2025-11-23 00:27:59,455 - database.operations - INFO - 列 updated_at 已存在，跳过
+2025-11-23 00:27:59,455 - database.operations - INFO - 列 ai_processed 已存在，跳过
+2025-11-23 00:27:59,456 - database.operations - INFO - 数据库迁移完成
+2025-11-23 00:27:59,456 - web.api_server - INFO - 数据库连接成功
+2025-11-23 00:28:07,118 - database.operations - INFO - 当前表中的列: ['id', 'source', 'title', 'link', 'summary', 'published', 'content', 'author', 'sentiment', 'sentiment_score', 'chinese_summary', 'keywords', 'created_at', 'updated_at', 'ai_processed']
+2025-11-23 00:28:07,119 - database.operations - INFO - 列 sentiment 已存在，跳过
+2025-11-23 00:28:07,120 - database.operations - INFO - 列 sentiment_score 已存在，跳过
+2025-11-23 00:28:07,121 - database.operations - INFO - 列 chinese_summary 已存在，跳过
+2025-11-23 00:28:07,122 - database.operations - INFO - 列 keywords 已存在，跳过
+2025-11-23 00:28:07,122 - database.operations - INFO - 列 created_at 已存在，跳过
+2025-11-23 00:28:07,123 - database.operations - INFO - 列 updated_at 已存在，跳过
+2025-11-23 00:28:07,124 - database.operations - INFO - 列 ai_processed 已存在，跳过
+2025-11-23 00:28:07,124 - database.operations - INFO - 数据库迁移完成
+2025-11-23 00:28:07,125 - web.api_server - INFO - 数据库连接成功
+2025-11-23 00:48:37,913 - database.operations - INFO - 当前表中的列: ['id', 'source', 'title', 'link', 'summary', 'published', 'content', 'author', 'sentiment', 'sentiment_score', 'chinese_summary', 'keywords', 'created_at', 'updated_at', 'ai_processed']
+2025-11-23 00:48:37,913 - database.operations - INFO - 列 sentiment 已存在，跳过
+2025-11-23 00:48:37,914 - database.operations - INFO - 列 sentiment_score 已存在，跳过
+2025-11-23 00:48:37,914 - database.operations - INFO - 列 chinese_summary 已存在，跳过
+2025-11-23 00:48:37,914 - database.operations - INFO - 列 keywords 已存在，跳过
+2025-11-23 00:48:37,914 - database.operations - INFO - 列 created_at 已存在，跳过
+2025-11-23 00:48:37,914 - database.operations - INFO - 列 updated_at 已存在，跳过
+2025-11-23 00:48:37,915 - database.operations - INFO - 列 ai_processed 已存在，跳过
+2025-11-23 00:48:37,915 - database.operations - INFO - 数据库迁移完成
+2025-11-23 00:48:37,915 - web.api_server - INFO - 数据库连接成功
+2025-11-23 00:48:39,652 - database.operations - INFO - 当前表中的列: ['id', 'source', 'title', 'link', 'summary', 'published', 'content', 'author', 'sentiment', 'sentiment_score', 'chinese_summary', 'keywords', 'created_at', 'updated_at', 'ai_processed']
+2025-11-23 00:48:39,653 - database.operations - INFO - 列 sentiment 已存在，跳过
+2025-11-23 00:48:39,653 - database.operations - INFO - 列 sentiment_score 已存在，跳过
+2025-11-23 00:48:39,653 - database.operations - INFO - 列 chinese_summary 已存在，跳过
+2025-11-23 00:48:39,653 - database.operations - INFO - 列 keywords 已存在，跳过
+2025-11-23 00:48:39,653 - database.operations - INFO - 列 created_at 已存在，跳过
+2025-11-23 00:48:39,654 - database.operations - INFO - 列 updated_at 已存在，跳过
+2025-11-23 00:48:39,654 - database.operations - INFO - 列 ai_processed 已存在，跳过
+2025-11-23 00:48:39,654 - database.operations - INFO - 数据库迁移完成
+2025-11-23 00:48:39,654 - web.api_server - INFO - 数据库连接成功
