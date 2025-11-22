@@ -59,16 +59,22 @@
 
 3. **安装依赖**
    ```bash
-   pip install -r requirements.txt
-   # 或者使用uv（推荐）
-   uv sync
+   # 基于 pyproject.toml 安装依赖（推荐）
+   pip install -e .
+   # 或者使用 uv（需先安装 uv）
+   uv pip install -e .
    ```
 
 4. **配置环境变量**
-   ```bash
-   cp config/config.example.py config/config.py
-   # 编辑config/config.py，添加必要的API密钥
+   在项目根目录创建 `.env` 文件（已加入 `.gitignore`，不会被提交），示例：
+   ```env
+   BASE_URL=openai
+   API_KEY=your-api-key-here
+   MODEL=gpt-4o-mini
+   PROCESS_BATCH_SIZE=20
+   PROCESS_DELAY_SEC=0.5
    ```
+   可按需修改 `config/config.py` 中的数据库路径 `DB_URL`。
 
 ## ⚡ 快速开始
 
@@ -106,10 +112,7 @@ python web/api_server.py
 
 ### 5. 查看统计信息
 
-```bash
-# 查看数据库中的统计信息
-python ai_main.py stats
-```
+通过 API 获取统计信息：`GET /api/stats`
 
 ## 📁 项目结构
 
@@ -127,10 +130,8 @@ crypto-news-analyzer/
 │   └── cryptoslate.json   # CryptoSlate RSS配置
 ├── database/               # 数据库模块
 │   ├── operations.py      # 数据库操作
-│   ├── crypto_news.db     # SQLite数据库
+│   ├── crypto_news.db     # SQLite数据库（运行时自动生成，已忽略提交）
 │   └── __init__.py
-├── docs/                   # 文档
-│   └── diagrams.md        # 架构图和流程图
 ├── fetchers/               # 数据抓取模块
 │   ├── rss_fetcher.py     # RSS抓取器
 │   ├── context_extractor.py # 内容提取器
@@ -182,18 +183,7 @@ python web/api_server.py
 # 启动后访问 http://localhost:8000
 ```
 
-#### 示例程序 (ai_main.py)
 
-```bash
-# 查看统计信息
-python ai_main.py stats
-
-# 执行单次AI处理
-python ai_main.py single
-
-# 启动持续处理（每30分钟检查一次）
-python ai_main.py continuous
-```
 
 ### 数据库操作
 
@@ -220,36 +210,26 @@ positive_articles = db.get_sentiment_articles('positive', limit=5)
 
 ## ⚙️ 配置选项
 
-在 `config/config.py` 中可以配置以下选项：
+配置通过 `.env` 与 `config/config.py` 结合完成：
+
+```env
+# .env 示例
+BASE_URL=openai
+API_KEY=your-api-key-here
+MODEL=gpt-4o-mini
+PROCESS_BATCH_SIZE=20
+PROCESS_DELAY_SEC=0.5
+```
+
+`config/config.py` 会自动加载 `.env`：
 
 ```python
-# RSS源配置
-RSS_SOURCES = {
-    'cointelegraph': {
-        'url': 'https://cointelegraph.com/rss',
-        'name': 'Cointelegraph'
-    },
-    'coindesk': {
-        'url': 'https://www.coindesk.com/arc/outboundfeeds/rss/',
-        'name': 'CoinDesk'
-    },
-    'cryptoslate': {
-        'url': 'https://cryptoslate.com/feed/',
-        'name': 'CryptoSlate'
-    }
-}
-
-# 数据库配置
-DB_URL = 'sqlite:///database/crypto_news.db'
-
-# AI服务配置
-BASE_URL = "https://api.openai.com/v1/chat/completions"
-API_KEY = "your-api-key-here"
-MODEL = "gpt-3.5-turbo"
-
-# 抓取配置
-FETCH_INTERVAL = 3600  # 抓取间隔（秒）
-REQUEST_TIMEOUT = 30   # 请求超时时间（秒）
+from dotenv import load_dotenv
+load_dotenv()
+BASE_URL = os.getenv("BASE_URL", "openai")
+API_KEY = os.getenv("API_KEY")
+MODEL = os.getenv("MODEL")
+DB_URL = 'sqlite:///database/crypto_news.db'  # 可根据需要调整
 ```
 
 ## 📊 API参考
@@ -292,8 +272,17 @@ GET /api/articles
 # 获取文章详情
 GET /api/articles/{id}
 
-# 获取情感分析统计
-GET /api/sentiment-stats
+# 获取统计信息
+GET /api/stats
+
+# 触发后台处理未AI文章
+POST /api/process-unprocessed
+
+# 抓取最新新闻
+POST /api/fetch-latest
+
+# 查询任务状态
+GET /api/task-status
 
 # 获取新闻来源
 GET /api/sources

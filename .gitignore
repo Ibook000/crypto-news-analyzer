@@ -5,9 +5,12 @@ build/
 dist/
 wheels/
 tests/
+.trae/
 *.egg-info
 # Virtual environments
 .venv
 # Environment variables
 .env
 *.log
+*.db
+*.sqlite*
